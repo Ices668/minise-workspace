@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxury Spa Home Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c9a74a",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#1f1c13",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header Section -->
+<header class="flex flex-col gap-4 px-6 pt-8 pb-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-[0.2em] text-primary font-medium">Welcome Back</span>
+<h1 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100">Good morning, Elena</h1>
+</div>
+<div class="relative">
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm border border-primary/10">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<span class="absolute top-3 right-3 block h-2 w-2 rounded-full bg-primary border-2 border-white dark:border-slate-800"></span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative">
+<label class="flex items-center w-full h-12 px-4 rounded-xl bg-white dark:bg-slate-800 border border-primary/10 shadow-sm">
+<span class="material-symbols-outlined text-primary/60 mr-3">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400" placeholder="Search treatments or therapists" type="text"/>
+</label>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto hide-scrollbar pb-24">
+<!-- Service Categories -->
+<section class="px-6 py-4">
+<div class="flex justify-between items-center overflow-x-auto hide-scrollbar gap-4">
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">spa</span>
+</div>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Swedish</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">physical_therapy</span>
+</div>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Deep Tissue</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">self_care</span>
+</div>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Hot Stone</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">fragrance</span>
+</div>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Aroma</span>
+</div>
+</div>
+</section>
+<!-- Featured Therapists -->
+<section class="py-6">
+<div class="flex items-center justify-between px-6 mb-4">
+<h2 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Featured Therapists</h2>
+<a class="text-xs font-semibold text-primary uppercase tracking-widest" href="#">View All</a>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 px-6">
+<!-- Therapist Card 1 -->
+<div class="flex flex-col min-w-[200px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md border border-primary/5">
+<div class="h-48 w-full bg-cover bg-center" data-alt="Professional female therapist headshot with neutral background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD62oL-qQre8Z-B3Yp_Mlba-byl6KTG5roxJMKUo9Wjyy9w7OHakZ-ivcdMib4H1B88mMjBnA8CxJKOfCqjxS4UfPHL1hodYEOQh1mFAZHBywpiB4-68w_fEFQ_bsGr89_VlDAqQO7NYkULJLJ4GZN5HmCtRfxpA69zo9qHjkJBWGBrksn7bXl9OmYOGUsTOwsI9pGTXu2yEL_WHciO2k1Hv5Zkq6cWQ-leEbf-eZ_ieYF0HLjkVuyRktbJBI2Yebye9JZBlTX5ZUY')"></div>
+<div class="p-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">Sarah Jenkins</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Deep Tissue Expert</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.9</span>
+</div>
+</div>
+</div>
+<!-- Therapist Card 2 -->
+<div class="flex flex-col min-w-[200px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md border border-primary/5">
+<div class="h-48 w-full bg-cover bg-center" data-alt="Professional male therapist smiling in spa uniform" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHCAP0tjUqkHWv_krE1JQHUWym6gy1C4LaLk4Mq7Ywd_co0gyyiRL2pimDeVuHeJTQ3Zy8XaHFbVfCqIkbqf9mslb0m1fALaYqsp7t9eAI4xGpH3n74Fli9Fv6juChbry3Egtp0LAj_ob1fCBGSuEgtrWIPzLoHjuIvzuQw__qUdZ767Ug1fzU7YlTmTqh5GSc0Ofp_mICD_kFj2OSU5lRwo27jxRhPO5fiCwb-4dQ2_33qS3SATkvchdWTjl8G9pOerjVOSITyVY')"></div>
+<div class="p-4">
+<p class="font-bold text-slate-900 dark:text-slate-100">David Chen</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Sports Massage Pro</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">4.8</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Section -->
+<section class="px-6 py-6">
+<h2 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">Recommended for You</h2>
+<div class="flex flex-col gap-4">
+<!-- Recommended Item 1 -->
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-xl border border-primary/5 shadow-sm">
+<div class="size-16 rounded-lg bg-cover bg-center shrink-0" data-alt="Close-up portrait of female aromatherapy specialist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMyNY0G-gKqOxlPErHIJ8c0aqF3i7c-WDQK0Vt1WZ8YThzeEsCS7VCPwm-gIdYWhznFd6gLmVZZyt5-srOr82D2rGs9aezr9JZLPhfR_oHtuBxmwkrPZ0Mg0Gtey3-xGUi-6ChB-cBmrMLDTLt_TJ5LKRbjx1bPMctlc-yMt3f6jad-PRBPLN9kzgv1TltQPlBJD6Dsi3AbRHhIua4LKSEsFplA2Dap2vEoO7ig9koARRVj9mmc1p3NILH5jWlusLZgcjdkMXkeGU')"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm text-slate-900 dark:text-slate-100">Maya Williams</h3>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase">5.0 ★</span>
+</div>
+<p class="text-[11px] text-slate-500 leading-tight mt-1 line-clamp-2">Specializing in organic essential oils and holistic relaxation techniques for over 8 years.</p>
+</div>
+</div>
+<!-- Recommended Item 2 -->
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 rounded-xl border border-primary/5 shadow-sm">
+<div class="size-16 rounded-lg bg-cover bg-center shrink-0" data-alt="Portrait of experienced male massage therapist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC16oVM7PQwqH4w31yUdF5odrjXIjdjhNmPezFxL7rXybKXhLRepbLkONzF4JTo58U6pltx6kdm3OyQZmRCisQn0ef0xlW50kxOdu-6y9DAWw56-nI8T8VmxV6B8s4mds06AMGrh5c-j_YuTQ-r1oW8grvCH1AtXbERbi3zdtn1sJlccmuVR14PfMudAKggvaqTvPgP78sQ0IfwpiUHc8ZjVN_IZ5CuvtowgKmPqEQnAXj46USgkGGyosVRcsUITqC76MvhozeE8Bo')"></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm text-slate-900 dark:text-slate-100">Julian Pierce</h3>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase">4.7 ★</span>
+</div>
+<p class="text-[11px] text-slate-500 leading-tight mt-1 line-clamp-2">Master of Swedish techniques with a focus on chronic stress relief and improved circulation.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="absolute bottom-0 left-0 right-0 flex items-center justify-around bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-primary/10 px-4 pb-8 pt-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">spa</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Treatments</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

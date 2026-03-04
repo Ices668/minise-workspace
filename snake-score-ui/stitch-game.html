@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Snake Game Core Gameplay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102219",
+                        "game-board": "#0a1410",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .grid-bg {
+            background-image: radial-gradient(circle, rgba(19, 236, 128, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .snake-shadow {
+            box-shadow: 0 0 15px rgba(19, 236, 128, 0.4);
+        }
+        .food-glow {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center overflow-x-hidden">
+<!-- Top Navigation HUD -->
+<header class="w-full max-w-4xl px-6 py-8 flex items-center justify-between border-b border-primary/10">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-widest text-primary font-bold">Score</span>
+<span class="text-3xl font-bold leading-none tracking-tight">120</span>
+</div>
+<div class="h-10 w-px bg-primary/20"></div>
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-widest text-primary font-bold">Level</span>
+<span class="text-3xl font-bold leading-none tracking-tight">04</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-3 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">pause</span>
+</button>
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center" data-alt="User profile avatar placeholder">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Gameplay Area -->
+<main class="flex-1 flex flex-col items-center justify-center w-full p-4 gap-8">
+<!-- Game Board Container -->
+<div class="relative w-full max-w-[600px] aspect-square bg-game-board rounded-xl border border-primary/20 shadow-2xl flex items-center justify-center overflow-hidden">
+<!-- Grid Background Overlay -->
+<div class="absolute inset-0 grid-bg opacity-50"></div>
+<!-- Game World Representation -->
+<div class="relative w-[480px] h-[480px] grid grid-cols-20 grid-rows-20 gap-0">
+<!-- Food Item -->
+<div class="absolute w-5 h-5 bg-red-500 rounded-full food-glow" style="top: 120px; left: 360px;"></div>
+<!-- Snake Body -->
+<!-- Head -->
+<div class="absolute w-6 h-6 bg-primary rounded-full snake-shadow z-10 flex items-center justify-center" style="top: 240px; left: 240px;">
+<div class="flex gap-1">
+<div class="w-1 h-1 bg-background-dark rounded-full"></div>
+<div class="w-1 h-1 bg-background-dark rounded-full"></div>
+</div>
+</div>
+<!-- Body Segments -->
+<div class="absolute w-5 h-5 bg-primary/90 rounded-full" style="top: 240px; left: 216px;"></div>
+<div class="absolute w-5 h-5 bg-primary/80 rounded-full" style="top: 240px; left: 192px;"></div>
+<div class="absolute w-5 h-5 bg-primary/70 rounded-full" style="top: 240px; left: 168px;"></div>
+<div class="absolute w-5 h-5 bg-primary/60 rounded-full" style="top: 264px; left: 168px;"></div>
+<div class="absolute w-5 h-5 bg-primary/50 rounded-full" style="top: 288px; left: 168px;"></div>
+<div class="absolute w-5 h-5 bg-primary/40 rounded-full" style="top: 288px; left: 144px;"></div>
+</div>
+</div>
+<!-- Controls / UI Tips -->
+<div class="flex items-center gap-8 text-primary/60 text-sm font-medium">
+<div class="flex items-center gap-2">
+<kbd class="px-2 py-1 bg-primary/10 border border-primary/30 rounded text-primary">ESC</kbd>
+<span>Settings</span>
+</div>
+<div class="flex items-center gap-2">
+<kbd class="px-2 py-1 bg-primary/10 border border-primary/30 rounded text-primary">SPACE</kbd>
+<span>Pause</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex flex-col items-center">
+<div class="flex gap-1 mb-1">
+<kbd class="w-8 h-8 flex items-center justify-center bg-primary/10 border border-primary/30 rounded text-primary"><span class="material-symbols-outlined text-sm">arrow_upward</span></kbd>
+</div>
+<div class="flex gap-1">
+<kbd class="w-8 h-8 flex items-center justify-center bg-primary/10 border border-primary/30 rounded text-primary"><span class="material-symbols-outlined text-sm">arrow_back</span></kbd>
+<kbd class="w-8 h-8 flex items-center justify-center bg-primary/10 border border-primary/30 rounded text-primary"><span class="material-symbols-outlined text-sm">arrow_downward</span></kbd>
+<kbd class="w-8 h-8 flex items-center justify-center bg-primary/10 border border-primary/30 rounded text-primary"><span class="material-symbols-outlined text-sm">arrow_forward</span></kbd>
+</div>
+</div>
+<span>Move</span>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="w-full max-w-4xl px-6 py-8 flex justify-between text-xs text-primary/30 uppercase tracking-[0.2em]">
+<div>Session ID: SNK-9921-X</div>
+<div>Engine v2.0.4 - Optimized for Web</div>
+</footer>
+</body></html>

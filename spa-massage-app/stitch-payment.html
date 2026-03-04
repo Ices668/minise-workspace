@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c9a74a",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#1f1c13",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark">
+<!-- Top Navigation -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="font-display text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12 text-slate-900 dark:text-slate-100 uppercase tracking-widest">Order Confirmation</h2>
+</div>
+<div class="flex-1 overflow-y-auto">
+<!-- Order Summary Card -->
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden shadow-sm border border-primary/10 bg-white dark:bg-zinc-900">
+<div class="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover" data-alt="Luxury hotel spa room with massage table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-xMmWprg-qsk8HmNwCP-d0ULALBGswS7T0r9B_RLkf8gRGYd9Ra4ujnaMEG_802RKg-PkYcWAZrNB6iVkbTa1bmrdM0OaJjwXBASfiMNqbJliaICShlF3EZsWl6OkibXDE5x4fxYP6DTV6Cav0hnLYJhvqUo8Ug14Gd-zhlIyE6WtYyF_VqNACj5C_KZERZtaMfwIQl63SveCfSMPakkmWvSV_fs-hSqV9_5fOs81Yo185F0WEKUJcug00UXFodMr8doRX8t-1Uo");'>
+</div>
+<div class="flex w-full flex-col items-stretch justify-center gap-2 p-5">
+<div class="flex justify-between items-start">
+<p class="font-display text-xl font-bold text-slate-900 dark:text-slate-100">90min Deep Tissue Massage</p>
+<span class="text-primary material-symbols-outlined">spa</span>
+</div>
+<div class="space-y-1 mt-2">
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">person</span>
+<p class="text-sm font-medium">Therapist: Seraphina</p>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<p class="text-sm font-medium">Oct 24, 2023 • 14:00</p>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">meeting_room</span>
+<p class="text-sm font-medium">In-Room Service: Room 402</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="px-6 py-4">
+<h3 class="font-display text-base font-bold uppercase tracking-widest text-primary mb-4">Price Breakdown</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Service Price</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium">$220.00</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Taxes (10%)</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium">$22.00</p>
+</div>
+<div class="flex justify-between items-center pb-3 border-b border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Service Fee</p>
+<p class="text-slate-900 dark:text-slate-100 font-medium">$15.00</p>
+</div>
+<div class="flex justify-between items-center pt-2">
+<p class="font-display text-lg font-bold text-slate-900 dark:text-slate-100">Total Amount</p>
+<p class="font-display text-2xl font-bold text-primary">$257.00</p>
+</div>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="px-6 py-6 mb-24">
+<h3 class="font-display text-base font-bold uppercase tracking-widest text-primary mb-4">Payment Method</h3>
+<div class="space-y-3">
+<!-- Credit Card -->
+<label class="flex items-center justify-between p-4 rounded-xl border-2 border-primary bg-white dark:bg-zinc-900 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="font-medium text-slate-900 dark:text-slate-100">Credit Card</span>
+</div>
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary border-primary/30" name="payment" type="radio"/>
+</label>
+<!-- WeChat Pay -->
+<label class="flex items-center justify-between p-4 rounded-xl border border-primary/10 bg-white dark:bg-zinc-900 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">account_balance_wallet</span>
+<span class="font-medium text-slate-600 dark:text-slate-400">WeChat Pay</span>
+</div>
+<input class="w-5 h-5 text-primary focus:ring-primary border-primary/30" name="payment" type="radio"/>
+</label>
+<!-- Alipay -->
+<label class="flex items-center justify-between p-4 rounded-xl border border-primary/10 bg-white dark:bg-zinc-900 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">payments</span>
+<span class="font-medium text-slate-600 dark:text-slate-400">Alipay</span>
+</div>
+<input class="w-5 h-5 text-primary focus:ring-primary border-primary/30" name="payment" type="radio"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg max-w-[430px] mx-auto">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-display font-bold py-4 rounded-xl shadow-lg transition-colors uppercase tracking-widest text-sm">
+                Place Order • $257.00
+            </button>
+</div>
+</div>
+</body></html>

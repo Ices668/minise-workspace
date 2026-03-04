@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Therapist Profile Detail Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#c9a74a",
+                "background-light": "#f8f7f6",
+                "background-dark": "#1f1c13",
+              },
+              fontFamily: {
+                "display": ["Manrope", "sans-serif"],
+                "serif": ["Playfair Display", "serif"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .fade-bottom {
+            background: linear-gradient(to bottom, transparent 0%, rgba(248, 247, 246, 1) 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden max-w-[430px] mx-auto shadow-2xl">
+<div class="absolute top-0 left-0 right-0 z-10 flex items-center p-4 justify-between bg-gradient-to-b from-black/20 to-transparent">
+<div class="text-white flex size-10 shrink-0 items-center justify-center rounded-full bg-black/10 backdrop-blur-md">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div class="flex size-10 items-center justify-center rounded-full bg-black/10 backdrop-blur-md">
+<button class="text-white">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<div class="relative h-[450px] w-full">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Professional therapist in a luxury spa setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZvk_xg81hC1-hVWLaN_Paet7OQIt9LwieRMbUmX8lrCYQyJnauAKCDnysGHQl0HOVOlEFO6gOqvgQVhqQbZUjZjLtAjw5pvB1if3FvU5J39tofjUGVdLcxuMXLpdNvvUVZ8BJGcvlsgWJy3ECQuxm_-gfpa_PUxXkzOZuL3SqafdX-QgI2qlBV3-yRQDDy_2F7tIdftQ0lPN25gSlksr4sCFpCydYCqduluMpMyvKhFiJtWOrED_pX2DQtbIMfevMWyEwT6PLtdw");'></div>
+<div class="absolute inset-0 fade-bottom"></div>
+</div>
+<div class="relative -mt-20 px-4 pb-6">
+<div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-xl p-6 shadow-sm border border-primary/10">
+<div class="flex flex-col items-center text-center">
+<h1 class="font-serif text-3xl font-bold text-slate-900 dark:text-white mb-1">Elena Rodriguez</h1>
+<p class="text-primary font-medium tracking-wide uppercase text-xs mb-3">Aromatherapy Specialist</p>
+<div class="flex items-center gap-6 mb-4">
+<div class="text-center">
+<p class="text-xs text-slate-500 uppercase font-semibold">Experience</p>
+<p class="font-bold text-lg">8 Years</p>
+</div>
+<div class="h-8 w-px bg-primary/20"></div>
+<div class="text-center">
+<p class="text-xs text-slate-500 uppercase font-semibold">Rating</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm fill-1">star</span>
+<p class="font-bold text-lg">4.9</p>
+</div>
+</div>
+<div class="h-8 w-px bg-primary/20"></div>
+<div class="text-center">
+<p class="text-xs text-slate-500 uppercase font-semibold">Reviews</p>
+<p class="font-bold text-lg">128</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                        "Dedicated to creating a sanctuary of healing through personalized aromatherapy and deep tissue techniques."
+                    </p>
+</div>
+</div>
+</div>
+<section class="px-4 py-4">
+<h3 class="font-serif text-xl font-bold mb-4">Next Available</h3>
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-20 h-24 rounded-lg bg-primary text-white shadow-md">
+<span class="text-xs uppercase font-bold">Today</span>
+<span class="text-2xl font-bold">14</span>
+<span class="text-xs">Oct</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-20 h-24 rounded-lg bg-white dark:bg-slate-800 border border-primary/20">
+<span class="text-xs uppercase font-semibold text-slate-500">Tue</span>
+<span class="text-2xl font-bold">15</span>
+<span class="text-xs text-slate-500">Oct</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-20 h-24 rounded-lg bg-white dark:bg-slate-800 border border-primary/20">
+<span class="text-xs uppercase font-semibold text-slate-500">Wed</span>
+<span class="text-2xl font-bold">16</span>
+<span class="text-xs text-slate-500">Oct</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-20 h-24 rounded-lg bg-white dark:bg-slate-800 border border-primary/20">
+<span class="text-xs uppercase font-semibold text-slate-500">Thu</span>
+<span class="text-2xl font-bold">17</span>
+<span class="text-xs text-slate-500">Oct</span>
+</div>
+</div>
+<div class="flex gap-2 mt-4 overflow-x-auto hide-scrollbar">
+<button class="px-5 py-2 rounded-full border border-primary/30 text-sm font-medium hover:bg-primary/10">10:30 AM</button>
+<button class="px-5 py-2 rounded-full bg-primary/20 border border-primary text-primary text-sm font-bold">02:00 PM</button>
+<button class="px-5 py-2 rounded-full border border-primary/30 text-sm font-medium hover:bg-primary/10">03:30 PM</button>
+<button class="px-5 py-2 rounded-full border border-primary/30 text-sm font-medium hover:bg-primary/10">05:00 PM</button>
+</div>
+</section>
+<section class="px-4 py-6">
+<h3 class="font-serif text-xl font-bold mb-4">Service Menu</h3>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-primary/10">
+<div class="grid grid-cols-4 gap-2 bg-primary/5 p-3 text-[10px] uppercase font-bold tracking-wider text-slate-500">
+<div class="col-span-1">Treatment</div>
+<div class="text-center">60m</div>
+<div class="text-center">90m</div>
+<div class="text-center">120m</div>
+</div>
+<div class="divide-y divide-primary/5">
+<div class="grid grid-cols-4 gap-2 p-4 items-center">
+<div class="col-span-1 font-bold text-sm">Swedish Massage</div>
+<div class="text-center text-sm font-medium text-primary">$120</div>
+<div class="text-center text-sm font-medium text-primary">$170</div>
+<div class="text-center text-sm font-medium text-primary">$220</div>
+</div>
+<div class="grid grid-cols-4 gap-2 p-4 items-center bg-primary/5">
+<div class="col-span-1 font-bold text-sm">Deep Tissue</div>
+<div class="text-center text-sm font-medium text-primary">$140</div>
+<div class="text-center text-sm font-medium text-primary">$195</div>
+<div class="text-center text-sm font-medium text-primary">$250</div>
+</div>
+<div class="grid grid-cols-4 gap-2 p-4 items-center">
+<div class="col-span-1 font-bold text-sm">Aromatherapy</div>
+<div class="text-center text-sm font-medium text-primary">$135</div>
+<div class="text-center text-sm font-medium text-primary">$185</div>
+<div class="text-center text-sm font-medium text-primary">$240</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-serif text-xl font-bold">Guest Reviews</h3>
+<button class="text-primary text-sm font-bold">See All</button>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-primary/5">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-xs">JD</div>
+<div>
+<p class="text-xs font-bold">Julianne Devis</p>
+<div class="flex text-[10px] text-primary">
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+</div>
+</div>
+</div>
+<span class="text-[10px] text-slate-400">2 days ago</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                        "Elena has magical hands. The aromatherapy session was the highlight of my stay at the hotel. Truly professional."
+                    </p>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-primary/5">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-xs">MR</div>
+<div>
+<p class="text-xs font-bold">Marcus Reed</p>
+<div class="flex text-[10px] text-primary">
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+<span class="material-symbols-outlined text-[12px] fill-1">star</span>
+</div>
+</div>
+</div>
+<span class="text-[10px] text-slate-400">1 week ago</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                        "The deep tissue massage was exactly what I needed after a long flight. Elena is incredibly skilled."
+                    </p>
+</div>
+</div>
+</section>
+<div class="sticky bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-primary/10">
+<button class="w-full h-14 bg-primary text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/30 flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+                Book Now
+                <span class="material-symbols-outlined">calendar_month</span>
+</button>
+</div>
+</div>
+</body></html>

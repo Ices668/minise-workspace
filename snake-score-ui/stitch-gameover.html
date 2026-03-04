@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Snake Game Over Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102219",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-6 py-4 md:px-10 lg:px-40">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-6">
+<span class="material-symbols-outlined text-3xl">sports_esports</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Snake Pro</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">How to Play</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Leaderboard</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Game Over Content -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 text-center">
+<!-- Game Over Backdrop Effect -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]"></div>
+</div>
+<div class="z-10 flex flex-col items-center max-w-2xl w-full bg-slate-100/5 dark:bg-slate-900/40 backdrop-blur-sm border border-slate-200/10 dark:border-primary/10 p-8 md:p-16 rounded-xl shadow-2xl">
+<!-- Status Badge -->
+<div class="mb-6 px-4 py-1 rounded-full bg-red-500/10 border border-red-500/20">
+<span class="text-red-500 text-xs font-bold uppercase tracking-widest">Session Ended</span>
+</div>
+<!-- Title -->
+<h1 class="text-slate-900 dark:text-white tracking-tighter text-5xl md:text-7xl font-black leading-none mb-4 uppercase italic">
+                    GAME OVER
+                </h1>
+<!-- Score Container -->
+<div class="mt-8 mb-4">
+<p class="text-slate-500 dark:text-primary/60 text-sm font-bold uppercase tracking-[0.2em] mb-2">Final Score</p>
+<div class="relative group">
+<p class="text-slate-900 dark:text-primary text-7xl md:text-9xl font-black leading-none tracking-tighter drop-shadow-[0_0_20px_rgba(19,236,128,0.4)]">
+                            1,840
+                        </p>
+</div>
+</div>
+<!-- High Score -->
+<div class="flex items-center gap-2 mb-12">
+<span class="material-symbols-outlined text-primary text-xl">emoji_events</span>
+<h2 class="text-slate-600 dark:text-slate-300 text-lg font-medium">High Score: <span class="text-slate-900 dark:text-white font-bold">2,450</span></h2>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+<button class="flex-1 flex cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-primary text-background-dark text-lg font-bold hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(19,236,128,0.3)]">
+<span class="material-symbols-outlined mr-2">replay</span>
+                        PLAY AGAIN
+                    </button>
+<button class="flex-1 flex cursor-pointer items-center justify-center rounded-full h-14 px-8 border-2 border-primary/30 text-slate-900 dark:text-primary text-lg font-bold hover:bg-primary/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined mr-2">home</span>
+                        MAIN MENU
+                    </button>
+</div>
+<!-- Share Score -->
+<div class="mt-8 flex gap-4">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">save</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="p-6 text-center">
+<p class="text-slate-500 text-xs font-medium tracking-widest uppercase opacity-50">© 2024 Snake Pro Engine • v2.0.4</p>
+</footer>
+</div>
+<!-- Decorative Corner Elements -->
+<div class="fixed top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-primary/10 rounded-tl-xl pointer-events-none m-4"></div>
+<div class="fixed bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-primary/10 rounded-br-xl pointer-events-none m-4"></div>
+</body></html>

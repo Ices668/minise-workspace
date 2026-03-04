@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102219",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .neon-glow {
+            text-shadow: 0 0 15px rgba(19, 236, 128, 0.4);
+        }
+        .snake-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(19, 236, 128, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(19, 236, 128, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden snake-grid">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between border-b border-primary/10 px-6 py-4 md:px-20 lg:px-40 bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark font-bold">keyboard_command_key</span>
+</div>
+<h2 class="text-slate-100 text-xl font-bold tracking-tight">SNAKE <span class="text-primary">MODERN</span></h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 md:gap-12">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Leaderboard</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Settings</a>
+</nav>
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<!-- Main Dashboard Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+<div class="max-w-4xl w-full flex flex-col items-center">
+<!-- Score Label -->
+<div class="flex flex-col items-center mb-2">
+<span class="text-slate-400 text-sm font-bold tracking-[0.3em] uppercase mb-4">Current Score</span>
+<div class="relative">
+<h1 class="text-primary text-[120px] md:text-[180px] font-bold leading-none tracking-tighter neon-glow">
+                        1,250
+                    </h1>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-8">
+<!-- High Score Module -->
+<div class="flex flex-col items-center justify-center gap-2 rounded-xl p-8 bg-primary/5 border border-primary/20 backdrop-blur-sm group hover:border-primary/40 transition-all">
+<p class="text-slate-400 text-xs font-bold tracking-widest uppercase">High Score</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">emoji_events</span>
+<p class="text-slate-100 text-4xl font-bold tracking-tight">5,840</p>
+</div>
+</div>
+<!-- Level Module -->
+<div class="flex flex-col items-center justify-center gap-2 rounded-xl p-8 bg-primary/5 border border-primary/20 backdrop-blur-sm group hover:border-primary/40 transition-all">
+<p class="text-slate-400 text-xs font-bold tracking-widest uppercase">Level</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">trending_up</span>
+<p class="text-slate-100 text-4xl font-bold tracking-tight">12</p>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-16 flex flex-col items-center gap-4">
+<button class="flex min-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-primary text-background-dark gap-3 hover:scale-105 hover:shadow-[0_0_30px_rgba(19,236,128,0.3)] transition-all active:scale-95">
+<span class="material-symbols-outlined font-bold text-2xl">play_arrow</span>
+<span class="text-lg font-bold tracking-wider">PLAY AGAIN</span>
+</button>
+<button class="text-slate-500 hover:text-slate-300 transition-colors text-sm font-medium flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-base">share</span>
+                    Share your score
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer Decorative Area -->
+<footer class="p-8 flex justify-center items-center opacity-30">
+<div class="flex gap-4">
+<div class="size-2 rounded-full bg-primary"></div>
+<div class="size-2 rounded-full bg-primary"></div>
+<div class="size-2 rounded-full bg-primary"></div>
+<div class="size-2 rounded-full bg-primary/40"></div>
+<div class="size-2 rounded-full bg-primary/20"></div>
+</div>
+</footer>
+</div>
+<!-- Decorative Background Elements -->
+<div class="fixed top-1/4 -left-20 size-80 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="fixed bottom-1/4 -right-20 size-80 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+</body></html>
