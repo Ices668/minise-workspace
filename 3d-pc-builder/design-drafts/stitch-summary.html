@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PC Build Summary &amp; Export | PC Builder Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 lg:px-10 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">deployed_code</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">PC Builder Pro</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Build</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Parts</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Guides</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="relative hidden sm:block w-full max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-500" placeholder="Search parts..." type="text"/>
+</div>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</div>
+</div>
+</header>
+<main class="flex-1 px-6 lg:px-10 py-8 max-w-[1440px] mx-auto w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-2">
+<span>My Builds</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>High-End Gaming</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-medium">Summary</span>
+</div>
+<h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Build Summary: Ultimate 4K Rig</h1>
+<p class="text-slate-500 dark:text-slate-400">Configuration finalized on Oct 24, 2023 • v2.4.0</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg font-semibold text-sm hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">save</span>
+                            Save Build
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg font-semibold text-sm hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">share</span>
+                            Share Link
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg font-semibold text-sm hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+                            Export PDF
+                        </button>
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+                            Order All Parts
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 space-y-6">
+<div class="bg-background-light dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Component</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Part Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Brand</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Price</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">CPU</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">Intel Core i9-14900K</td>
+<td class="px-6 py-4 text-sm text-slate-500">Intel</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$589.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">GPU</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">NVIDIA RTX 4080 Super</td>
+<td class="px-6 py-4 text-sm text-slate-500">NVIDIA</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$999.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">Motherboard</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">ASUS ROG Strix Z790-E</td>
+<td class="px-6 py-4 text-sm text-slate-500">ASUS</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$379.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">RAM</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">32GB DDR5-6000 CL30</td>
+<td class="px-6 py-4 text-sm text-slate-500">G.Skill</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$125.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">Storage</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">2TB NVMe Gen4 SSD</td>
+<td class="px-6 py-4 text-sm text-slate-500">Samsung</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$160.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">PSU</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">850W 80+ Gold Modular</td>
+<td class="px-6 py-4 text-sm text-slate-500">Corsair</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$129.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">Case</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">NZXT H7 Flow</td>
+<td class="px-6 py-4 text-sm text-slate-500">NZXT</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$129.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-400">Cooling</td>
+<td class="px-6 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100">360mm AIO Liquid Cooler</td>
+<td class="px-6 py-4 text-sm text-slate-500">Kraken</td>
+<td class="px-6 py-4 text-sm font-mono text-slate-900 dark:text-slate-100">$172.00</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded border border-green-500/20">In Stock</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-6 rounded-xl flex flex-col justify-between">
+<span class="text-primary text-sm font-bold uppercase tracking-wider mb-2">Estimated Total Build Cost</span>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-slate-900 dark:text-slate-100">$2,382.00</span>
+<span class="text-slate-500 text-sm">inc. tax &amp; shipping</span>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800 p-6 rounded-xl flex items-center gap-4">
+<div class="size-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Ready to Ship</h4>
+<p class="text-sm text-slate-500">All components are currently available at retailers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">view_in_ar</span>
+                                3D Build Preview
+                            </h3>
+<div class="aspect-square w-full bg-slate-200 dark:bg-slate-900 rounded-lg overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&amp;fit=crop&amp;q=80&amp;w=800')] bg-cover bg-center" data-alt="Cyberpunk style PC case with neon lighting"></div>
+<button class="absolute bottom-4 right-4 p-2 bg-primary rounded-full text-white shadow-lg">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="text-white text-sm font-bold">Interactive 3D View</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+                                Compatibility Report
+                            </h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-xl">bolt</span>
+<span class="text-sm font-medium">Power Supply</span>
+</div>
+<span class="text-xs font-mono text-slate-500">520W / 850W</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[61%]"></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-xl">settings_input_hdmi</span>
+<span class="text-sm font-medium">PCIe Clearance</span>
+</div>
+<span class="text-xs font-bold text-green-500 uppercase">Passed</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-xl">memory</span>
+<span class="text-sm font-medium">RAM Clearance</span>
+</div>
+<span class="text-xs font-bold text-green-500 uppercase">Passed</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-700 mt-4 pt-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500 text-xl">straighten</span>
+<span class="text-sm font-medium">Case Dimensions</span>
+</div>
+<span class="text-xs font-bold text-green-500 uppercase">Passed</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                Performance Metrics
+                            </h3>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between items-center text-sm">
+<span class="font-medium">Gaming 4K Ultra</span>
+<span class="font-bold text-primary">94</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-sm">
+<span class="font-medium">Content Creation</span>
+<span class="font-bold text-primary">91</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-sm">
+<span class="font-medium">Productivity</span>
+<span class="font-bold text-primary">88</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-slate-100 dark:bg-slate-900 rounded-lg text-xs text-slate-500 leading-relaxed">
+                                Benchmarks are estimated based on hardware specifications and representative software suites.
+                            </div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 py-10 px-6 lg:px-10 mt-12 bg-slate-50 dark:bg-slate-950/40">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined text-2xl">deployed_code</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold tracking-tight">PC Builder Pro</h2>
+</div>
+<p class="text-sm text-slate-500">The world's most advanced PC configuration tool for enthusiasts and professional builders.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-slate-900 dark:text-slate-100">Tools</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Compatibility Checker</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bottleneck Calculator</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">PSU Calculator</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Custom Water Cooling</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-slate-900 dark:text-slate-100">Community</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Completed Builds</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Forum Discussions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Component Reviews</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Discord Server</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-slate-900 dark:text-slate-100">Support</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Documentation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Legal &amp; Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto border-t border-slate-200 dark:border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-500">© 2024 PC Builder Pro. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">alternate_email</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">rss_feed</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

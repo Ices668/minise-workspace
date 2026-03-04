@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PC Parts Browser Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                        "surface": "#1a2a33",
+                        "surface-accent": "#223c49",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-surface-accent bg-background-light dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">developer_board</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">NexusBuild 3D</h2>
+</div>
+<nav class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Builds</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Guides</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Benchmarks</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Market</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-surface-accent text-slate-700 dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-surface-accent text-slate-700 dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+<div class="h-10 w-px bg-slate-200 dark:bg-surface-accent mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold leading-none">Alex Rivera</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Enthusiast Tier</p>
+</div>
+<div class="bg-primary/20 border-2 border-primary rounded-full size-10 overflow-hidden" data-alt="User profile avatar portrait">
+<img alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwYKR7lc58KIvqmoo2_9jM729afKs6LAEqaXBf89s8NK523VB5stus9AAj4Td-CA6y8B4yOwwskWqRy6uyYolBgqYMI7y0mPBLwgcxfYhy-KJWt-KdVWCxXUWoCXLBMx2ar8OpdcNiL9C0gLbBmdlfrmguxwcV-dLxtizJT5GNwbYUPrFsvG6JLMpVN2hGya6kAB5TzSsCTB0oFg32I3aJcfUljtptJ6e5YUYqUhEpM_1m6ylnzFyzaFVRaaeef-1yZenRlk6pzyA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<div class="flex-1 flex flex-col min-w-0">
+<div class="bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-surface-accent px-8 pt-4">
+<div class="flex border-b border-slate-200 dark:border-surface-accent gap-6 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary px-4 pb-3" href="#">
+<p class="text-primary text-sm font-bold tracking-tight">All Components</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">CPU</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">GPU</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">Motherboard</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">RAM</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">Storage</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">Case</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">PSU</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 px-4 pb-3 group" href="#">
+<p class="text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-100 text-sm font-bold transition-colors">Cooling</p>
+</a>
+</div>
+<div class="py-6 flex flex-col gap-4">
+<div class="flex gap-4">
+<label class="flex flex-1 min-w-0 h-12">
+<div class="flex w-full items-stretch rounded-xl bg-slate-100 dark:bg-surface-accent border border-slate-200 dark:border-transparent focus-within:border-primary transition-all">
+<div class="flex items-center justify-center pl-4 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full border-none bg-transparent focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 px-3 text-base" placeholder="Search components, brands, or specs..."/>
+</div>
+</label>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Sort by:</span>
+<select class="h-12 bg-slate-100 dark:bg-surface-accent border-none rounded-xl text-sm font-medium focus:ring-1 focus:ring-primary min-w-[140px]">
+<option>Popularity</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Performance</option>
+</select>
+</div>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+<button class="flex h-9 shrink-0 items-center gap-2 rounded-lg bg-slate-100 dark:bg-surface-accent border border-slate-200 dark:border-transparent px-4 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="text-slate-700 dark:text-slate-200 text-sm font-medium">Brand: Intel</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center gap-2 rounded-lg bg-slate-100 dark:bg-surface-accent border border-slate-200 dark:border-transparent px-4">
+<span class="text-slate-700 dark:text-slate-200 text-sm font-medium">Socket: LGA1700</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center gap-2 rounded-lg bg-slate-100 dark:bg-surface-accent border border-slate-200 dark:border-transparent px-4">
+<span class="text-slate-700 dark:text-slate-200 text-sm font-medium">TDP: &lt;150W</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<div class="flex items-center gap-4 bg-slate-100 dark:bg-surface-accent border border-slate-200 dark:border-transparent rounded-lg px-4 h-9">
+<span class="text-slate-700 dark:text-slate-200 text-sm font-medium">Price Range:</span>
+<input class="w-24 h-1.5 bg-slate-300 dark:bg-slate-600 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<span class="text-xs font-mono">$0 - $1200</span>
+</div>
+<button class="flex h-9 shrink-0 items-center gap-2 rounded-lg text-primary hover:bg-primary/10 px-3 ml-auto transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list_off</span>
+<span class="text-sm font-bold">Clear Filters</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto bg-slate-50 dark:bg-background-dark/50 p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-surface-accent overflow-hidden hover:border-primary/50 transition-all shadow-sm hover:shadow-xl hover:shadow-primary/5">
+<div class="relative aspect-square bg-slate-100 dark:bg-background-dark p-6 flex items-center justify-center group-hover:bg-slate-50 dark:group-hover:bg-[#15232b] transition-colors" data-alt="Close up high quality photo of an Intel Core i9 processor box">
+<img alt="Product" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAct8Fr-rcUsO2W65BDyDVzy3uguNLFo-hUXmBzNm-ei8ICI1DerhIfacdNkFGlA5HYCUgxWbk9ZFP-O3he7_jdvFzBaJg9bKdpPy3doIvbyLSeeaRMu4QaU6LhFY9r-RaX4Yojzl0CXmUpAEJkzM_z7tdlBmz3FSP_hJSYZex4CgqUyjdd6OcwVCIGdO23U-Ooll03BP4JM3JNUJaLSPJH5GOgkSX0OkJfgmbxnx1yO5tBOueVuVE7OtvAdXeHjtmK1xut5JTYDT0"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-emerald-500/10 text-emerald-500 text-[10px] font-bold px-2 py-1 rounded border border-emerald-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] font-bold">check_circle</span>
+                                        COMPATIBLE
+                                    </span>
+</div>
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-white/80 dark:bg-surface/80 rounded-full shadow-lg backdrop-blur text-primary">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<p class="text-xs font-bold text-primary tracking-widest uppercase">INTEL</p>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input class="rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400">COMPARE</span>
+</label>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mb-3">Core i9-14900K Desktop Processor</h3>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Cores</span>
+<span class="text-xs font-bold">24 Cores</span>
+</div>
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Power</span>
+<span class="text-xs font-bold">125W TDP</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">$589.99</p>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                                        ADD TO BUILD
+                                    </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-surface-accent overflow-hidden hover:border-primary/50 transition-all shadow-sm">
+<div class="relative aspect-square bg-slate-100 dark:bg-background-dark p-6 flex items-center justify-center" data-alt="NVIDIA GeForce RTX 4090 Graphics Card hardware component">
+<img alt="Product" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSWvx-BNRRYeaie06VQcmmj8Hi1G9ReA4NX38nyjque9FV-ivgPNFZNIvgaioMMAUj9yASj_5MiniqbMXsrhrmb0aNvXXOcdBAgWrD8UKzdyX9yc-R4__7uladp5fwtTV3ljmH-FL8AJdHs2PlMXHObQzV40Q4flNgBqG98XXy2bPdo4DgWLgnbOKX7iS-0Fytr0NLjNPI3pGpO1dck3EJBLYDOJlupGwRqlwEUhcQNq5gz5VcebjWkl5ew3Xq4mdxSK8rccrdGKA"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-emerald-500/10 text-emerald-500 text-[10px] font-bold px-2 py-1 rounded border border-emerald-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] font-bold">check_circle</span>
+                                        COMPATIBLE
+                                    </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<p class="text-xs font-bold text-primary tracking-widest uppercase">NVIDIA</p>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input class="rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400">COMPARE</span>
+</label>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mb-3">GeForce RTX 4090 24GB GDDR6X</h3>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">VRAM</span>
+<span class="text-xs font-bold">24GB</span>
+</div>
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Length</span>
+<span class="text-xs font-bold">336mm</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">$1,649.00</p>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                                        ADD TO BUILD
+                                    </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-surface-accent overflow-hidden hover:border-primary/50 transition-all shadow-sm">
+<div class="relative aspect-square bg-slate-100 dark:bg-background-dark p-6 flex items-center justify-center" data-alt="ROG Maximus Z790 Dark Hero motherboard with rgb lighting">
+<img alt="Product" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYtI1DpAUCROpC0zoZp8MIfYxSY95XxJOQkBG1TywG30l385_uEpEDPkiK3V6HrkoFHNJShNNGcFgQLr7HX856b0yJB12nd4h1UBJCqzvrU8Hyvs1zCbkMzbByo7C0wQoItVjl_ViWimaRUNlCL67YNjPWE6mvA43GIOEa1j7AxyzG_EIR1fzmkZI_UhgybK3HNGOJiAESz4CTOiKCQEk8SOneZ5c6_A8dLWvyaekc5IYWh-UgucxirJJ7xyXPGJfbgYXW1Vgt_k4"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-emerald-500/10 text-emerald-500 text-[10px] font-bold px-2 py-1 rounded border border-emerald-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] font-bold">check_circle</span>
+                                        COMPATIBLE
+                                    </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<p class="text-xs font-bold text-primary tracking-widest uppercase">ASUS ROG</p>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input class="rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400">COMPARE</span>
+</label>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mb-3">ROG Maximus Z790 Dark Hero</h3>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Socket</span>
+<span class="text-xs font-bold">LGA1700</span>
+</div>
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Memory</span>
+<span class="text-xs font-bold">DDR5</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">$659.99</p>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                                        ADD TO BUILD
+                                    </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-surface-accent overflow-hidden opacity-80 filter grayscale-[0.3]" hover:grayscale-0="" shadow-sm="" transition-all="">
+<div class="relative aspect-square bg-slate-100 dark:bg-background-dark p-6 flex items-center justify-center" data-alt="AMD Ryzen 9 7950X box with contrasting colors">
+<img alt="Product" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAoeYKgN_fwD5J9XeGVPAImc8y6elTvXIX8ipKCTmEqSGujZ_iGOSC2vEupsEShSGVRK9O-qyoawRj2F4dyLuAQA5W8UNdA_v1ejrEFzvh_PVZbWnoI1cLOW9_haOxmnbihItvBlKBUiDOKYxIZ7LjBkmAd7EH42hkhWj254fVkZs0cQBSg4W86tfOkX27YYSsrmLE5cztccPBCngRV6xiqLAws1QR1TeHqp6QMuTmmHsmupKjDtm4c19J3InfcNnw5acyn6BBSEY"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-red-500/10 text-red-500 text-[10px] font-bold px-2 py-1 rounded border border-red-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] font-bold">error</span>
+                                        INCOMPATIBLE
+                                    </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<p class="text-xs font-bold text-primary tracking-widest uppercase">AMD</p>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input class="rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400">COMPARE</span>
+</label>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight mb-3">Ryzen 9 7950X 16-Core 32-Thread</h3>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Socket</span>
+<span class="text-xs font-bold">AM5</span>
+</div>
+<div class="bg-slate-100 dark:bg-surface-accent rounded px-2 py-1.5 flex flex-col">
+<span class="text-[9px] uppercase font-bold text-slate-400">Cores</span>
+<span class="text-xs font-bold">16 Cores</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<p class="text-lg font-bold text-slate-900 dark:text-white">$549.00</p>
+<button class="bg-slate-200 dark:bg-slate-700 text-slate-500 cursor-not-allowed rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                                        ADD TO BUILD
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex items-center justify-center gap-2 pb-8">
+<button class="flex items-center justify-center rounded-lg h-9 w-9 bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_left</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-9 w-9 bg-primary text-white font-bold text-sm">1</button>
+<button class="flex items-center justify-center rounded-lg h-9 w-9 bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent font-bold text-sm hover:border-primary transition-colors">2</button>
+<button class="flex items-center justify-center rounded-lg h-9 w-9 bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent font-bold text-sm hover:border-primary transition-colors">3</button>
+<span class="mx-1 text-slate-400">...</span>
+<button class="flex items-center justify-center rounded-lg h-9 w-9 bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent font-bold text-sm hover:border-primary transition-colors">12</button>
+<button class="flex items-center justify-center rounded-lg h-9 w-9 bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_right</span>
+</button>
+</div>
+</div>
+</div>
+<aside class="w-[360px] bg-white dark:bg-surface border-l border-slate-200 dark:border-surface-accent flex flex-col sticky top-0 h-[calc(100vh-64px)] overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-surface-accent">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-bold">Current Build</h2>
+<button class="text-primary text-xs font-bold hover:underline">CLEAR ALL</button>
+</div>
+<div class="bg-slate-50 dark:bg-background-dark/50 rounded-xl p-4 border border-slate-200 dark:border-surface-accent">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mb-1">Estimated Total</p>
+<p class="text-3xl font-bold text-primary">$2,898.98</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-emerald-500 text-[16px]">bolt</span>
+<span class="text-xs font-medium text-emerald-500">Estimated Wattage: 680W</span>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-3">
+<div class="group flex items-center gap-4 p-3 rounded-lg bg-slate-50 dark:bg-background-dark/30 border border-slate-100 dark:border-surface-accent/50 hover:border-primary/30 transition-colors">
+<div class="size-12 rounded bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent flex items-center justify-center p-1 overflow-hidden" data-alt="Processor hardware component preview">
+<img alt="CPU" class="object-contain h-full w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ZYHdkYx16GwTK4xMFy_8yWKW2o6AuQPjnInSKARuhSY7olHQ0BIrrf6d_NyYbaD0KCx3xd3oz0-pfsQaUM6xdeu6CqveO3W4kolsGuH8vKubbDpmkjoMCXBhRF0L2XDZPLljqrKfhka02z78wam9JWy3oqZZYVn2wfQjJzFG-ae9R8mY0WlbmLYMWD4JidwRJdHBNOnIVSYLCUIKQmfhTCVI8YTGntpBVjlVN9G_Kw5lQ5f-KpCXQ29neZ6ZreSfzIxh5fQkEfs"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[10px] font-bold text-primary uppercase">CPU</p>
+<p class="text-sm font-bold truncate">Intel Core i9-14900K</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">$589</p>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="group flex items-center gap-4 p-3 rounded-lg bg-slate-50 dark:bg-background-dark/30 border border-slate-100 dark:border-surface-accent/50 hover:border-primary/30 transition-colors">
+<div class="size-12 rounded bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent flex items-center justify-center p-1 overflow-hidden" data-alt="Graphics card hardware component preview">
+<img alt="GPU" class="object-contain h-full w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFco152pc6jatFExeWRIt6mNJjgi7RLz9K18198-V2AvGIstDLsCT_Mv10RJDHVbBrcjXJsrvwb3U-Lfp2UstabEu1cjNM9Her4xtcvcl79me8QIy1EWVz-9IN_ZOOvDtkEdPb8r-qd_m_Zi-RsHPgoTA8WJX78QpJHbUmFD71XwMMN_B0R-Ci3jIuY0UFey_uRQH3eDVsgi7ePrEsabzulyWUbT3WOC_cxylEGz0dZVDy0TqacguXtuSxcmOMyHNpMhiCUDaVN2g"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[10px] font-bold text-primary uppercase">GPU</p>
+<p class="text-sm font-bold truncate">RTX 4090 Founders Edition</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">$1649</p>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="group flex items-center gap-4 p-3 rounded-lg bg-slate-50 dark:bg-background-dark/30 border border-slate-100 dark:border-surface-accent/50 hover:border-primary/30 transition-colors">
+<div class="size-12 rounded bg-white dark:bg-surface border border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center p-1">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700">memory</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Memory</p>
+<button class="text-sm font-bold text-primary hover:underline">Select RAM</button>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-primary text-[20px]">add_circle</span>
+</div>
+</div>
+<div class="group flex items-center gap-4 p-3 rounded-lg bg-slate-50 dark:bg-background-dark/30 border border-slate-100 dark:border-surface-accent/50 hover:border-primary/30 transition-colors">
+<div class="size-12 rounded bg-white dark:bg-surface border border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center p-1">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700">database</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Storage</p>
+<button class="text-sm font-bold text-primary hover:underline">Select Storage</button>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-primary text-[20px]">add_circle</span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-background-dark/80 border-t border-slate-200 dark:border-surface-accent flex flex-col gap-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined">shopping_cart_checkout</span>
+                        CHECKOUT BUILD
+                    </button>
+<button class="w-full bg-white dark:bg-surface border border-slate-200 dark:border-surface-accent text-slate-900 dark:text-white font-bold py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                        SHARE CONFIG
+                    </button>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

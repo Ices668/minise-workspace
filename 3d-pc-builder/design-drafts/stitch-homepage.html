@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00aaff",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0d0d1a",
+              "accent-dark": "#16162d",
+              "border-dark": "#1f1f3d"
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glow-button {
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+        }
+        .glass-panel {
+            background: rgba(22, 22, 45, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(31, 31, 61, 1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-border-dark bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">view_in_ar</span>
+<h2 class="text-slate-100 text-xl font-bold leading-tight tracking-tight uppercase">PCBuilder3D</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Parts</a>
+<a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Builds</a>
+<a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Community</a>
+<a class="text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Pricing</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center bg-accent-dark border border-border-dark rounded-lg px-3 py-1.5">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-slate-100 placeholder:text-slate-500 w-32 lg:w-48" placeholder="Search parts..."/>
+</div>
+<button class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold glow-button hover:brightness-110 transition-all">
+<span>Sign In</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative px-6 lg:px-20 py-16 lg:py-24 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8 z-10">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest w-fit">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                                v2.0 Live Now
+                            </div>
+<h1 class="text-slate-100 text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+                                Build Your <span class="text-primary">Dream PC</span> in 3D
+                            </h1>
+<p class="text-slate-400 text-lg lg:text-xl max-w-lg leading-relaxed">
+                                Experience high-end interactive assembly with real-time 3D visualization, physics-based cable routing, and glowing RGB customization.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-lg font-bold glow-button hover:scale-105 transition-transform">
+                                Start Building
+                            </button>
+<button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-accent-dark border border-border-dark text-slate-100 text-lg font-bold hover:bg-border-dark transition-colors">
+                                View Gallery
+                            </button>
+</div>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex -space-x-3">
+<img class="size-10 rounded-full border-2 border-background-dark" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB5Og4yFMCzvFRsA2rANySsJrdgDY-WwfmWXiJ_dnQ66loYzMFmegFLb0_aaCroOZshNR-osMN1dy8y8d-a0uPKRcl7hwWtZNWWm4rqcsP4HyCCoQOt3l4L8MKUZtgHbA9NpXPm3je4jaMupw_BPgkVqlceDXuj5icNdTBP7ZFglXizIcAz_SBrqGGYTNfBcC2CSJZmG6widwFjnCiEiJ_o3gLLNUWH8OItPqkfKthwajn8wt8AFYUYlYExkHCciom4S-p_xINCvk"/>
+<img class="size-10 rounded-full border-2 border-background-dark" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLXrDuXGCLHvfCvVWuPbIrp1zopmI7O4XugQr0IC_42fcqIBQj8hokf7WQfgY2C2a2TR2Jp3Z5jD31ewdEWw-B8TM_sj2Vh8gzNZFzck2wq5as-AlPBQyAH916F1D8oVRMqWoqn-tK6753aF7h9N5EPAOsnd3CeuQzkPKRHQ3VjLE7VYT_p-ms_XLcPtVfAuDPDLYRXcObJVR67YSSDE7YF0tGqW8YVDIlsuSCQObSqkoDmyQYLIAY7wat8bMRD7kCD0wjK9vzH0w"/>
+<img class="size-10 rounded-full border-2 border-background-dark" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApQXl87MfyD7HcmhzEcbUIPpQ1HvR8ViQfeqWUTtR99ExU0ojpSAvavGukKJ-B_FRV0YnnUAjWec7kTs4FgAAeKD0D0WpuKg5E-M1RxtgYW1j-mw5sQNWt8E9KWMPmH7nj-D6fc-fqTGZvFtPYNIJAUMAlIrDJjzgCOBmDch_BRvYZq94R10GQUlCBSr2T9vKojhFS8aPbpLwGrBJXZxugJsgt7BOdV0U64cx2hDzm2UWMAS-G8MjLGc8sl1i8jdz0izaDsRG7W3g"/>
+<div class="flex items-center justify-center size-10 rounded-full bg-border-dark border-2 border-background-dark text-[10px] font-bold">+2k</div>
+</div>
+<p class="text-slate-500 text-sm italic">Joined by 12,000+ PC enthusiasts this month</p>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative aspect-square lg:aspect-[4/3] rounded-xl overflow-hidden bg-accent-dark border border-border-dark shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="3D render of a futuristic open-case gaming PC with neon blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU7Qt36ImK9uiij3EOp0zxIWzNkSk0qEMsBf_EytqXMGBT2D-dBtOp6OrKeVSI317VY-QaoUNH2Bo7Q49z_Zyy3v9Bv0I0gtg5Kg4j48iRIeY1zHGndZBRAYs-lkHUNQgdbEeWa-97gcmMdjhZxMT68aQ7klVY1lCS9O40DbB8ehQoS6iRpSkztDKz1Ak1ILy-gLT_igWzovI9JVU7JwijonEodGfnuak5bst8RuOVeKule312bM9BTK8K8XHEnZGPbwDvEexKwAw"/>
+<div class="absolute bottom-6 left-6 z-20 flex flex-col gap-1">
+<span class="text-primary text-xs font-bold uppercase">Featured Case</span>
+<span class="text-white text-lg font-bold">Lian Li O11 Dynamic EVO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-20 bg-accent-dark/30">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<div class="text-center flex flex-col items-center gap-4">
+<h2 class="text-slate-100 text-3xl lg:text-4xl font-bold tracking-tight">Engineered for Enthusiasts</h2>
+<div class="h-1 w-20 bg-primary rounded-full"></div>
+<p class="text-slate-400 max-w-2xl">Our simulator handles the complex technicalities so you can focus on the aesthetics and performance of your ultimate rig.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-6 hover:border-primary/50 transition-colors group">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">deployed_code</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-slate-100 text-xl font-bold">Real-time 3D Visualization</h3>
+<p class="text-slate-400 leading-relaxed">View every component in stunning detail from any angle. Rotate, zoom, and inspect thermal airflow paths in real-time.</p>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-6 hover:border-primary/50 transition-colors group">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-slate-100 text-xl font-bold">Smart Compatibility Checker</h3>
+<p class="text-slate-400 leading-relaxed">Our AI-driven engine detects clearance issues, power requirements, and bottlenecking before you buy a single part.</p>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-6 hover:border-primary/50 transition-colors group">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">database</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-slate-100 text-xl font-bold">Massive Parts Library</h3>
+<p class="text-slate-400 leading-relaxed">Access over 5,000+ real-world components from top brands like NVIDIA, ASUS, Corsair, and Intel, updated daily.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-20 max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-12">
+<div class="flex flex-col gap-2">
+<h2 class="text-slate-100 text-3xl font-bold tracking-tight">Community Masterpieces</h2>
+<p class="text-slate-400">Inspiration from our top builders across the globe.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                        View All Builds <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative aspect-video rounded-xl overflow-hidden border border-border-dark">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end PC build with purple and cyan RGB lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ad2GYQCtBDPqpsrOH3hoiKdq9rEIH2_DZTAmfcMfbZYi1lLtVXwgUCFkGhvSpWLv35osYE7gtjXlV7obpp16cSv-2MwqIwZPjCxrBg39TW-mWUwK9yN4ycB-ltLTwJcdVT3zkyNaFSIfYtTloWaCVsqiRlQRwL2FfpUkN7dQNBj58GX2faXVsAYbEQv0580JtTJi3vHhQm15o_BPiZmRu-oOOWTC_vLMrRs5hEo9_pVAM8yj7ZnZEoTLtFWeg5LUcAC7j3tP_so"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<div>
+<p class="text-white font-bold">Cyberpunk 2077 Rig</p>
+<p class="text-slate-400 text-xs">by NeonWizard</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="text-xs font-bold">1.2k</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-video rounded-xl overflow-hidden border border-border-dark">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Clean all-white PC build minimal setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdELeXIFggTAgnJsf76r_y5ThR6gbOskD7XzV4xi9m3jMjB8qVFYciJ-P3fO0gE-bAZgKarv9JTsnNWAsXiqznqewOfOOFQ_ibd18NYfVDy3yKksPRZoLIapH_w9ximz9pmsWh3VVxQWs3zy3Bw5JMLqCBkyDFu8lDy1sUy4AT2Kgn2tRzuJpdjfKL76F_oB0JULUh4T9wcz7Wbw4Q-2Xv21gdVjvt1sH3OgmJR5E5_GS3jqpAxZbx7Sy79KYidzroFANE3dHDqhg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<div>
+<p class="text-white font-bold">Minimalist Whiteout</p>
+<p class="text-slate-400 text-xs">by ArcticFlow</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="text-xs font-bold">842</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-video rounded-xl overflow-hidden border border-border-dark">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Powerful PC build with red accent lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqgoGYgDr7Ly-s0BjFZcO_NBPRktUFye2qmdRmNOyq4XBee2WXq-Iut9O4gzJgLnitwLoeL5BUvSJfcLTdjVaVivaZUuvGRsapSasH5QpqjcZltz0LRL6Ihc1leCL5K3jLmGzE8u4nyxNIttbRGQgVO8hlXOi5kQza7CsmSqH5Tc_kRyh9mbYIR0gN7N791kTG9h_CmeNK70jFuFXNee-9ocgDHR8fcixDXLy2qNdEthynAWhEsh37xktJ_aSD4ZznVCHeg3bTFYU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<div>
+<p class="text-white font-bold">The Overclocker</p>
+<p class="text-slate-400 text-xs">by HertzKing</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="text-xs font-bold">2.1k</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark border-t border-border-dark px-6 lg:px-20 py-16">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
+<div class="col-span-2 flex flex-col gap-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">view_in_ar</span>
+<h2 class="text-slate-100 text-xl font-bold uppercase">PCBuilder3D</h2>
+</div>
+<p class="text-slate-400 max-w-sm leading-relaxed">
+                        The world's most advanced 3D PC building simulator. Start your project today and bring your dream setup to life in virtual reality.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-lg bg-accent-dark flex items-center justify-center text-slate-300 hover:text-primary transition-colors border border-border-dark" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="size-10 rounded-lg bg-accent-dark flex items-center justify-center text-slate-300 hover:text-primary transition-colors border border-border-dark" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+<a class="size-10 rounded-lg bg-accent-dark flex items-center justify-center text-slate-300 hover:text-primary transition-colors border border-border-dark" href="#">
+<span class="material-symbols-outlined text-xl">forum</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-slate-100 font-bold uppercase text-xs tracking-widest">Platform</h4>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Simulator</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Parts Catalog</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Leaderboards</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Mobile App</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-slate-100 font-bold uppercase text-xs tracking-widest">Resources</h4>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Tutorials</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Discord</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Compatibility API</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-slate-100 font-bold uppercase text-xs tracking-widest">Company</h4>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">About Us</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Careers</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-primary text-sm" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-sm">© 2024 PCBuilder3D Simulator. All rights reserved.</p>
+<p class="text-slate-500 text-sm">Designed for high-performance enthusiasts.</p>
+</div>
+</footer>
+</div>
+</body></html>
