@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#245feb",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>简历投递 - Resume Submission</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark shadow-xl overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="sticky top-0 z-10 flex items-center bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-800 justify-between">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center cursor-pointer" data-icon="ArrowBack">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">投递简历</h2>
+</div>
+<!-- Candidate Info Card -->
+<div class="p-4">
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-900 p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-full border-2 border-primary/10" data-alt="Professional headshot of a male candidate" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJ4aAQTSti2Y-_JjdDZyVOfGKFYGErkrF_EMZjKyYBV-5DGUVwAJ9hi5eCTy-5NM5JwJTV0AOdgXEjSd8X5IeHNXHzjG98OypneGqthk9hqurH1QpQSW8LImfeMTf15no3op4fKI2DMnJ_eXCqfO6tCUnS0SzkjQZcRtY43Xps7c0Su3Ap5jcb4YxRGVy0ggXfQ1kSl6LWgKY_jTF6sMCrbJhfHCDLTfzDUYSsrhHtpNRQ9KrK23xvWsRxXFWJ6BeelAscm9MrOS9N");'></div>
+<div class="flex flex-col gap-0.5">
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight">张伟</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">高级产品经理</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">简历完整度</p>
+<p class="text-primary text-sm font-bold">85%</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Summary Section -->
+<div class="px-4 pb-4">
+<div class="flex flex-col gap-1 px-1">
+<h3 class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">投递职位</h3>
+<div class="flex items-start justify-between rounded-xl bg-white dark:bg-slate-900 p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-lg font-bold">资深产品专家</p>
+<div class="flex items-center gap-2">
+<span class="text-slate-600 dark:text-slate-400 text-sm">阿里巴巴</span>
+<span class="text-slate-300 dark:text-slate-700">|</span>
+<span class="text-primary text-sm font-semibold">30k-50k</span>
+</div>
+</div>
+<div class="size-12 bg-slate-50 dark:bg-slate-800 rounded-lg flex items-center justify-center border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary">corporate_fare</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Resume Selection Area -->
+<div class="px-4 pb-4">
+<h3 class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider px-1 mb-2">选择投递方式</h3>
+<div class="flex flex-col gap-3">
+<!-- Option 1: Online Resume -->
+<label class="flex items-center justify-between rounded-xl bg-white dark:bg-slate-900 p-4 border-2 border-primary shadow-sm cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-bold">在线简历</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">更新于 2023-11-20</p>
+</div>
+</div>
+<div class="size-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="size-2.5 rounded-full bg-primary"></div>
+</div>
+</label>
+<!-- Option 2: Attachment Resume -->
+<label class="flex items-center justify-between rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-100 dark:border-slate-800 shadow-sm cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-bold">附件简历</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">张伟_高级产品经理_2023.pdf</p>
+</div>
+</div>
+<div class="size-5 rounded-full border-2 border-slate-300 dark:border-slate-600"></div>
+</label>
+</div>
+</div>
+<!-- Additional Info Section -->
+<div class="px-4 pb-24">
+<h3 class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider px-1 mb-2">自我介绍 (选填)</h3>
+<div class="rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-100 dark:border-slate-800 shadow-sm">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white text-sm min-h-[120px] resize-none p-0" placeholder="介绍一下你的优势，或者对这份职位的理解..."></textarea>
+<div class="flex justify-end pt-2">
+<span class="text-slate-400 text-xs tracking-tight">0/500</span>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-4 pb-8">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+<span>确认投递</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</body></html>

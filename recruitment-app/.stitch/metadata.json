@@ -1,0 +1,31 @@
+{
+  "projectId": "16082751562364009398",
+  "title": "招聘App-核心流程",
+  "deviceType": "MOBILE",
+  "screens": {
+    "login": {
+      "id": "0182c25e81414b99b0da42fd540e2ac5",
+      "sourceScreen": "projects/16082751562364009398/screens/0182c25e81414b99b0da42fd540e2ac5"
+    },
+    "home": {
+      "id": "84f383b25f094fd6905993f2192d47e7",
+      "sourceScreen": "projects/16082751562364009398/screens/84f383b25f094fd6905993f2192d47e7"
+    },
+    "job_detail": {
+      "id": "34cbbebef4164104b8c814321c37ca89",
+      "sourceScreen": "projects/16082751562364009398/screens/34cbbebef4164104b8c814321c37ca89"
+    },
+    "company": {
+      "id": "d8267f3492e94798b82a6182d6f798dd",
+      "sourceScreen": "projects/16082751562364009398/screens/d8267f3492e94798b82a6182d6f798dd"
+    },
+    "resume": {
+      "id": "3ad5f6d38eb84981ac067330914a60e9",
+      "sourceScreen": "projects/16082751562364009398/screens/3ad5f6d38eb84981ac067330914a60e9"
+    },
+    "profile": {
+      "id": "191cf2d3c170451a813b2f086bf768d9",
+      "sourceScreen": "projects/16082751562364009398/screens/191cf2d3c170451a813b2f086bf768d9"
+    }
+  }
+}
