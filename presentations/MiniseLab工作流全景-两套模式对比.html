@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>MiniseLab 工作流全景 - 两套模式对比</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter','PingFang SC','Microsoft YaHei',sans-serif;background:#0a0e1a;color:#fff;}
+
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;display:flex;flex-direction:column;page-break-after:always;}
+
+  /* ── Shared ── */
+  .eyebrow{font-size:12px;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+  .h2g{font-size:40px;font-weight:800;background:linear-gradient(135deg,#fff 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .sh{margin-bottom:32px;}
+  .pn{position:absolute;bottom:24px;left:80px;font-size:12px;color:#334155;font-weight:500;}
+  .bm{position:absolute;bottom:24px;right:80px;font-size:13px;color:#334155;font-weight:600;}
+
+  /* ══ S1 Cover ══ */
+  .s1{background:linear-gradient(135deg,#0a0e1a 0%,#0f1628 100%);justify-content:center;align-items:flex-start;padding:80px 100px;}
+  .tag{display:inline-block;background:rgba(59,130,246,0.2);border:1px solid rgba(59,130,246,0.4);color:#60a5fa;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:600;letter-spacing:1px;margin-bottom:26px;text-transform:uppercase;}
+  .s1 h1{font-size:58px;font-weight:800;line-height:1.15;background:linear-gradient(135deg,#fff 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px;}
+  .s1 .sub{font-size:19px;color:#94a3b8;margin-bottom:44px;}
+  .s1 .meta{display:flex;gap:36px;}
+  .mi{display:flex;flex-direction:column;gap:4px;}
+  .mi .ml{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;}
+  .mi .mv{font-size:15px;color:#e2e8f0;font-weight:500;}
+  .deco{position:absolute;right:80px;top:50%;transform:translateY(-50%);width:360px;height:360px;border:1px solid rgba(59,130,246,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .deco::before{content:'';position:absolute;width:240px;height:240px;border:1px solid rgba(59,130,246,0.12);border-radius:50%;}
+  .deco::after{content:'2';font-size:96px;font-weight:800;background:linear-gradient(135deg,#3b82f6,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+
+  /* ══ S2 Compare Overview ══ */
+  .s2{background:#0a0e1a;padding:60px 80px;}
+  .cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px;}
+  .cmp-card{border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;}
+  .cmp-a{background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.3);}
+  .cmp-b{background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.3);}
+  .cmp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+  .cmp-a::before{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
+  .cmp-b::before{background:linear-gradient(90deg,#a78bfa,#c4b5fd);}
+  .cmp-card .ct{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .cmp-a .ct{color:#60a5fa;}
+  .cmp-b .ct{color:#a78bfa;}
+  .cmp-card h3{font-size:26px;font-weight:800;color:#f1f5f9;margin-bottom:10px;}
+  .cmp-card .cx{font-size:13px;color:#64748b;line-height:1.7;margin-bottom:16px;}
+  .cmp-card .tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .cmp-card .tg{padding:5px 12px;border-radius:16px;font-size:12px;font-weight:500;}
+  .cmp-a .tg{background:rgba(59,130,246,0.15);color:#93c5fd;}
+  .cmp-b .tg{background:rgba(167,139,250,0.15);color:#c4b5fd;}
+  .cmp-card .badge{position:absolute;top:20px;right:20px;font-size:22px;}
+
+  /* ══ S3 Flow A - Design Demo ══ */
+  .s3{background:#0a0e1a;padding:56px 80px;}
+  .flow-row{display:flex;align-items:flex-start;gap:0;margin-top:32px;}
+  .fnode{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;flex:1;}
+  .ficon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;border:2px solid;}
+  .ficon-a{background:rgba(59,130,246,0.15);border-color:#3b82f6;}
+  .fname{font-size:12px;font-weight:600;color:#94a3b8;text-align:center;line-height:1.4;}
+  .fdesc{font-size:11px;color:#475569;text-align:center;line-height:1.4;margin-top:4px;}
+  .farrow{display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:20px;min-width:28px;padding-top:18px;}
+  .detail-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .dcard{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px 16px;}
+  .dcard h4{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:8px;}
+  .dcard ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .dcard ul li{font-size:12px;color:#64748b;display:flex;align-items:flex-start;gap:6px;}
+  .dcard ul li::before{content:'›';color:#3b82f6;font-weight:700;margin-top:1px;}
+
+  /* ══ S4 Flow B - Full Dev ══ */
+  .s4{background:#0a0e1a;padding:56px 80px;}
+  .ficon-b{background:rgba(167,139,250,0.15);border-color:#a78bfa;}
+  .farrow-b{color:#a78bfa;}
+  .detail-row-b .dcard{border-color:rgba(167,139,250,0.15);}
+  .phase-line{display:flex;gap:0;margin-top:28px;}
+  .ph{flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px 14px;position:relative;}
+  .ph::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#a78bfa,#c4b5fd);border-radius:12px 12px 0 0;}
+  .ph-num{font-size:11px;color:#a78bfa;font-weight:700;margin-bottom:6px;}
+  .ph-title{font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:5px;}
+  .ph-who{font-size:11px;color:#64748b;}
+  .ph-sep{display:flex;align-items:center;justify-content:center;color:#a78bfa;font-size:16px;min-width:14px;}
+
+  /* ══ S5 Key Diff ══ */
+  .s5{background:#0a0e1a;padding:60px 80px;}
+  .diff-table{width:100%;border-collapse:collapse;margin-top:32px;}
+  .diff-table th{padding:14px 16px;font-size:13px;font-weight:600;text-align:left;background:rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.08);}
+  .diff-table th:first-child{color:#94a3b8;width:180px;}
+  .diff-table th.col-a{color:#60a5fa;}
+  .diff-table th.col-b{color:#a78bfa;}
+  .diff-table td{padding:13px 16px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.05);}
+  .diff-table td:first-child{color:#64748b;font-weight:500;}
+  .diff-table td.va{color:#93c5fd;}
+  .diff-table td.vb{color:#c4b5fd;}
+  .diff-table tr:last-child td{border-bottom:none;}
+  .diff-table tr:hover td{background:rgba(255,255,255,0.02);}
+
+  /* ══ S6 Tools ══ */
+  .s6{background:#0a0e1a;padding:60px 80px;}
+  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .tk{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 18px;}
+  .tk.ta{border-color:rgba(59,130,246,0.25);background:rgba(59,130,246,0.05);}
+  .tk.tb{border-color:rgba(167,139,250,0.25);background:rgba(167,139,250,0.05);}
+  .tk.tc{border-color:rgba(34,197,94,0.2);background:rgba(34,197,94,0.04);}
+  .tkb{display:inline-block;font-size:11px;font-weight:600;padding:2px 10px;border-radius:10px;margin-bottom:8px;}
+  .tkb.a{background:rgba(59,130,246,0.2);color:#60a5fa;}
+  .tkb.b{background:rgba(167,139,250,0.2);color:#a78bfa;}
+  .tkb.c{background:rgba(34,197,94,0.15);color:#4ade80;}
+  .tkb.s{background:rgba(251,191,36,0.15);color:#fbbf24;}
+  .tk .tn{font-size:15px;font-weight:700;color:#f1f5f9;margin-bottom:5px;}
+  .tk .td{font-size:12px;color:#64748b;line-height:1.5;}
+
+  /* ══ S7 When to Use ══ */
+  .s7{background:#0a0e1a;padding:60px 80px;}
+  .when-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
+  .wc{border-radius:18px;padding:28px 26px;}
+  .wc-a{background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.25);}
+  .wc-b{background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.25);}
+  .wc h3{font-size:20px;font-weight:800;margin-bottom:16px;}
+  .wc-a h3{color:#60a5fa;}
+  .wc-b h3{color:#a78bfa;}
+  .wc ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .wc ul li{font-size:14px;color:#94a3b8;display:flex;align-items:flex-start;gap:10px;}
+  .wc-a ul li::before{content:'✓';color:#3b82f6;font-weight:700;margin-top:1px;}
+  .wc-b ul li::before{content:'✓';color:#a78bfa;font-weight:700;margin-top:1px;}
+
+  /* ══ S8 Pipeline ══ */
+  .s8{background:#0a0e1a;padding:60px 80px;align-items:center;}
+  .pip-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px;width:100%;}
+  .pip-col h3{font-size:16px;font-weight:700;margin-bottom:18px;}
+  .pip-col-a h3{color:#60a5fa;}
+  .pip-col-b h3{color:#a78bfa;}
+  .pip-steps{display:flex;flex-direction:column;gap:0;}
+  .ps{display:flex;align-items:flex-start;gap:12px;position:relative;}
+  .ps:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:-8px;width:2px;background:rgba(255,255,255,0.07);}
+  .psdot{width:30px;height:30px;min-width:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px;}
+  .psdot-a{background:linear-gradient(135deg,#3b82f6,#60a5fa);}
+  .psdot-b{background:linear-gradient(135deg,#a78bfa,#c4b5fd);}
+  .ps-body{padding-bottom:18px;}
+  .ps-body h4{font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:3px;}
+  .ps-body p{font-size:12px;color:#64748b;line-height:1.5;}
+
+  /* ══ S9 Cover Back ══ */
+  .s9{background:linear-gradient(135deg,#0a0e1a 0%,#0f1628 100%);padding:80px 100px;justify-content:center;align-items:flex-start;}
+  .s9 h2{font-size:52px;font-weight:800;background:linear-gradient(135deg,#fff 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:14px;}
+  .s9 .tl{font-size:18px;color:#64748b;margin-bottom:44px;}
+  .spts{display:flex;flex-direction:column;gap:16px;}
+  .spt{display:flex;align-items:center;gap:14px;font-size:16px;color:#cbd5e1;font-weight:500;}
+  .spt::before{content:'✦';color:#3b82f6;font-size:13px;min-width:16px;}
+
+  @media print{.slide{page-break-after:always;}}
+</style>
+</head>
+<body>
+
+<!-- ═══ S1: Cover ═══ -->
+<div class="slide s1">
+  <div class="tag">MiniseLab · Workflow Playbook v2.0</div>
+  <h1>两套工作流<br>全景解析</h1>
+  <div class="sub">产品设计展示工作流 × 标准项目开发工作流</div>
+  <div class="meta">
+    <div class="mi"><span class="ml">版本</span><span class="mv">v2.0</span></div>
+    <div class="mi"><span class="ml">更新</span><span class="mv">2026年3月</span></div>
+    <div class="mi"><span class="ml">工作流数</span><span class="mv">2 套</span></div>
+    <div class="mi"><span class="ml">总阶段</span><span class="mv">3 + 6</span></div>
+  </div>
+  <div class="deco"></div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S2: Overview Compare ═══ -->
+<div class="slide s2">
+  <div class="sh">
+    <div class="eyebrow">Overview</div>
+    <div class="h2g">两套模式，按项目类型选择</div>
+  </div>
+  <div class="cmp-grid">
+    <div class="cmp-card cmp-a">
+      <div class="badge">🎨</div>
+      <div class="ct">模式 A · 3 阶段</div>
+      <h3>产品设计展示工作流</h3>
+      <div class="cx">适用于只需要可展示的静态/交互 Demo，不需要真实后端和功能文档的场景。AI 生成设计稿，工程化还原，快速交付。</div>
+      <div class="tags">
+        <span class="tg">H5 / Web Demo</span>
+        <span class="tg">纯前端展示</span>
+        <span class="tg">Mock 数据</span>
+        <span class="tg">快速交付</span>
+      </div>
+    </div>
+    <div class="cmp-card cmp-b">
+      <div class="badge">🏗️</div>
+      <div class="ct">模式 B · 6 阶段</div>
+      <h3>标准项目开发工作流</h3>
+      <div class="cx">适用于有真实后端、完整功能需求的正式项目。从需求分析到并行开发，经过 Code Review 和集成验收，确保质量。</div>
+      <div class="tags">
+        <span class="tg">完整功能开发</span>
+        <span class="tg">前后端并行</span>
+        <span class="tg">Code Review</span>
+        <span class="tg">生产级质量</span>
+      </div>
+    </div>
+  </div>
+  <div class="pn">02 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S3: Flow A - Design Demo ═══ -->
+<div class="slide s3">
+  <div class="sh">
+    <div class="eyebrow">模式 A · 产品设计展示工作流</div>
+    <div class="h2g">3 阶段 · 从想法到可交互 Demo</div>
+  </div>
+  <div class="flow-row">
+    <div class="fnode">
+      <div class="ficon ficon-a">💡</div>
+      <div class="fname">需求描述</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode">
+      <div class="ficon ficon-a">✨</div>
+      <div class="fname">enhance-prompt<br>优化 Prompt</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode">
+      <div class="ficon ficon-a">🎨</div>
+      <div class="fname">Stitch MCP<br>生成设计稿</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode">
+      <div class="ficon ficon-a">📸</div>
+      <div class="fname">截图发飞书<br>Boss 确认</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode">
+      <div class="ficon ficon-a">📄</div>
+      <div class="fname">design-md<br>锁定风格</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode">
+      <div class="ficon ficon-a">⚛️</div>
+      <div class="fname">react:components<br>工程还原</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode">
+      <div class="ficon ficon-a">🚀</div>
+      <div class="fname">Build 验证<br>Push GitHub</div>
+    </div>
+  </div>
+  <div class="detail-row">
+    <div class="dcard">
+      <h4>阶段1 · UI 设计稿</h4>
+      <ul>
+        <li>minise 担任 UI 设计师</li>
+        <li>Stitch MCP 生成原型图</li>
+        <li>全中文，明确配色/设备</li>
+        <li>截图飞书发 Boss 多轮确认</li>
+      </ul>
+    </div>
+    <div class="dcard">
+      <h4>阶段2 · Boss 确认</h4>
+      <ul>
+        <li>配色/排版/页面数量验收</li>
+        <li>不满意 → edit_screens 迭代</li>
+        <li>全部通过 → 生成 DESIGN.md</li>
+        <li>设计系统锁定，风格不跑偏</li>
+      </ul>
+    </div>
+    <div class="dcard">
+      <h4>阶段3 · 工程还原</h4>
+      <ul>
+        <li>react:components skill</li>
+        <li>像素级还原 Stitch HTML</li>
+        <li>mockData.ts 数据解耦</li>
+        <li>npm run build → push GitHub</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pn">03 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S4: Flow B - Full Dev ═══ -->
+<div class="slide s4">
+  <div class="sh">
+    <div class="eyebrow">模式 B · 标准项目开发工作流</div>
+    <div class="h2g">6 阶段 · 从需求到生产级交付</div>
+  </div>
+  <div class="phase-line" style="gap:6px;">
+    <div class="ph" style="border-color:rgba(167,139,250,0.2);">
+      <div class="ph-num">01</div>
+      <div class="ph-title">需求分析</div>
+      <div class="ph-who">前后端功能设计文档 → Boss 确认</div>
+    </div>
+    <div class="ph-sep">›</div>
+    <div class="ph" style="border-color:rgba(167,139,250,0.2);">
+      <div class="ph-num">02</div>
+      <div class="ph-title">原型设计</div>
+      <div class="ph-who">Stitch MCP 出图（全中文）→ Boss 确认</div>
+    </div>
+    <div class="ph-sep">›</div>
+    <div class="ph" style="border-color:rgba(167,139,250,0.2);">
+      <div class="ph-num">03</div>
+      <div class="ph-title">并行开发</div>
+      <div class="ph-who">Gemini 前端 + Codex 后端，同时进行</div>
+    </div>
+    <div class="ph-sep">›</div>
+    <div class="ph" style="border-color:rgba(167,139,250,0.2);">
+      <div class="ph-num">04</div>
+      <div class="ph-title">Code Review</div>
+      <div class="ph-who">Claude Code 对照文档逐条核查 + 评分</div>
+    </div>
+    <div class="ph-sep">›</div>
+    <div class="ph" style="border-color:rgba(167,139,250,0.2);">
+      <div class="ph-num">05</div>
+      <div class="ph-title">集成验收</div>
+      <div class="ph-who">验证整体可运行 → 汇报 Boss</div>
+    </div>
+    <div class="ph-sep">›</div>
+    <div class="ph" style="border-color:rgba(167,139,250,0.2);">
+      <div class="ph-num">06</div>
+      <div class="ph-title">推送上线</div>
+      <div class="ph-who">git commit + push → GitHub 存档</div>
+    </div>
+  </div>
+  <div class="detail-row" style="margin-top:22px;">
+    <div class="dcard" style="border-color:rgba(167,139,250,0.15);">
+      <h4>设计阶段（01-02）</h4>
+      <ul>
+        <li>Claude Code 输出功能设计文档</li>
+        <li>Stitch 出原型图（功能文档权威）</li>
+        <li>文档定功能，原型图定风格</li>
+      </ul>
+    </div>
+    <div class="dcard" style="border-color:rgba(167,139,250,0.15);">
+      <h4>开发阶段（03-04）</h4>
+      <ul>
+        <li>Gemini 前端（gemini --yolo）</li>
+        <li>Codex 后端（--full-auto 后台）</li>
+        <li>Code Review：不通过给具体原因</li>
+      </ul>
+    </div>
+    <div class="dcard" style="border-color:rgba(167,139,250,0.15);">
+      <h4>验收阶段（05-06）</h4>
+      <ul>
+        <li>集成验证整体可运行</li>
+        <li>功能完整性逐条核查</li>
+        <li>代码质量评分通过后推送</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pn">04 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S5: Key Differences ═══ -->
+<div class="slide s5">
+  <div class="sh">
+    <div class="eyebrow">Comparison</div>
+    <div class="h2g">核心差异对比</div>
+  </div>
+  <table class="diff-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="col-a">🎨 产品设计展示工作流</th>
+        <th class="col-b">🏗️ 标准项目开发工作流</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>阶段数</td><td class="va">3 个阶段</td><td class="vb">6 个阶段</td></tr>
+      <tr><td>适用场景</td><td class="va">展示 Demo、产品原型、接单报价样品</td><td class="vb">正式产品、有真实用户、需上线</td></tr>
+      <tr><td>后端</td><td class="va">无后端，Mock 数据</td><td class="vb">完整后端（API + 数据库）</td></tr>
+      <tr><td>数据</td><td class="va">mockData.ts 静态数据</td><td class="vb">真实接口，动态数据</td></tr>
+      <tr><td>Code Review</td><td class="va">无需，Boss 视觉验收即通过</td><td class="vb">必须，Claude Code 逐条核查 + 评分</td></tr>
+      <tr><td>执行主力</td><td class="va">minise（react:components skill）</td><td class="vb">Gemini（前端）+ Codex（后端）</td></tr>
+      <tr><td>交付周期</td><td class="va">3-7 天</td><td class="vb">2-4 周</td></tr>
+    </tbody>
+  </table>
+  <div class="pn">05 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S6: Tools per Mode ═══ -->
+<div class="slide s6">
+  <div class="sh">
+    <div class="eyebrow">Tooling</div>
+    <div class="h2g">工具矩阵</div>
+  </div>
+  <div class="tools-grid">
+    <div class="tk ta"><div class="tkb a">模式A核心</div><div class="tn">react:components</div><div class="td">Stitch HTML → React 组件系统，AST 验证，像素级还原。</div></div>
+    <div class="tk ta"><div class="tkb a">模式A核心</div><div class="tn">design-md</div><div class="td">从设计稿提取设计系统，生成 DESIGN.md，锁定多页面风格一致性。</div></div>
+    <div class="tk ta"><div class="tkb s">共用</div><div class="tn">enhance-prompt</div><div class="td">优化 Stitch 生成 prompt，注入设计系统上下文，提升质量。</div></div>
+    <div class="tk tb"><div class="tkb b">模式B核心</div><div class="tn">Gemini CLI</div><div class="td">前端开发主力（gemini --yolo），功能文档权威，设计稿辅助。</div></div>
+    <div class="tk tb"><div class="tkb b">模式B核心</div><div class="tn">Codex</div><div class="td">后端开发主力（--full-auto），后台跑，完成后飞书自动通知。</div></div>
+    <div class="tk tc"><div class="tkb c">共用</div><div class="tn">Stitch MCP</div><div class="td">两套工作流共同使用，AI 驱动 UI 设计稿生成与迭代。</div></div>
+  </div>
+  <div class="pn">06 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S7: When to Use ═══ -->
+<div class="slide s7">
+  <div class="sh">
+    <div class="eyebrow">Decision Guide</div>
+    <div class="h2g">什么时候用哪套？</div>
+  </div>
+  <div class="when-grid">
+    <div class="wc wc-a">
+      <h3>🎨 选产品设计展示工作流</h3>
+      <ul>
+        <li>客户需要一个可展示的 Demo，用于融资/汇报/销售</li>
+        <li>项目预算有限，工期短（3-7天）</li>
+        <li>只需前端，不需要真实后端和数据库</li>
+        <li>接单报价，先出样品验证客户满意度</li>
+        <li>产品原型阶段，验证 UI/UX 方向</li>
+      </ul>
+    </div>
+    <div class="wc wc-b">
+      <h3>🏗️ 选标准项目开发工作流</h3>
+      <ul>
+        <li>项目需要真实登录、数据库、接口对接</li>
+        <li>有明确的功能需求文档或详细需求</li>
+        <li>需要上线或交付给真实用户使用</li>
+        <li>客户预算充足，工期 2-4 周以上</li>
+        <li>需要代码质量评审和完整测试</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pn">07 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S8: Side-by-Side Pipeline ═══ -->
+<div class="slide s8">
+  <div class="sh" style="text-align:center;width:100%;">
+    <div class="eyebrow">Pipeline Comparison</div>
+    <div class="h2g">两套流程并排对比</div>
+  </div>
+  <div class="pip-wrap">
+    <div class="pip-col pip-col-a">
+      <h3>🎨 产品设计展示工作流</h3>
+      <div class="pip-steps">
+        <div class="ps"><div class="psdot psdot-a">1</div><div class="ps-body"><h4>UI 设计稿</h4><p>Stitch MCP + enhance-prompt → 截图发 Boss 确认</p></div></div>
+        <div class="ps"><div class="psdot psdot-a">2</div><div class="ps-body"><h4>Boss 确认 + DESIGN.md</h4><p>视觉验收通过 → 提取设计系统，锁定风格</p></div></div>
+        <div class="ps"><div class="psdot psdot-a">3</div><div class="ps-body"><h4>工程还原</h4><p>react:components → npm run build → push GitHub</p></div></div>
+      </div>
+    </div>
+    <div class="pip-col pip-col-b">
+      <h3>🏗️ 标准项目开发工作流</h3>
+      <div class="pip-steps">
+        <div class="ps"><div class="psdot psdot-b">1</div><div class="ps-body"><h4>需求分析</h4><p>Claude Code 输出前后端功能设计文档 → Boss 确认</p></div></div>
+        <div class="ps"><div class="psdot psdot-b">2</div><div class="ps-body"><h4>原型设计</h4><p>Stitch 出图（中文）→ Boss 确认</p></div></div>
+        <div class="ps"><div class="psdot psdot-b">3</div><div class="ps-body"><h4>并行开发</h4><p>Gemini 前端 + Codex 后端，同步进行</p></div></div>
+        <div class="ps"><div class="psdot psdot-b">4</div><div class="ps-body"><h4>Code Review</h4><p>Claude Code 逐条核查 + 评分 → 不通过交专家修</p></div></div>
+        <div class="ps"><div class="psdot psdot-b">5</div><div class="ps-body"><h4>集成验收</h4><p>验证整体可运行 → 汇报 Boss</p></div></div>
+        <div class="ps"><div class="psdot psdot-b">6</div><div class="ps-body"><h4>推送 GitHub</h4><p>git commit + push → 存档</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="pn">08 / 09</div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+<!-- ═══ S9: Summary ═══ -->
+<div class="slide s9">
+  <h2>两套模式，<br>覆盖全场景</h2>
+  <div class="tl">按项目类型选择，AI 驱动，高效交付</div>
+  <div class="spts">
+    <div class="spt">🎨 展示 Demo / 原型验证 → 产品设计展示工作流（3阶段，3-7天）</div>
+    <div class="spt">🏗️ 正式功能开发 / 上线产品 → 标准项目开发工作流（6阶段，2-4周）</div>
+    <div class="spt">两套工作流共享 Stitch MCP 设计能力，AI 驱动贯穿始终</div>
+    <div class="spt">所有产出统一归档 minise-workspace，GitHub 版本管理</div>
+  </div>
+  <div class="bm">MiniseLab 🦞</div>
+</div>
+
+</body>
+</html>
