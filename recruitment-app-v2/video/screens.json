@@ -1,0 +1,10 @@
+{
+  "screens": [
+    { "id": "login",      "title": "登录页",    "description": "手机号验证码登录，支持微信/QQ快捷登录",   "file": "login.png",      "duration": 150 },
+    { "id": "home",       "title": "首页",      "description": "推荐职位、分类导航、实时搜索",             "file": "home.png",       "duration": 180 },
+    { "id": "job_detail", "title": "职位详情",  "description": "薪资、要求、公司介绍，一键投递",           "file": "job_detail.png", "duration": 180 },
+    { "id": "company",    "title": "公司详情",  "description": "公司背景、在招职位列表、即时沟通",         "file": "company.png",    "duration": 180 },
+    { "id": "resume",     "title": "投递简历",  "description": "在线/附件简历选择，附带自我介绍",         "file": "resume.png",     "duration": 150 },
+    { "id": "profile",    "title": "个人中心",  "description": "简历完善度、投递记录、设置管理",           "file": "profile.png",    "duration": 150 }
+  ]
+}

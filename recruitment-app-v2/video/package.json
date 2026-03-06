@@ -1,0 +1,20 @@
+{
+  "name": "recruitment-walkthrough-video",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx remotion studio",
+    "render": "npx remotion render src/Root.tsx Walkthrough out/recruitment-app-walkthrough.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/transitions": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
