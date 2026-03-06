@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2463eb",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>职位详情</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Main Container (390px simulated width) -->
+<div class="relative mx-auto min-h-screen w-full max-w-[390px] bg-background-light dark:bg-background-dark pb-24 shadow-2xl overflow-x-hidden">
+<!-- Top Nav -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+<button class="flex h-10 w-10 items-center justify-start text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold">职位详情</h1>
+<div class="flex gap-4">
+<button class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</header>
+<!-- Company Card -->
+<div class="px-4 py-4">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-900 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+<img alt="Company Logo" class="h-full w-full object-cover" data-alt="Modern technology company minimalist logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADPe542Ti7mG7tSAWSIuObDncsZqUusyfAfwa_h11tSt4zOdWKrZEVkRNc8TimKTjeJIZgXaRHRuD_sxzizglMwmy0PPK5IU1qVT0548DeQpalgA2TWsGU7GYgOhjBO5K35YJ_d2llR_jebma7qvkVIam-nuXYjqSE4b_qJ9_EkxbhruwzVcwcOt5H6ajICrsFRJRnzyI-qyzkAQXBEdOj9F_DXBYmn0tVDZGpo3vn3S_QXaqdSjkThcjcNuEwj-Sm6mnn5vT1n7pp"/>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<h2 class="truncate text-lg font-bold text-slate-900 dark:text-white leading-tight">某某科技集团</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">100-499人 | 互联网/软件</p>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Job Core Info -->
+<section class="bg-white dark:bg-slate-900 px-4 py-6 mb-2">
+<div class="flex justify-between items-start mb-2">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">高级产品经理</h1>
+</div>
+<div class="text-xl font-bold text-primary mb-4">15k-25k·14薪</div>
+<!-- Specs Row -->
+<div class="flex flex-wrap gap-y-2 gap-x-4 mb-6">
+<div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span class="text-sm">北京·海淀</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">work_history</span>
+<span class="text-sm">3-5年</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">school</span>
+<span class="text-sm">本科</span>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2">
+<span class="rounded-lg bg-primary/10 px-3 py-1 text-xs font-medium text-primary">五险一金</span>
+<span class="rounded-lg bg-primary/10 px-3 py-1 text-xs font-medium text-primary">带薪年假</span>
+<span class="rounded-lg bg-primary/10 px-3 py-1 text-xs font-medium text-primary">定期体检</span>
+<span class="rounded-lg bg-primary/10 px-3 py-1 text-xs font-medium text-primary">绩效奖金</span>
+</div>
+</section>
+<!-- Job Description -->
+<section class="bg-white dark:bg-slate-900 px-4 py-6 mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">职位描述</h3>
+<div class="space-y-4">
+<div>
+<h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">岗位职责：</h4>
+<ul class="list-inside list-disc text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+<li>负责移动端产品的规划、设计、迭代与上线全流程；</li>
+<li>深入分析用户需求，持续优化产品体验和核心业务指标；</li>
+<li>协调开发、设计、测试团队，确保项目高质量按时交付；</li>
+<li>通过数据驱动，制定中长期产品发展路径图。</li>
+</ul>
+</div>
+<div class="relative">
+<h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">任职要求：</h4>
+<ul class="list-inside list-disc text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+<li>本科及以上学历，3年以上互联网产品经理经验；</li>
+<li>具备优秀的逻辑思维能力和敏锐的市场洞察力；</li>
+<li>熟练使用Axure, Figma, Mindmanager等产品工具；</li>
+<li>有大型B端或复杂移动端项目经验者优先。</li>
+</ul>
+<!-- Fade effect for truncation -->
+<div class="absolute bottom-0 h-12 w-full bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+</div>
+<button class="flex w-full items-center justify-center gap-1 py-2 text-sm font-medium text-primary">
+                    展开全文
+                    <span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Company Introduction -->
+<section class="bg-white dark:bg-slate-900 px-4 py-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">公司介绍</h3>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                某某科技集团成立于2015年，是国内领先的数字化转型解决方案提供商。我们秉承“技术驱动未来”的理念，致力于为企业提供最高效的软件服务。公司氛围自由开放，注重员工成长，提供极具竞争力的薪酬福利体系。
+            </p>
+<div class="mt-4 h-32 w-full rounded-xl bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img alt="Office Environment" class="h-full w-full object-cover opacity-80" data-alt="Modern open office workspace with greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwSAHv7JYU6FH40BGP472F2jJ2pzSWR05G6OGHRmbhKBMEIuuvKINvqWbUFwz_unFQgwcztWLSxRNWoh-otJgYNIThAOaZaqMarg7mK3dR3jrh2c761udxJofYBYTEXOIQseLysOuWQVjSVA9mlQI5wmh0NXU-HYUKPMiLeoanyhZKBucfMCiIlMFgbBDa-gONY1IzY-J_-RUb6BWWo3thLlmSTjsAI3bbUMPt3thDdS3kQpAPSK6g4G_wdpiDRZ6dSvZS5lbnaClS"/>
+</div>
+</section>
+<!-- Bottom Actions -->
+<footer class="fixed bottom-0 left-1/2 z-[60] w-full max-w-[390px] -translate-x-1/2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center gap-3">
+<button class="flex h-12 w-14 flex-shrink-0 flex-col items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-[10px] font-medium">聊一聊</span>
+</button>
+<button class="h-12 flex-1 rounded-xl bg-primary text-white font-bold text-base shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+                立即投递
+            </button>
+</footer>
+</div>
+
+<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('button, [class*="cursor-pointer"], span');
+    if (!el) return;
+    var text = el.innerText || '';
+    if (text.includes('投递') || text.includes('立即')) {
+      window.parent.postMessage({ type: 'navigate', path: '/resume' }, '*');
+    } else if (text.includes('公司') || text.includes('查看公司')) {
+      window.parent.postMessage({ type: 'navigate', path: '/company' }, '*');
+    } else if (text.includes('返回') || text.includes('arrow_back')) {
+      window.parent.postMessage({ type: 'navigate', path: '/home' }, '*');
+    }
+  });
+})();
+</script>
+</body></html>
