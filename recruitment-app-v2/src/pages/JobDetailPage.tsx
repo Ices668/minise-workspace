@@ -28,8 +28,12 @@ export default function JobDetailPage() {
             className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm border border-slate-100 cursor-pointer"
             onClick={() => navigate('/company')}
           >
-            <div className="h-16 w-16 flex-shrink-0 rounded-lg bg-slate-100 flex items-center justify-center">
-              <span className="material-symbols-outlined text-slate-400 text-3xl">business</span>
+            <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-slate-100">
+              <img
+                alt="Company Logo"
+                className="h-full w-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADPe542Ti7mG7tSAWSIuObDncsZqUusyfAfwa_h11tSt4zOdWKrZEVkRNc8TimKTjeJIZgXaRHRuD_sxzizglMwmy0PPK5IU1qVT0548DeQpalgA2TWsGU7GYgOhjBO5K35YJ_d2llR_jebma7qvkVIam-nuXYjqSE4b_qJ9_EkxbhruwzVcwcOt5H6ajICrsFRJRnzyI-qyzkAQXBEdOj9F_DXBYmn0tVDZGpo3vn3S_QXaqdSjkThcjcNuEwj-Sm6mnn5vT1n7pp"
+              />
             </div>
             <div className="flex flex-col gap-1 overflow-hidden">
               <h2 className="truncate text-lg font-bold text-slate-900 leading-tight">{jobDetail.company}</h2>
@@ -97,8 +101,12 @@ export default function JobDetailPage() {
           <p className="text-sm leading-relaxed text-slate-600">
             {jobDetail.company}成立于2015年，是国内领先的数字化转型解决方案提供商。我们秉承"技术驱动未来"的理念，致力于为企业提供最高效的软件服务。
           </p>
-          <div className="mt-4 h-32 w-full rounded-xl bg-slate-100 flex items-center justify-center">
-            <span className="material-symbols-outlined text-slate-300 text-5xl">apartment</span>
+          <div className="mt-4 h-32 w-full rounded-xl bg-slate-100 overflow-hidden">
+            <img
+              alt="Office Environment"
+              className="h-full w-full object-cover opacity-80"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwSAHv7JYU6FH40BGP472F2jJ2pzSWR05G6OGHRmbhKBMEIuuvKINvqWbUFwz_unFQgwcztWLSxRNWoh-otJgYNIThAOaZaqMarg7mK3dR3jrh2c761udxJofYBYTEXOIQseLysOuWQVjSVA9mlQI5wmh0NXU-HYUKPMiLeoanyhZKBucfMCiIlMFgbBDa-gONY1IzY-J_-RUb6BWWo3thLlmSTjsAI3bbUMPt3thDdS3kQpAPSK6g4G_wdpiDRZ6dSvZS5lbnaClS"
+            />
           </div>
         </section>
 

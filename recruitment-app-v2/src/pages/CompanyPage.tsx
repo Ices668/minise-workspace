@@ -40,16 +40,26 @@ export default function CompanyPage() {
         </div>
 
         {/* Cover Image */}
-        <div className="w-full bg-slate-200 min-h-48 relative flex items-center justify-center">
-          <span className="material-symbols-outlined text-slate-400 text-6xl">apartment</span>
+        <div className="w-full bg-center bg-no-repeat bg-cover min-h-48 relative"
+          style={{
+            backgroundImage:
+              'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcYqUgA_gNDAo08Zw41SXyabBf131huJj40nP_FIp217ojIQzL_5DORuQS65QVe-2RUqY2moMsEtDPWd047ueNbAhPyBhZF5sLjcnpYytcRQlxx3B-xTCCwfhArBxK6H3qvBLnnY299wxxAlHIepbsRXb43yBkctp7uohjGHa7tLU2uuTmiY9aExf3HLvU-WNLqbNcN9oqw1-MOR-VbtdYzbtEJUhtIUZD8bHgDKDk79n6yA5t-jf2APsS7utOw-iHgrhsoR7va63Y")',
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
 
         {/* Company Header Info */}
         <div className="px-4 -mt-10 relative z-10">
           <div className="flex flex-col gap-4">
-            <div className="bg-white p-1 rounded-xl shadow-lg w-24 h-24 flex items-center justify-center">
-              <span className="material-symbols-outlined text-[#2761e7] text-5xl">business</span>
+            <div className="bg-white p-1 rounded-xl shadow-lg w-24 h-24">
+              <div
+                className="bg-center bg-no-repeat bg-cover rounded-lg w-full h-full bg-slate-100"
+                style={{
+                  backgroundImage:
+                    'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyzMQt10Kn9Cn8RfPYXx-FTtl7-k1DSdXOUkgWZp-tVmKZDzAAkM-hMMDP-ETtkVNIOoDS0u1xy69oqj2NAFymitM_0PxwVplYiPiGIAMdmOI_Okux8IwIJN-ZB-jECmjXjsNKHPePrMMVHNeW-X5HLyTfyXOoP3FaqpWdU6N1yQkULkcAzEj5raf6riRLDkIXgIj--76C9iNsAkT4j3xSGlQgm84lsOqOhvQzpcjbrD4s9ZjpbX3A2QH2LT6NidO8ikyHCOLV5BU0")',
+                }}
+              />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
@@ -102,9 +112,19 @@ export default function CompanyPage() {
               <p className="mt-3 text-slate-500 text-sm line-clamp-2">{job.desc}</p>
               <div className="mt-4 flex items-center border-t border-slate-50 pt-3">
                 <div className="flex items-center gap-2">
-                  <div className="size-6 rounded-full bg-slate-200 flex items-center justify-center">
-                    <span className="material-symbols-outlined text-slate-400 text-sm">person</span>
-                  </div>
+                  <div
+                    className="size-6 rounded-full bg-slate-200"
+                    style={{
+                      backgroundImage:
+                        i === 0
+                          ? 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCim-oTFLwtfhMSj3MgSjizjmR_rIWKpTm5Nhvy2apOpwee_X5c09-3cfSxU60UPzmaF_WvtcwGftBWOycLnQjPllpKm5AAG2E-ndU67A4AH-wtHWVKeQVAw0sG7PupFLfzj2hbtBfUjl4ym_ZmLBKkho6QEiH1XzdywfoFlr3DT45kXHjdhKDT4d5Chpl63-FmnuYnccYGvetsDRscwLeqhlv3kiJn9pi8zKZu9x36Mgt-H0Ef5Ha2ylYkIqOQfAmYWHeiYbZTZ5mH")'
+                          : i === 1
+                            ? 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6iTs54X6p3ZFLVsoKdwhBihdtx03e3YttrZO0iyOdsJKp5PGfvn8w0bPNuebHzXh3NpYiLlPGB8qBQEafSTv_WWuYkjlKskKBJuTDnaRvtphOX1pMN-bCE7UICWSVoLDdMji7m3cVe4dJuD86xH1bovYeEQjpxBvpYXXQZ1vZrwJK3zldXDEWrmXaTusHI83sMgom5_oDmJFeIbSdkbJqXrLXvhpAYNhkvfGQNfBeLpTkDDzKMQGKKbi5K2aoK5DkTaufAlGDH_zW")'
+                            : 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4SXlQVZz1Ep4zCSuJGYcF0AK1BMtkAMRzfQKQ4LuGA7zkVIqSiIasBR8NiqtL9LhWHCjioiugKv23AOvamgApvjd_J9sYPsoZ8-pmMHv1V0-iTN5lg4uSZGx3yj8fyX17RnVc4L6TDbX_bdt2yWKM1NWVanjYT66HL7lwXCl68utvBcqLH6S-A99Z2nve5rGlfLyJDWEl22qlvRnQIdJaFu8pXDyjCBa-4EJiifzJCia6Gfn82JCGgRoT9epaCjajNhWskXyhBcny")',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  />
                   <span className="text-xs text-slate-600">{job.hr}</span>
                 </div>
               </div>

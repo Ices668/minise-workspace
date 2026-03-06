@@ -10,6 +10,8 @@ export const jobs = [
     size: '100-499人',
     tags: ['五险一金', '周末双休', '带薪年假'],
     location: '朝阳区 · 望京 · 2.5km',
+    logoUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCcYLPzFS2kzVgTbWkMMs6xVwCuoC3A3yL5O4P848L0z7phWvpQzlka_GsgzgGjUwyw7BXd7dbBKVRweZW4zahREoFd9e3xlYVCGwsu-LmNDaQsjTn82yphi-N7R5PyFmOTZ-McjpRXK8laqgUGiw0FUteM5RIeTsLN1WOJVQMFz0L9gbhhw0DCgQNkQ5Jv1PRP1tas4JaNwH3dRIQSN7Wfek6RMcRZAJ7Rh_7v-awKVBLylU8SeMD3BFDi76WRa0wgCQ1wwR6czz1h',
   },
   {
     id: 2,
@@ -20,6 +22,8 @@ export const jobs = [
     size: '1000人以上',
     tags: ['股票期权', '年度体检', '定期团建'],
     location: '海淀区 · 中关村 · 4.8km',
+    logoUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBmnKntj8MScOodWY9o2LKV17jVXTd3ub33KqdlPrVKs5f5lALkMv7JrRPsE-BMu7yrvLteZOfpPC9vM4HzIL7nZt__ykXyCYWfxkDJlW_kexlnkfTcZG4q7xmwcot0k87m7vrQwokMOUDnTdXC5PfEtAzpAD66SbfdzKJ4fjLecOP-w-NupgeHbicfimJqpnN1OBzigb4HT2PPcAfdhtGCLUZJs2cgwDRdlWe6Ar5ehX2zORnT8qb7MG3jc_EZ2KYz3ugNo2OQcZED',
   },
   {
     id: 3,
@@ -30,6 +34,8 @@ export const jobs = [
     size: '500-999人',
     tags: ['六险一金', '弹性工作', '餐补'],
     location: '朝阳区 · 太阳宫 · 3.2km',
+    logoUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBSW2TJrbefc1Hi0OW3vCOifys53_1_klcZIScqtqGc0O7vspyKnlZJVbE4QwVAo_7HAQXOWGQZQ4ksb_gxRfl1zIelbQwQtynFAhfquLJuGzZCdU6PMgMZchfQrnbscljX6-cXialqi1INmTBX4HfrVVdIKTFcDt8FdTIk6f_x5UxJeiOgXZ3yrtXanrfLymojcH3ntwTNGxw744M6-LZMcW-LTFprRkx4CAqXZROOXBmQeWpZyMWYsZjCjZY-rlsLqQ7MbabiSqxS',
   },
 ]
 

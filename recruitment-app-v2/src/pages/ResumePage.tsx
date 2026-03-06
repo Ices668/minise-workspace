@@ -25,9 +25,13 @@ export default function ResumePage() {
         <div className="p-4">
           <div className="flex flex-col gap-4 rounded-xl bg-white p-5 shadow-sm border border-slate-100">
             <div className="flex items-center gap-4">
-              <div className="size-16 rounded-full bg-slate-200 flex items-center justify-center border-2 border-[#2761e7]/10">
-                <span className="material-symbols-outlined text-slate-400 text-3xl">person</span>
-              </div>
+              <div
+                className="size-16 bg-center bg-no-repeat bg-cover rounded-full border-2 border-[#2761e7]/10"
+                style={{
+                  backgroundImage:
+                    'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJ4aAQTSti2Y-_JjdDZyVOfGKFYGErkrF_EMZjKyYBV-5DGUVwAJ9hi5eCTy-5NM5JwJTV0AOdgXEjSd8X5IeHNXHzjG98OypneGqthk9hqurH1QpQSW8LImfeMTf15no3op4fKI2DMnJ_eXCqfO6tCUnS0SzkjQZcRtY43Xps7c0Su3Ap5jcb4YxRGVy0ggXfQ1kSl6LWgKY_jTF6sMCrbJhfHCDLTfzDUYSsrhHtpNRQ9KrK23xvWsRxXFWJ6BeelAscm9MrOS9N")',
+                }}
+              />
               <div className="flex flex-col gap-0.5">
                 <p className="text-slate-900 text-lg font-bold leading-tight">张伟</p>
                 <p className="text-slate-500 text-sm font-normal">高级产品经理</p>

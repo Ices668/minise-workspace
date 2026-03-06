@@ -36,8 +36,12 @@ export default function ProfilePage() {
 
           <div className="relative flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-white/50 bg-white flex items-center justify-center">
-                <span className="material-symbols-outlined text-slate-400 text-3xl">person</span>
+              <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-white/50 bg-white">
+                <img
+                  alt="Avatar"
+                  className="h-full w-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOlOFIS0bQcjtBsEtPoOE_rZEEcQ_J5TybmttclRokxkZir-Oq5xxvr4k3dNXSQ6WzhMaznAydvcnu1zOKr8QV7JXFLpgYcHq13Pjm8jSaMmFdsBQJON22Txdq018velWyr6p1mOpXTZHPm4n9OgCr_BJwjls-7ZIW8O5LTvol4sp-xoRPUzzkd42DBmIJWhpZxatP-k1SioTJUMFDk9Xllq1aENIVGVMlOts0miA6fQJ_-OQjNw21BoWyLui9-hXBfnyqnLwLzla9"
+                />
               </div>
               <div>
                 <div className="flex items-center gap-2">

@@ -79,8 +79,12 @@ export default function HomePage() {
                 <span className="text-[#2761e7] font-bold text-lg">{job.salary}</span>
               </div>
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-slate-400 text-xl">business</span>
+                <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center overflow-hidden">
+                  <img
+                    alt="Company Logo"
+                    className="w-full h-full object-cover"
+                    src={job.logoUrl}
+                  />
                 </div>
                 <div className="flex flex-col">
                   <p className="text-sm font-medium text-slate-800">{job.company}</p>
