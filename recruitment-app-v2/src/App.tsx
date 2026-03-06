@@ -1,23 +1,22 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import StitchFrame from './StitchFrame'
+import LoginPage from './pages/LoginPage'
+import HomePage from './pages/HomePage'
+import JobDetailPage from './pages/JobDetailPage'
+import CompanyPage from './pages/CompanyPage'
+import ResumePage from './pages/ResumePage'
+import ProfilePage from './pages/ProfilePage'
 import './index.css'
-
-const pages = [
-  { path: '/',          src: '/pages/login.html' },
-  { path: '/home',      src: '/pages/home.html' },
-  { path: '/job-detail',src: '/pages/job_detail.html' },
-  { path: '/company',   src: '/pages/company.html' },
-  { path: '/resume',    src: '/pages/resume.html' },
-  { path: '/profile',   src: '/pages/profile.html' },
-]
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {pages.map(({ path, src }) => (
-          <Route key={path} path={path} element={<StitchFrame src={src} />} />
-        ))}
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/job-detail" element={<JobDetailPage />} />
+        <Route path="/company" element={<CompanyPage />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
