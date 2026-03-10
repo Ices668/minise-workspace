@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>聚类分析 - 新型高端智库系统</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ba6da",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "Noto Sans SC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "12px",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", "Noto Sans SC", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center space-x-2 text-sm font-medium text-primary/80 mb-6">
+<a class="hover:text-primary transition-colors" href="#">新型高端智库系统</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">战略咨询智能支持</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">技术趋势分析</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100">聚类分析</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<h1 class="text-3xl font-black tracking-tight">聚类分析</h1>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>新建聚类任务</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-primary/10 text-primary font-bold rounded-lg border border-primary/20 hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>数据导入</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-primary/10 text-primary font-bold rounded-lg border border-primary/20 hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>导出报告</span>
+</button>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="border-b border-primary/10 mb-8">
+<div class="flex gap-8 overflow-x-auto no-scrollbar">
+<a class="pb-4 text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent" href="#">
+                    聚类任务管理
+                </a>
+<a class="pb-4 text-sm font-bold text-primary border-b-2 border-primary" href="#">
+                    聚类结果视图
+                </a>
+<a class="pb-4 text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent" href="#">
+                    筛选机制配置
+                </a>
+<a class="pb-4 text-sm font-bold text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent" href="#">
+                    清单定制
+                </a>
+</div>
+</div>
+<!-- Row 1: Statistic Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg border border-primary/10 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">分析样本总数</p>
+<div class="flex items-end justify-between">
+<p class="text-3xl font-black text-slate-900 dark:text-white">12,840</p>
+<span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">+12%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg border border-primary/10 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">聚类簇数</p>
+<p class="text-3xl font-black text-slate-900 dark:text-white">12</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg border border-primary/10 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">平均置信度</p>
+<div class="flex items-center gap-2">
+<p class="text-3xl font-black text-slate-900 dark:text-white">94.2%</p>
+<div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 94.2%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg border border-primary/10 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">覆盖关键词数</p>
+<p class="text-3xl font-black text-slate-900 dark:text-white">356</p>
+</div>
+</div>
+<!-- Row 2: Cluster Cards List -->
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bubble_chart</span>
+            聚类核心发现
+        </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<!-- Cluster Card 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-lg border border-primary/10 shadow-sm p-5 hover:border-primary/40 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">聚类 #01</h3>
+<p class="text-sm text-slate-500">生成式人工智能应用</p>
+</div>
+<div class="relative flex items-center justify-center w-12 h-12">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-700" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="12.5" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold">90%</span>
+</div>
+</div>
+<div class="flex gap-4 mb-4 text-sm">
+<div class="flex flex-col">
+<span class="text-slate-400">文档数</span>
+<span class="font-bold">2,410</span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-400">权重</span>
+<span class="font-bold">18.4%</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">大语言模型</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">多模态生成</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">扩散模型</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">智算中心</span>
+</div>
+</div>
+<!-- Cluster Card 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-lg border border-primary/10 shadow-sm p-5 hover:border-primary/40 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">聚类 #02</h3>
+<p class="text-sm text-slate-500">量子计算硬件突破</p>
+</div>
+<div class="relative flex items-center justify-center w-12 h-12">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-700" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="25.1" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold">80%</span>
+</div>
+</div>
+<div class="flex gap-4 mb-4 text-sm">
+<div class="flex flex-col">
+<span class="text-slate-400">文档数</span>
+<span class="font-bold">1,820</span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-400">权重</span>
+<span class="font-bold">14.2%</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">超导量子</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">纠错技术</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">低温制冷</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">量子霸权</span>
+</div>
+</div>
+<!-- Cluster Card 3 -->
+<div class="bg-white dark:bg-slate-800 rounded-lg border border-primary/10 shadow-sm p-5 hover:border-primary/40 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">聚类 #03</h3>
+<p class="text-sm text-slate-500">半导体先进封测</p>
+</div>
+<div class="relative flex items-center justify-center w-12 h-12">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-700" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="15.7" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold">88%</span>
+</div>
+</div>
+<div class="flex gap-4 mb-4 text-sm">
+<div class="flex flex-col">
+<span class="text-slate-400">文档数</span>
+<span class="font-bold">3,105</span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-400">权重</span>
+<span class="font-bold">22.1%</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">Chiplet</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">3D封装</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">光电集成</span>
+<span class="px-2 py-1 bg-primary/5 text-primary text-xs rounded-full border border-primary/10">异构集成</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Clustering List Detail Table -->
+<div class="bg-white dark:bg-slate-800 rounded-lg border border-primary/10 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-primary/10 flex justify-between items-center">
+<h2 class="text-lg font-bold">聚类清单详情</h2>
+<div class="flex gap-2">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="pl-10 pr-4 py-1.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary" placeholder="搜索关键词..." type="text"/>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-4 w-12"><input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/></th>
+<th class="px-6 py-4">聚类名称</th>
+<th class="px-6 py-4">关键词集</th>
+<th class="px-6 py-4">相关度 (Heat)</th>
+<th class="px-6 py-4">出现频次</th>
+<th class="px-6 py-4 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4"><input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/></td>
+<td class="px-6 py-4">
+<span class="font-bold text-slate-900 dark:text-white">边缘AI加速器</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm text-slate-600 dark:text-slate-400">端侧算力, NPU, 低功耗, 推理优化</span>
+</td>
+<td class="px-6 py-4">
+<div class="w-32 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-blue-400 to-primary h-full" style="width: 85%"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">1,245</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:underline text-sm font-bold">加入清单</button>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4"><input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/></td>
+<td class="px-6 py-4">
+<span class="font-bold text-slate-900 dark:text-white">自动驾驶视觉系统</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm text-slate-600 dark:text-slate-400">激光雷达, SLAM, 图像识别, 毫米波</span>
+</td>
+<td class="px-6 py-4">
+<div class="w-32 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-blue-400 to-primary h-full" style="width: 72%"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">958</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:underline text-sm font-bold">加入清单</button>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4"><input class="rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/></td>
+<td class="px-6 py-4">
+<span class="font-bold text-slate-900 dark:text-white">智慧能源网格</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm text-slate-600 dark:text-slate-400">特高压, 储能平衡, 虚拟电厂</span>
+</td>
+<td class="px-6 py-4">
+<div class="w-32 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-blue-400 to-primary h-full" style="width: 45%"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">622</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:underline text-sm font-bold">加入清单</button>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-700/20 border-t border-primary/10 flex items-center justify-between">
+<p class="text-sm text-slate-500">显示 1 到 3 条，共 12 个聚类项</p>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white hover:bg-slate-100"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary bg-primary text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white hover:bg-slate-100 text-xs font-bold">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white hover:bg-slate-100 text-xs font-bold">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white hover:bg-slate-100"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

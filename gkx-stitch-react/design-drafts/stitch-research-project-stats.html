@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ba6da",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "PingFang SC", "Microsoft YaHei", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>科研项目分析 - 统计看板</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="layout-container flex h-full grow flex-col">
+<div class="max-w-[1280px] mx-auto w-full px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6 text-sm font-medium">
+<a class="text-primary hover:opacity-80" href="#">新型高端智库系统</a>
+<span class="text-slate-400">/</span>
+<a class="text-primary hover:opacity-80" href="#">战略咨询智能支持</a>
+<span class="text-slate-400">/</span>
+<a class="text-primary hover:opacity-80" href="#">技术体系分析</a>
+<span class="text-slate-400">/</span>
+<span class="text-slate-600 dark:text-slate-400">科研项目分析</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">科研项目分析</h1>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl font-bold hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>新增分析任务</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>导出数据</span>
+</button>
+<button class="flex items-center justify-center w-11 h-11 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="border-b border-slate-200 dark:border-slate-700 mb-8">
+<div class="flex gap-8">
+<a class="pb-4 text-slate-500 font-bold border-b-2 border-transparent hover:text-primary transition-colors" href="#">项目检索清单</a>
+<a class="pb-4 text-primary font-bold border-b-2 border-primary relative" href="#">
+                        统计分析看板
+                    </a>
+<a class="pb-4 text-slate-500 font-bold border-b-2 border-transparent hover:text-primary transition-colors" href="#">分析任务管理</a>
+</div>
+</div>
+<!-- Filter Section -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm mb-8 flex flex-wrap items-end gap-4">
+<div class="flex-1 min-w-[240px]">
+<label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">关键词检索</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm" placeholder="搜索项目、机构或负责人..." type="text"/>
+</div>
+</div>
+<div class="w-48">
+<label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">技术领域</label>
+<select class="w-full py-2.5 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm">
+<option>全部领域</option>
+<option>人工智能</option>
+<option>量子计算</option>
+<option>生物制药</option>
+</select>
+</div>
+<div class="w-48">
+<label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">资助来源</label>
+<select class="w-full py-2.5 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm">
+<option>全部来源</option>
+<option>国家自然科学基金</option>
+<option>企业委托</option>
+<option>国际合作</option>
+</select>
+</div>
+<div class="flex gap-2">
+<button class="px-6 py-2.5 bg-primary text-white rounded-lg font-bold hover:opacity-90 transition-all">查询</button>
+<button class="px-6 py-2.5 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-lg font-bold hover:bg-slate-200 transition-all">重置</button>
+</div>
+</div>
+<!-- Row 1: Stat Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded">+12%</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">项目总数</p>
+<h3 class="text-2xl font-black mt-1">1,248</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded">+5.4%</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">资助总经费</p>
+<h3 class="text-2xl font-black mt-1">1.28 <span class="text-sm font-bold text-slate-400">亿</span></h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+<span class="text-xs font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded">稳定</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">进行中项目</p>
+<h3 class="text-2xl font-black mt-1">452</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded">+3</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">参与研究机构</p>
+<h3 class="text-2xl font-black mt-1">86</h3>
+</div>
+</div>
+<!-- Row 2: Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+<!-- Donut Chart Card -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-black text-slate-800 dark:text-white">研究领域分布</h4>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="flex items-center h-64">
+<div class="relative w-48 h-48 flex-shrink-0">
+<!-- SVG Donut Chart Placeholder -->
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#e2e8f0" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#0ba6da" stroke-dasharray="40 100" stroke-linecap="round" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#38bdf8" stroke-dasharray="25 100" stroke-dashoffset="-40" stroke-linecap="round" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#0ea5e9" stroke-dasharray="20 100" stroke-dashoffset="-65" stroke-linecap="round" stroke-width="3.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black">100%</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Total Share</span>
+</div>
+</div>
+<div class="ml-8 space-y-3 flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">人工智能</span>
+</div>
+<span class="text-sm font-bold">40%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-sky-400"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">生物工程</span>
+</div>
+<span class="text-sm font-bold">25%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-sky-600"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">材料科学</span>
+</div>
+<span class="text-sm font-bold">20%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-slate-300"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">其他</span>
+</div>
+<span class="text-sm font-bold">15%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- World Map/Dist Card -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-black text-slate-800 dark:text-white">国家/地区分布</h4>
+<div class="flex gap-2">
+<button class="text-xs font-bold px-3 py-1 bg-primary/10 text-primary rounded-full">地图</button>
+<button class="text-xs font-bold px-3 py-1 text-slate-400 hover:text-slate-600">列表</button>
+</div>
+</div>
+<div class="h-64 rounded-lg overflow-hidden relative bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="Abstract world map distribution visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe2GJpUHuGTOW_13yRaDgv4xDdPzmBPxQpI9MScBLtr0d8ypdnaaAXxk6o1tuEntgrs9OPtUIAxs9rcepHTwhxBkWX__Ja7ptuwSeoVfPU21bJvXpeRY2Na9xmCB3gVh2h1aDwFhy0zw4Ccp3s5gu8w_fkKk6jkK-n_bGsuo9_XgJwcsY9t0RVM0-UxIhVjHjcIM-NUb9QbnDy-4dSimQY9UUJ8iW0UbF2TAWCbtdeuXuW_9wkPTf9YKxqpq-h6i3DUMGlZ1iRhD1z"/>
+<div class="absolute inset-0 p-4">
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-bold mb-1"><span>中国</span><span>45%</span></div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[45%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold mb-1"><span>北美</span><span>30%</span></div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[30%] opacity-80"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold mb-1"><span>欧洲</span><span>15%</span></div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[15%] opacity-60"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold mb-1"><span>其他</span><span>10%</span></div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[10%] opacity-40"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3: Detail Table -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+<h4 class="font-black text-slate-800 dark:text-white">重点项目明细</h4>
+<button class="text-primary text-sm font-bold hover:underline">查看全部</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">项目名称</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">所属领域</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">负责人</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">经费 (万)</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">状态</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">生成式AI在药物发现中的应用</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">人工智能 / 生物医药</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">张文宏 教授</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-200">1,250</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 text-[10px] font-black bg-emerald-100 text-emerald-700 rounded-full">进行中</span>
+</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex gap-4">
+<a class="text-primary font-bold hover:opacity-80" href="#">查看详情</a>
+<a class="text-primary font-bold hover:opacity-80" href="#">关联分析</a>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">2nm制程关键设备研发专项</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">半导体制造</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">林本坚 院士</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-200">4,800</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 text-[10px] font-black bg-sky-100 text-sky-700 rounded-full">启动中</span>
+</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex gap-4">
+<a class="text-primary font-bold hover:opacity-80" href="#">查看详情</a>
+<a class="text-primary font-bold hover:opacity-80" href="#">关联分析</a>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">深海自主无人探测系统研究</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">海洋装备 / 自动化</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">王海峰 研究员</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-200">850</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 text-[10px] font-black bg-amber-100 text-amber-700 rounded-full">结项评审</span>
+</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex gap-4">
+<a class="text-primary font-bold hover:opacity-80" href="#">查看详情</a>
+<a class="text-primary font-bold hover:opacity-80" href="#">关联分析</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</body></html>

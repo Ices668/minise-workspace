@@ -1,0 +1,314 @@
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101d22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "Noto Sans SC", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: "Public Sans", "Noto Sans SC", sans-serif; }
+        .custom-shadow { box-shadow: 0 4px 6px -1px rgba(19, 182, 236, 0.05), 0 2px 4px -1px rgba(19, 182, 236, 0.03); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100">
+<main class="max-w-7xl mx-auto px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6 text-sm font-medium">
+<a class="text-primary hover:opacity-80" href="#">新型高端智库系统</a>
+<span class="text-slate-400 dark:text-slate-600 material-symbols-outlined text-sm">chevron_right</span>
+<a class="text-primary hover:opacity-80" href="#">基础研究智能决策</a>
+<span class="text-slate-400 dark:text-slate-600 material-symbols-outlined text-sm">chevron_right</span>
+<a class="text-primary hover:opacity-80" href="#">基础研究问题清单</a>
+<span class="text-slate-400 dark:text-slate-600 material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-600 dark:text-slate-400">问题识别与清单研发</span>
+</nav>
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">问题识别与清单研发</h1>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>新建问题清单</span>
+</button>
+<button class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-lg font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+<span>批量导出</span>
+</button>
+<button class="p-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary transition-all">
+<span class="material-symbols-outlined block">refresh</span>
+</button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-2">识别问题总数</p>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">1,280</span>
+<span class="text-xs font-medium text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded-full">+12%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-2">待研制问题</p>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">45</span>
+<span class="text-xs font-medium text-amber-500 bg-amber-50 dark:bg-amber-500/10 px-2 py-1 rounded-full">需加速</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-2">高优先级问题</p>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">12</span>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">重点关注</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-2">已发布清单数</p>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">86</span>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full">年度目标86%</span>
+</div>
+</div>
+</div>
+<!-- Filter Section -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow mb-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+<div class="lg:col-span-3">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">问题关键词</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="输入关键字搜索..." type="text"/>
+</div>
+</div>
+<div class="lg:col-span-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">学科分类</label>
+<select class="w-full py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm">
+<option>全部学科</option>
+<option>数学</option>
+<option>物理</option>
+<option>生命科学</option>
+</select>
+</div>
+<div class="lg:col-span-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">问题级别</label>
+<select class="w-full py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm">
+<option>全部级别</option>
+<option>重大科学问题</option>
+<option>前沿技术问题</option>
+</select>
+</div>
+<div class="lg:col-span-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">优先级</label>
+<select class="w-full py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm">
+<option>全部</option>
+<option>高</option>
+<option>中</option>
+<option>低</option>
+</select>
+</div>
+<div class="lg:col-span-3 flex gap-2">
+<button class="flex-1 bg-primary text-white py-2 rounded-lg font-medium hover:opacity-90">查询</button>
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 py-2 rounded-lg font-medium hover:bg-slate-200 dark:hover:bg-slate-600">重置</button>
+</div>
+</div>
+</div>
+<!-- Main Content Tabs -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center border-b border-slate-200 dark:border-slate-700">
+<button class="px-6 py-3 border-b-2 border-primary text-primary font-bold transition-all">问题识别清单</button>
+<button class="px-6 py-3 text-slate-500 dark:text-slate-400 font-medium hover:text-slate-700 transition-all">关联分布看板</button>
+</div>
+<!-- Active Tab Content -->
+<div class="space-y-4">
+<!-- Toolbar -->
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-primary/10 text-primary rounded-md text-sm font-medium">批量操作</button>
+<span class="text-xs text-slate-400">已选择 0 项</span>
+</div>
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-lg">
+<button class="p-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-primary">
+<span class="material-symbols-outlined block">list</span>
+</button>
+<button class="p-1.5 rounded-md text-slate-400">
+<span class="material-symbols-outlined block">grid_view</span>
+</button>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-100 dark:border-slate-700">
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-10">
+<input class="rounded text-primary focus:ring-primary bg-transparent border-slate-300" type="checkbox"/>
+</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider">问题名称</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider">所属领域</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider">识别来源</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-40">成熟度</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider">优先级</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-colors">
+<td class="p-4"><input class="rounded text-primary focus:ring-primary bg-transparent border-slate-300" type="checkbox"/></td>
+<td class="p-4 font-medium text-slate-900 dark:text-white">高维拓扑结构的动力学演化机理</td>
+<td class="p-4 text-slate-600 dark:text-slate-400 text-sm">数学 / 拓扑学</td>
+<td class="p-4 text-slate-600 dark:text-slate-400 text-sm">Nature 期刊综述</td>
+<td class="p-4">
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[75%]"></div>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">75% 完成度</span>
+</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">高</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:underline text-sm font-medium">详情</button>
+<button class="text-primary hover:underline text-sm font-medium">加入清单</button>
+<button class="text-slate-400 hover:text-rose-500 text-sm font-medium">删除</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-colors">
+<td class="p-4"><input class="rounded text-primary focus:ring-primary bg-transparent border-slate-300" type="checkbox"/></td>
+<td class="p-4 font-medium text-slate-900 dark:text-white">常温超导材料的微观量子态研究</td>
+<td class="p-4 text-slate-600 dark:text-slate-400 text-sm">物理 / 凝聚态</td>
+<td class="p-4 text-slate-600 dark:text-slate-400 text-sm">专利情报挖掘</td>
+<td class="p-4">
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[40%]"></div>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">40% 完成度</span>
+</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-600 dark:bg-amber-500/20 dark:text-amber-400">中</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:underline text-sm font-medium">详情</button>
+<button class="text-primary hover:underline text-sm font-medium">加入清单</button>
+<button class="text-slate-400 hover:text-rose-500 text-sm font-medium">删除</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-colors">
+<td class="p-4"><input class="rounded text-primary focus:ring-primary bg-transparent border-slate-300" type="checkbox"/></td>
+<td class="p-4 font-medium text-slate-900 dark:text-white">人工多肽链的精准折叠与功能模拟</td>
+<td class="p-4 text-slate-600 dark:text-slate-400 text-sm">生命科学 / 生物物理</td>
+<td class="p-4 text-slate-600 dark:text-slate-400 text-sm">专家推荐系统</td>
+<td class="p-4">
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">90% 完成度</span>
+</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">高</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:underline text-sm font-medium">详情</button>
+<button class="text-primary hover:underline text-sm font-medium">加入清单</button>
+<button class="text-slate-400 hover:text-rose-500 text-sm font-medium">删除</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-4 py-3 bg-slate-50/50 dark:bg-slate-900/20 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-slate-500">
+<span>共 128 条记录</span>
+<div class="flex gap-1">
+<button class="p-1.5 rounded border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800"><span class="material-symbols-outlined block text-sm">chevron_left</span></button>
+<button class="px-3 py-1.5 rounded bg-primary text-white font-bold">1</button>
+<button class="px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800">2</button>
+<button class="px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800">3</button>
+<button class="p-1.5 rounded border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800"><span class="material-symbols-outlined block text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Visualization Split View (Hidden by default based on description but included) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow min-h-[400px]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">hub</span>
+                            领域关联网络图
+                        </h3>
+<button class="text-xs text-primary font-medium">全屏查看</button>
+</div>
+<div class="h-64 flex items-center justify-center bg-slate-50 dark:bg-slate-900 rounded-lg relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<div class="relative w-48 h-48 border-2 border-primary/20 rounded-full flex items-center justify-center">
+<div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center">
+<div class="w-8 h-8 bg-primary rounded-full animate-pulse shadow-[0_0_15px_rgba(19,182,236,0.5)]"></div>
+</div>
+<!-- Floating nodes simulation -->
+<div class="absolute -top-4 -left-4 w-4 h-4 bg-primary/60 rounded-full"></div>
+<div class="absolute top-1/2 -right-6 w-6 h-6 bg-primary/40 rounded-full"></div>
+<div class="absolute -bottom-2 left-1/4 w-5 h-5 bg-primary/50 rounded-full"></div>
+</div>
+<span class="absolute bottom-4 text-[10px] text-slate-400 italic">知识图谱动态生成中...</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 custom-shadow min-h-[400px]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+                            问题热度趋势
+                        </h3>
+<div class="flex gap-2">
+<button class="px-2 py-1 text-[10px] bg-slate-100 dark:bg-slate-700 rounded">周</button>
+<button class="px-2 py-1 text-[10px] bg-primary text-white rounded">月</button>
+</div>
+</div>
+<div class="h-64 bg-slate-50 dark:bg-slate-900 rounded-lg p-4 flex flex-col justify-end">
+<div class="flex items-end gap-2 h-full px-4">
+<div class="w-full bg-primary/20 h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-primary/30 h-[45%] rounded-t-sm"></div>
+<div class="w-full bg-primary/40 h-[25%] rounded-t-sm"></div>
+<div class="w-full bg-primary/50 h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-primary/60 h-[85%] rounded-t-sm"></div>
+<div class="w-full bg-primary/70 h-[70%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[95%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-[10px] text-slate-400">01-01</span>
+<span class="text-[10px] text-slate-400">01-15</span>
+<span class="text-[10px] text-slate-400">01-30</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

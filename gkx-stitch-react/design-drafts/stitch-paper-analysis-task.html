@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ba6da",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "system-ui", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>论文分析 - 任务管理与交叉分析</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Content Container -->
+<main class="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-4 py-6 md:px-8">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap items-center gap-2 pb-6 text-sm font-medium">
+<a class="text-primary hover:opacity-80 transition-opacity" href="#">新型高端智库系统</a>
+<span class="text-slate-400 dark:text-slate-500">/</span>
+<a class="text-primary hover:opacity-80 transition-opacity" href="#">战略咨询智能支持</a>
+<span class="text-slate-400 dark:text-slate-500">/</span>
+<a class="text-primary hover:opacity-80 transition-opacity" href="#">技术体系分析</a>
+<span class="text-slate-400 dark:text-slate-500">/</span>
+<span class="text-slate-600 dark:text-slate-300">论文分析</span>
+</nav>
+<!-- Navigation Tabs -->
+<div class="mb-6">
+<div class="flex border-b border-primary/20 gap-8">
+<a class="group relative flex items-center justify-center pb-4 pt-2 text-primary" href="#cross-analysis">
+<span class="material-symbols-outlined mr-2 text-[20px]">grid_view</span>
+<p class="text-sm font-bold tracking-wide">二维交叉分析</p>
+<div class="absolute bottom-0 left-0 h-[3px] w-full bg-primary rounded-t-full"></div>
+</a>
+<a class="group relative flex items-center justify-center pb-4 pt-2 text-slate-500 hover:text-primary transition-colors" href="#task-list">
+<span class="material-symbols-outlined mr-2 text-[20px]">list_alt</span>
+<p class="text-sm font-bold tracking-wide">任务列表</p>
+</a>
+</div>
+</div>
+<!-- Section 1: 二维交叉分析 (Active View) -->
+<section class="flex flex-col gap-6" id="cross-analysis">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex flex-wrap gap-4 flex-1">
+<div class="flex flex-col min-w-[200px] flex-1">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">X轴维度</label>
+<div class="relative">
+<select class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary h-11 px-4">
+<option>年份 (Year)</option>
+<option>国家 (Country)</option>
+<option>研究领域 (Field)</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col min-w-[200px] flex-1">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">Y轴维度</label>
+<div class="relative">
+<select class="form-select w-full rounded-lg border-primary/20 bg-background-light dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary h-11 px-4">
+<option>研究领域 (Research Field)</option>
+<option>年份 (Year)</option>
+<option>机构 (Organization)</option>
+</select>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center gap-2 h-11 px-6 bg-primary text-white font-bold rounded-lg hover:brightness-110 transition-all shadow-md">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+                        生成分析
+                    </button>
+</div>
+<!-- Heatmap Table -->
+<div class="bg-white dark:bg-slate-800/50 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5 border-b border-primary/10">
+<th class="p-4 text-sm font-bold text-slate-800 dark:text-slate-100 w-48">研究领域 / 年份</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase">2020</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase">2021</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase">2022</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase text-primary">2023 (当前)</th>
+<th class="p-4 text-xs font-bold text-slate-500 uppercase">2024 (预测)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<tr>
+<td class="p-4 font-medium text-slate-700 dark:text-slate-200">人工智能 (AI)</td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/20 text-primary font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">142</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/40 text-primary-dark font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">284</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/60 text-white font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">412</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/80 text-white font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">589</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary text-white font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all border-2 border-white/20">720</div></td>
+</tr>
+<tr>
+<td class="p-4 font-medium text-slate-700 dark:text-slate-200">量子计算 (Quantum)</td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/5 text-slate-400 font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">34</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/10 text-primary/60 font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">88</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/30 text-primary font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">156</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/40 text-primary-dark font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">210</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/50 text-white font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">345</div></td>
+</tr>
+<tr>
+<td class="p-4 font-medium text-slate-700 dark:text-slate-200">生物工程 (Bio)</td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/30 text-primary font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">198</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/20 text-primary font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">142</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/40 text-primary-dark font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">267</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/50 text-white font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">312</div></td>
+<td class="p-2"><div class="rounded-lg h-12 flex items-center justify-center bg-primary/60 text-white font-bold cursor-pointer hover:ring-2 ring-primary/40 transition-all">456</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Cell Expansion Detail Area (Simulated) -->
+<div class="bg-primary/5 p-4 border-t border-primary/10">
+<div class="flex items-center justify-between mb-3">
+<h4 class="text-sm font-bold text-slate-800 dark:text-slate-100 flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-2 text-primary">list</span>
+                                详细论文列表 (人工智能 / 2023)
+                            </h4>
+<button class="text-xs text-primary font-bold hover:underline">查看全部 589 篇</button>
+</div>
+<div class="space-y-2">
+<div class="bg-white dark:bg-slate-900 p-3 rounded shadow-sm flex justify-between items-center border-l-4 border-primary">
+<div class="text-sm text-slate-700 dark:text-slate-300 truncate pr-4">Large Language Models in Strategic Intelligence: A Systematic Review</div>
+<span class="text-xs text-slate-400 shrink-0">IEEE Trans. AI</span>
+</div>
+<div class="bg-white dark:bg-slate-900 p-3 rounded shadow-sm flex justify-between items-center border-l-4 border-primary/40">
+<div class="text-sm text-slate-700 dark:text-slate-300 truncate pr-4">Neural Architectures for Complex Decision Support Systems</div>
+<span class="text-xs text-slate-400 shrink-0">Nature Intelligence</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: 任务列表 -->
+<section class="mt-12 flex flex-col gap-6" id="task-list">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">分析任务管理</h3>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        新建任务
+                    </button>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-4">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 h-10 rounded-full border-primary/20 bg-white dark:bg-slate-800 focus:border-primary focus:ring-primary text-sm" placeholder="搜索任务名称或关键词..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="px-4 h-10 rounded-full bg-primary text-white text-sm font-medium">全部</button>
+<button class="px-4 h-10 rounded-full bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/5">运行中</button>
+<button class="px-4 h-10 rounded-full bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/5">已完成</button>
+</div>
+</div>
+<!-- Task Table Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-primary/10 shadow-lg overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-primary/10 bg-primary/5">
+<th class="p-4 text-sm font-bold text-slate-600 dark:text-slate-300">任务名称</th>
+<th class="p-4 text-sm font-bold text-slate-600 dark:text-slate-300">分析类型</th>
+<th class="p-4 text-sm font-bold text-slate-600 dark:text-slate-300">创建时间</th>
+<th class="p-4 text-sm font-bold text-slate-600 dark:text-slate-300">任务进度</th>
+<th class="p-4 text-sm font-bold text-slate-600 dark:text-slate-300">状态</th>
+<th class="p-4 text-sm font-bold text-slate-600 dark:text-slate-300 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<!-- Task 1 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="p-4">
+<div class="font-bold text-slate-800 dark:text-slate-100">全球半导体技术演进趋势分析</div>
+<div class="text-xs text-slate-400 mt-1">数据源: Web of Science (2018-2023)</div>
+</td>
+<td class="p-4"><span class="text-sm">趋势预测分析</span></td>
+<td class="p-4 text-sm text-slate-500">2023-11-20 14:30</td>
+<td class="p-4 w-48">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 75%"></div>
+</div>
+<span class="text-xs font-bold text-primary">75%</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/20 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1.5 animate-pulse"></span>
+                                            运行中
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex items-center justify-end gap-3 text-primary">
+<button class="hover:opacity-70" title="重新运行"><span class="material-symbols-outlined text-[20px]">refresh</span></button>
+<button class="hover:opacity-70" title="合并"><span class="material-symbols-outlined text-[20px]">merge</span></button>
+<button class="hover:opacity-70" title="下载"><span class="material-symbols-outlined text-[20px]">download</span></button>
+<button class="hover:opacity-70" title="重新解析"><span class="material-symbols-outlined text-[20px]">settings_backup_restore</span></button>
+</div>
+</td>
+</tr>
+<!-- Task 2 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="p-4">
+<div class="font-bold text-slate-800 dark:text-slate-100">量子加密通信领域专家画像</div>
+<div class="text-xs text-slate-400 mt-1">数据源: IEEE Xplore, CNKI</div>
+</td>
+<td class="p-4"><span class="text-sm">人物关系挖掘</span></td>
+<td class="p-4 text-sm text-slate-500">2023-11-18 09:12</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 100%"></div>
+</div>
+<span class="text-xs font-bold text-primary">100%</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-500/10 text-green-600">
+                                            已完成
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex items-center justify-end gap-3 text-primary">
+<button class="hover:opacity-70" title="重新运行"><span class="material-symbols-outlined text-[20px]">refresh</span></button>
+<button class="hover:opacity-70" title="合并"><span class="material-symbols-outlined text-[20px]">merge</span></button>
+<button class="hover:opacity-70" title="下载"><span class="material-symbols-outlined text-[20px]">download</span></button>
+<button class="hover:opacity-70" title="重新解析"><span class="material-symbols-outlined text-[20px]">settings_backup_restore</span></button>
+</div>
+</td>
+</tr>
+<!-- Task 3 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="p-4">
+<div class="font-bold text-slate-800 dark:text-slate-100">新型电力系统核心技术体系交叉分析</div>
+<div class="text-xs text-slate-400 mt-1">数据源: 多源融合数据</div>
+</td>
+<td class="p-4"><span class="text-sm">技术交叉分析</span></td>
+<td class="p-4 text-sm text-slate-500">2023-11-15 16:45</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 100%"></div>
+</div>
+<span class="text-xs font-bold text-primary">100%</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-500/10 text-green-600">
+                                            已完成
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex items-center justify-end gap-3 text-primary">
+<button class="hover:opacity-70" title="重新运行"><span class="material-symbols-outlined text-[20px]">refresh</span></button>
+<button class="hover:opacity-70" title="合并"><span class="material-symbols-outlined text-[20px]">merge</span></button>
+<button class="hover:opacity-70" title="下载"><span class="material-symbols-outlined text-[20px]">download</span></button>
+<button class="hover:opacity-70" title="重新解析"><span class="material-symbols-outlined text-[20px]">settings_backup_restore</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-primary/5 px-6 py-4 border-t border-primary/10 flex items-center justify-between">
+<span class="text-xs text-slate-500">共 24 个任务</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary/20 bg-white dark:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary/20 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary/20 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary/20 bg-white dark:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</body></html>

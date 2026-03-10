@@ -1,0 +1,256 @@
+export default function ResearchDelphiPage() {
+  return (
+    <div className="p-8 space-y-6">
+<div className="max-w-[1200px] mx-auto px-6 py-8">
+{/* Breadcrumbs */}
+<nav className="flex items-center gap-2 mb-6 text-sm font-medium">
+<a className="text-primary hover:opacity-80" href="#">新型高端智库系统</a>
+<span className="text-slate-400">/</span>
+<a className="text-primary hover:opacity-80" href="#">战略咨询智能支持</a>
+<span className="text-slate-400">/</span>
+<a className="text-primary hover:opacity-80" href="#">领域技术线路</a>
+<span className="text-slate-400">/</span>
+<span className="text-slate-600 dark:text-slate-400">德尔菲问卷</span>
+</nav>
+{/* Page Header */}
+<div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white">德尔菲问卷</h1>
+<div className="flex items-center gap-3">
+<button className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary/20 transition-colors">
+<span className="material-symbols-outlined text-[20px]">add_circle</span>
+<span>新建问卷轮次</span>
+</button>
+<button className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary/20 transition-colors">
+<span className="material-symbols-outlined text-[20px]">file_download</span>
+<span>导出分析报告</span>
+</button>
+<button className="flex items-center gap-2 px-6 py-2 bg-primary text-white font-bold rounded-lg hover:opacity-90 shadow-lg shadow-primary/20 transition-all">
+<span className="material-symbols-outlined text-[20px]">send</span>
+<span>一键发放</span>
+</button>
+</div>
+</div>
+{/* Stats Row */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col justify-between">
+<div>
+<p className="text-slate-500 dark:text-slate-400 text-sm mb-1">当前问卷轮次</p>
+<div className="flex items-baseline gap-2">
+<span className="text-3xl font-bold text-slate-900 dark:text-white">第 2 轮</span>
+<span className="text-emerald-500 text-sm font-semibold flex items-center">
+<span className="material-symbols-outlined text-[16px]">trending_up</span>+1轮
+                        </span>
+</div>
+</div>
+<div className="mt-4 flex gap-1">
+<div className="h-1.5 w-full bg-primary rounded-full"></div>
+<div className="h-1.5 w-full bg-primary rounded-full"></div>
+<div className="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+</div>
+</div>
+<div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div className="flex justify-between items-start mb-4">
+<div>
+<p className="text-slate-500 dark:text-slate-400 text-sm mb-1">专家回收率</p>
+<span className="text-3xl font-bold text-slate-900 dark:text-white">85.4%</span>
+</div>
+<span className="text-emerald-500 text-sm font-semibold flex items-center">
+<span className="material-symbols-outlined text-[16px]">trending_up</span>+12%
+                    </span>
+</div>
+<div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div className="bg-primary h-full rounded-full" style={{width: '85.4%'}}></div>
+</div>
+<div className="flex justify-between mt-2 text-[10px] text-slate-400 uppercase tracking-wider">
+<span>已回收 128</span>
+<span>总专家 150</span>
+</div>
+</div>
+<div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/10 shadow-sm flex items-center justify-between">
+<div>
+<p className="text-slate-500 dark:text-slate-400 text-sm mb-1">专家意见共识度</p>
+<div className="flex items-baseline gap-2">
+<span className="text-3xl font-bold text-slate-900 dark:text-white">78%</span>
+<span className="text-emerald-500 text-sm font-semibold flex items-center">
+<span className="material-symbols-outlined text-[16px]">trending_up</span>+5%
+                        </span>
+</div>
+</div>
+{/* Mini Donut placeholder */}
+<div className="relative w-16 h-16">
+<svg className="w-full h-full transform -rotate-90">
+<circle className="text-slate-100 dark:text-slate-700" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="6"></circle>
+<circle className="text-primary" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="38.7" stroke-width="6"></circle>
+</svg>
+<div className="absolute inset-0 flex items-center justify-center">
+<span className="material-symbols-outlined text-primary text-[20px]">groups</span>
+</div>
+</div>
+</div>
+</div>
+{/* Filter Section */}
+<div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-primary/10 shadow-sm mb-8">
+<div className="flex flex-wrap items-center gap-4">
+<div className="flex-1 min-w-[240px] relative">
+<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input className="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/50" placeholder="搜索问卷名称..." type="text" />
+</div>
+<div className="flex items-center gap-3">
+<select className="bg-slate-50 dark:bg-slate-900 border-none rounded-lg text-sm px-4 py-2 focus:ring-2 focus:ring-primary/50">
+<option>所有发放状态</option>
+<option>进行中</option>
+<option>已结束</option>
+</select>
+<select className="bg-slate-50 dark:bg-slate-900 border-none rounded-lg text-sm px-4 py-2 focus:ring-2 focus:ring-primary/50">
+<option>所有技术领域</option>
+<option>量子科技</option>
+<option>人工智能</option>
+<option>生物医药</option>
+</select>
+<button className="px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:opacity-90">查询</button>
+<button className="px-6 py-2 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">重置</button>
+</div>
+</div>
+</div>
+{/* Main Content - Tabbed View */}
+<div className="bg-white dark:bg-slate-800 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div className="border-b border-primary/10 px-6">
+<div className="flex gap-8">
+<button className="py-4 border-b-2 border-primary text-primary font-bold text-sm">问卷列表</button>
+<button className="py-4 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm hover:text-primary transition-colors">分析看板</button>
+</div>
+</div>
+{/* Tab Content: Table */}
+<div className="overflow-x-auto">
+<table className="w-full text-left">
+<thead>
+<tr className="bg-slate-50/50 dark:bg-slate-900/50 text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
+<th className="px-6 py-4">问卷名称</th>
+<th className="px-6 py-4">当前轮次</th>
+<th className="px-6 py-4">发放/回收</th>
+<th className="px-6 py-4">截止日期</th>
+<th className="px-6 py-4">状态</th>
+<th className="px-6 py-4 text-right">操作</th>
+</tr>
+</thead>
+<tbody className="divide-y divide-primary/5">
+<tr className="hover:bg-primary/5 transition-colors">
+<td className="px-6 py-4">
+<p className="text-sm font-semibold text-slate-900 dark:text-white">2024量子通信关键技术预见</p>
+<p className="text-xs text-slate-400">领域：前沿物理</p>
+</td>
+<td className="px-6 py-4">
+<span className="text-sm font-medium">第 2 轮</span>
+</td>
+<td className="px-6 py-4">
+<div className="text-sm">
+<span className="font-bold text-primary">42</span> / 50
+                                    <div className="w-20 h-1 bg-slate-100 dark:bg-slate-700 mt-1 rounded-full overflow-hidden">
+<div className="bg-primary h-full" style={{width: '84%'}}></div>
+</div>
+</div>
+</td>
+<td className="px-6 py-4 text-sm">2024-12-30</td>
+<td className="px-6 py-4">
+<span className="px-2 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 text-[10px] font-bold">进行中</span>
+</td>
+<td className="px-6 py-4 text-right space-x-3">
+<button className="text-primary text-sm font-semibold hover:underline">查看详情</button>
+<button className="text-primary text-sm font-semibold hover:underline">共识分析</button>
+<button className="text-primary text-sm font-semibold hover:underline">进入下轮</button>
+</td>
+</tr>
+<tr className="hover:bg-primary/5 transition-colors">
+<td className="px-6 py-4">
+<p className="text-sm font-semibold text-slate-900 dark:text-white">新一代人工智能伦理指南调研</p>
+<p className="text-xs text-slate-400">领域：社会科学</p>
+</td>
+<td className="px-6 py-4">
+<span className="text-sm font-medium">第 3 轮</span>
+</td>
+<td className="px-6 py-4">
+<div className="text-sm">
+<span className="font-bold text-primary">100</span> / 100
+                                    <div className="w-20 h-1 bg-slate-100 dark:bg-slate-700 mt-1 rounded-full overflow-hidden">
+<div className="bg-primary h-full" style={{width: '100%'}}></div>
+</div>
+</div>
+</td>
+<td className="px-6 py-4 text-sm">2024-10-15</td>
+<td className="px-6 py-4">
+<span className="px-2 py-1 rounded-full bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 text-[10px] font-bold">已结束</span>
+</td>
+<td className="px-6 py-4 text-right space-x-3">
+<button className="text-primary text-sm font-semibold hover:underline">查看详情</button>
+<button className="text-primary text-sm font-semibold hover:underline">查看报告</button>
+<button className="text-slate-400 text-sm font-semibold cursor-not-allowed">进入下轮</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+{/* Dashboard Split View (Hidden by default or shown below for representation) */}
+<div className="p-6 border-t border-primary/5 bg-slate-50/30 dark:bg-slate-900/30">
+<h3 className="text-base font-bold mb-6 flex items-center gap-2">
+<span className="material-symbols-outlined text-primary">analytics</span>
+                    分析看板预览
+                </h3>
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+{/* Radar Chart Placeholder */}
+<div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/10 flex flex-col items-center">
+<p className="text-sm font-bold text-slate-600 dark:text-slate-300 mb-4 w-full">专家意见一致性雷达图</p>
+<div className="w-full aspect-square max-w-[300px] relative">
+{/* SVG Radar visualization */}
+<svg className="w-full h-full" viewBox="0 0 100 100">
+<polygon className="text-slate-200 dark:text-slate-700" fill="none" points="50,5 95,35 80,85 20,85 5,35" stroke="currentColor" stroke-width="0.5"></polygon>
+<polygon className="text-slate-200 dark:text-slate-700" fill="none" points="50,20 80,45 70,75 30,75 20,45" stroke="currentColor" stroke-width="0.5"></polygon>
+<line className="text-slate-200 dark:text-slate-700" stroke="currentColor" stroke-width="0.5" x1="50" x2="50" y1="50" y2="5"></line>
+<line className="text-slate-200 dark:text-slate-700" stroke="currentColor" stroke-width="0.5" x1="50" x2="95" y1="50" y2="35"></line>
+<line className="text-slate-200 dark:text-slate-700" stroke="currentColor" stroke-width="0.5" x1="50" x2="80" y1="50" y2="85"></line>
+<line className="text-slate-200 dark:text-slate-700" stroke="currentColor" stroke-width="0.5" x1="50" x2="20" y1="50" y2="85"></line>
+<line className="text-slate-200 dark:text-slate-700" stroke="currentColor" stroke-width="0.5" x1="50" x2="5" y1="50" y2="35"></line>
+<polygon fill="rgba(11, 166, 218, 0.2)" points="50,15 85,38 75,80 35,70 15,40" stroke="#0ba6da" stroke-width="1.5"></polygon>
+</svg>
+<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span className="text-[8px] absolute top-0 text-slate-400">技术成熟度</span>
+<span className="text-[8px] absolute right-0 text-slate-400">战略重要性</span>
+<span className="text-[8px] absolute bottom-0 right-1/4 text-slate-400">资源投入</span>
+<span className="text-[8px] absolute bottom-0 left-1/4 text-slate-400">风险可控</span>
+<span className="text-[8px] absolute left-0 text-slate-400">社会影响</span>
+</div>
+</div>
+</div>
+{/* Line Chart Placeholder */}
+<div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/10">
+<p className="text-sm font-bold text-slate-600 dark:text-slate-300 mb-4">回收趋势波动图</p>
+<div className="h-[300px] w-full flex items-end justify-between gap-1 pt-4">
+{/* Simplified line chart visualization with bars for trend */}
+<div className="flex-1 bg-primary/20 rounded-t-sm h-[30%] relative group">
+<div className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] bg-slate-800 text-white px-1 rounded transition-opacity">12</div>
+</div>
+<div className="flex-1 bg-primary/30 rounded-t-sm h-[45%]"></div>
+<div className="flex-1 bg-primary/40 rounded-t-sm h-[60%]"></div>
+<div className="flex-1 bg-primary/20 rounded-t-sm h-[25%]"></div>
+<div className="flex-1 bg-primary/50 rounded-t-sm h-[80%]"></div>
+<div className="flex-1 bg-primary/70 rounded-t-sm h-[95%]"></div>
+<div className="flex-1 bg-primary rounded-t-sm h-[75%]"></div>
+<div className="flex-1 bg-primary/40 rounded-t-sm h-[55%]"></div>
+</div>
+<div className="flex justify-between mt-4 text-[10px] text-slate-400">
+<span>周一</span>
+<span>周二</span>
+<span>周三</span>
+<span>周四</span>
+<span>周五</span>
+<span>周六</span>
+<span>周日</span>
+<span>今日</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+  )
+}
