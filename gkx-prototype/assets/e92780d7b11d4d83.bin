@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/a3fd86776ce3d1bf.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url(assets/cdcefb2594fea3b5.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(assets/86bc079d2594c854.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(assets/194e2c5d3fafd0f7.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: url(assets/90bb710795baa978.ttf) format('truetype');
+}
