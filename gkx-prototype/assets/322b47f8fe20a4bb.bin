@@ -2,23 +2,23 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url(assets/a699af1dea30b799.ttf) format('truetype');
+  src: url(a699af1dea30b799.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  src: url(assets/e45972c7e9f24dc3.ttf) format('truetype');
+  src: url(e45972c7e9f24dc3.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  src: url(assets/87e867b52640b3b3.ttf) format('truetype');
+  src: url(87e867b52640b3b3.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url(assets/6f49e1b28bce7339.ttf) format('truetype');
+  src: url(6f49e1b28bce7339.ttf) format('truetype');
 }
