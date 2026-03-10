@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GKX - 深圳市基础研究部署清单 - 内容管理看板内容区</title>
-
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>GKX</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -36,109 +30,7 @@
         }
     </script>
 <title>深圳市基础研究部署清单</title>
-
-</head>
-<body class="antialiased">
-<div class="flex h-screen w-full bg-slate-50 overflow-hidden">
-  <aside id="sidebar" class="w-64 bg-white border-r border-slate-200 flex flex-col z-30 shrink-0 transition-all duration-300">
-      <!-- Logo -->
-      <div class="p-5 flex items-center gap-3 border-b border-slate-100">
-        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-          <span class="material-symbols-outlined text-white" style="font-size:20px">insights</span>
-        </div>
-        <span class="font-bold text-base text-slate-800 tracking-tight">GKX</span>
-        <a href="home.html" class="ml-auto text-slate-400 hover:text-slate-600" title="返回首页">
-          <span class="material-symbols-outlined" style="font-size:18px">home</span>
-        </a>
-      </div>
-      <!-- Nav label -->
-      <div class="px-4 pt-4 pb-1">
-        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">基础研究决策</span>
-      </div>
-      <!-- Nav items -->
-      <nav class="flex-1 px-2 py-2 overflow-y-auto space-y-0.5">
-        
-        <div class="nav-group">
-          <button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
-            <span class="material-symbols-outlined text-xl text-slate-400">checklist</span>
-            <span class="flex-1 text-left">基础研究问题清单</span>
-            <span class="material-symbols-outlined text-base text-slate-400 expand-icon">expand_more</span>
-          </button>
-          <div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease">
-            
-          <a href="problem-identification.html" class="flex items-center gap-3 pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] transition-colors rounded-lg nav-item" data-file="problem-identification.html">
-            问题识别与清单研发
-          </a>
-          <a href="problem-trend.html" class="flex items-center gap-3 pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] transition-colors rounded-lg nav-item" data-file="problem-trend.html">
-            问题发展趋势分析
-          </a>
-          <a href="competition-report.html" class="flex items-center gap-3 pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] transition-colors rounded-lg nav-item" data-file="competition-report.html">
-            国内外竞争格局报告
-          </a>
-          </div>
-        </div>
-        <div class="nav-group">
-          <button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
-            <span class="material-symbols-outlined text-xl text-slate-400">location_city</span>
-            <span class="flex-1 text-left">基础研究部署清单</span>
-            <span class="material-symbols-outlined text-base text-slate-400 expand-icon">expand_more</span>
-          </button>
-          <div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease">
-            
-          <a href="shenzhen-list.html" class="flex items-center gap-3 pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] transition-colors rounded-lg nav-item" data-file="shenzhen-list.html">
-            深圳市基础研究部署清单
-          </a>
-          </div>
-        </div>
-        <div class="nav-group">
-          <button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
-            <span class="material-symbols-outlined text-xl text-slate-400">assessment</span>
-            <span class="flex-1 text-left">基础研究成果评估</span>
-            <span class="material-symbols-outlined text-base text-slate-400 expand-icon">expand_more</span>
-          </button>
-          <div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease">
-            
-          </div>
-        </div>
-      </nav>
-      <!-- User -->
-      <div class="p-4 border-t border-slate-100">
-        <div class="bg-slate-50 rounded-xl p-3 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-primary bg-opacity-20 flex items-center justify-center font-bold">
-            <span class="material-symbols-outlined text-white" style="font-size:18px">manage_accounts</span>
-          </div>
-          <div>
-            <p class="text-xs font-bold text-slate-800">系统管理员</p>
-            <p class="text-[10px] text-slate-500">ID: GKX-0822</p>
-          </div>
-        </div>
-      </div>
-    </aside>
-  <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
-    <header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0">
-      <div class="flex items-center gap-4">
-        <button onclick="document.getElementById('sidebar').classList.toggle('w-0')" class="p-1 text-slate-500 hover:bg-slate-100 rounded-lg">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-        <h2 class="text-sm font-bold text-slate-800" id="page-title">基础研究智能决策</h2>
-      </div>
-      <div class="flex-1 max-w-md mx-6">
-        <div class="relative">
-          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" style="font-size:18px">search</span>
-          <input class="w-full pl-9 pr-4 py-1.5 bg-slate-100 rounded-full text-sm placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-200 border-none" placeholder="搜索功能、报告..." type="text" />
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full relative">
-          <span class="material-symbols-outlined" style="font-size:22px">notifications</span>
-          <span class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-        </button>
-        <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden border-2" style="border-color:#1392ec30;background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyjMP1t5wFzLTzq7P9GW0q-HvN6PCfnUzxFhn_AeBHU1U8kVGSNDsrqAsHlTb7K4wkqKMOrDPEr8nBJZq2ed5b-lPvaMOtllWxIQS51jRPpg2rRAOuAAfQx2Q6njeDrKW6goLp5-uiGdSzn1kwyd-J7L_JdMa9BDd0DO6fN-yQDYJyuNJkGAAhr6Hj_l9kmnMJbilZcytUjVVneYpYeQnhrj31Am9uP6O1ne8MhGA8phQN6ULjTyfdKbxhta68hejajh8OQfk-9hIs');background-size:cover"></div>
-      </div>
-    </header>
-    <div class="flex-1 overflow-y-auto">
-      
-<div class="max-w-[1440px] mx-auto px-6 py-8">
+</head><body class="antialiased"><div class="flex h-screen w-full bg-slate-50 overflow-hidden"><aside id="sidebar" class="w-64 bg-white border-r border-slate-200 flex flex-col z-30 shrink-0" style="min-width:256px"><div class="p-5 flex items-center gap-3 border-b border-slate-100"><div class="w-8 h-8 bg-[#1392ec] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:20px">insights</span></div><span class="font-bold text-base text-slate-800">GKX</span><a href="home.html" class="ml-auto text-slate-400 hover:text-slate-600" title="返回首页"><span class="material-symbols-outlined" style="font-size:18px">home</span></a></div><div class="px-4 pt-4 pb-1"><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">基础研究决策</span></div><nav class="flex-1 px-2 py-2 overflow-y-auto space-y-0.5"><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">checklist</span><span class="flex-1 text-left">基础研究问题清单</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="problem-identification.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] rounded-lg nav-item" data-file="problem-identification.html">问题识别与清单研发</a><a href="problem-trend.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] rounded-lg nav-item" data-file="problem-trend.html">问题发展趋势分析</a><a href="competition-report.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] rounded-lg nav-item" data-file="competition-report.html">国内外竞争格局报告</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">location_city</span><span class="flex-1 text-left">基础研究部署清单</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="shenzhen-list.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1392ec] rounded-lg nav-item" data-file="shenzhen-list.html">深圳市基础研究部署清单</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">assessment</span><span class="flex-1 text-left">基础研究成果评估</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"></div></div></nav><div class="p-4 border-t border-slate-100"><div class="bg-slate-50 rounded-xl p-3 flex items-center gap-3"><div class="w-9 h-9 bg-[#1392ec] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:18px">manage_accounts</span></div><div><p class="text-xs font-bold text-slate-800">系统管理员</p><p class="text-[10px] text-slate-500">ID: GKX-0822</p></div></div></div></aside><div class="flex-1 flex flex-col min-w-0 overflow-hidden"><header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0"><div class="flex items-center gap-4"><button onclick="var s=document.getElementById('sidebar');s.style.display=s.style.display==='none'?'flex':'none'" class="p-1 text-slate-500 hover:bg-slate-100 rounded-lg"><span class="material-symbols-outlined">menu</span></button><h2 class="text-sm font-bold text-slate-800">基础研究智能决策</h2></div><div class="flex-1 max-w-md mx-6"><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" style="font-size:18px">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-slate-100 rounded-full text-sm placeholder-slate-400 outline-none border-none" placeholder="搜索功能、报告..." type="text"/></div></div><div class="flex items-center gap-2"><button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full relative"><span class="material-symbols-outlined" style="font-size:22px">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span></button></div></header><div class="flex-1 overflow-y-auto"><div class="max-w-[1440px] mx-auto px-6 py-8">
 <!-- Breadcrumbs -->
 <nav class="flex items-center gap-2 mb-6 text-sm">
 <a class="text-accent-teal hover:text-primary transition-colors" href="#">新型高端智库系统</a>
@@ -420,42 +312,4 @@
 </div>
 </div>
 </div>
-</div>
-
-    </div>
-  </div>
-</div>
-<script>
-// 展开/收起菜单组
-function toggleGroup(btn) {
-  var children = btn.nextElementSibling;
-  if (children.style.maxHeight && children.style.maxHeight !== '0px') {
-    children.style.maxHeight = '0';
-    btn.querySelector('.expand-icon').textContent = 'expand_more';
-  } else {
-    children.style.maxHeight = children.scrollHeight + 'px';
-    btn.querySelector('.expand-icon').textContent = 'expand_less';
-  }
-}
-// 高亮当前页
-(function(){
-  var cur = location.pathname.split('/').pop();
-  document.querySelectorAll('.nav-item').forEach(function(a){
-    if (a.getAttribute('data-file') === cur) {
-      a.classList.add('active-nav-item');
-      // 展开父组
-      var children = a.closest('.group-children');
-      if (children) {
-        children.style.maxHeight = '9999px';
-        var icon = children.previousElementSibling.querySelector('.expand-icon');
-        if(icon) icon.textContent = 'expand_less';
-      }
-    }
-  });
-})();
-</script>
-<style>
-.active-nav-item { color: #1392ec !important; background: #e0f2fe; font-weight:600; border-radius:8px; }
-</style>
-</body>
-</html>
+</div></div></div></div><script>function toggleGroup(btn){var c=btn.nextElementSibling;if(c.style.maxHeight&&c.style.maxHeight!=="0px"){c.style.maxHeight="0";btn.querySelector(".expand-icon").textContent="expand_more";}else{c.style.maxHeight=c.scrollHeight+"px";btn.querySelector(".expand-icon").textContent="expand_less";}}(function(){var cur=location.href.split("/").pop().split("?")[0];document.querySelectorAll(".nav-item").forEach(function(a){if(a.getAttribute("data-file")===cur){a.classList.add("active-nav-item");var ch=a.closest(".group-children");if(ch){ch.style.maxHeight="9999px";var ic=ch.previousElementSibling.querySelector(".expand-icon");if(ic)ic.textContent="expand_less";}}});})();</script><style>.active-nav-item{color:#1392ec!important;background:#e0f2fe;font-weight:600;border-radius:8px;}</style></body></html>
