@@ -109,10 +109,10 @@
 </div>
 </div>
 <div class="mt-auto flex flex-col sm:flex-row gap-4">
-<button class="flex-1 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn">
+<a href="entity-list.html" class="flex-1 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn no-underline" style="text-decoration:none">
 <span>进入系统</span>
 <span class="material-symbols-outlined text-xl group-hover/btn:translate-x-1 transition-transform">arrow_right_alt</span>
-</button>
+</a>
 <button class="flex-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-bold py-3 px-6 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                         查看简介
                     </button>
@@ -139,10 +139,10 @@
 </div>
 </div>
 <div class="mt-auto flex flex-col sm:flex-row gap-4">
-<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn">
+<a href="problem-identification.html" class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn no-underline" style="text-decoration:none">
 <span>进入系统</span>
 <span class="material-symbols-outlined text-xl group-hover/btn:translate-x-1 transition-transform">arrow_right_alt</span>
-</button>
+</a>
 <button class="flex-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-bold py-3 px-6 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                         查看简介
                     </button>
@@ -182,21 +182,4 @@
 </div>
 </div>
 </footer>
-
-<script>
-document.querySelectorAll('button').forEach(function(btn){
-  var txt = btn.innerText.replace(/\s/g,'');
-  if(txt.includes('进入系统')) {
-    var card = btn.closest('[class*="rounded"]') || btn.parentElement;
-    var cardText = card ? card.innerText : '';
-    if(cardText.includes('战略咨询')) {
-      btn.style.cursor='pointer';
-      btn.addEventListener('click', function(){ location.href='entity-list.html'; });
-    } else if(cardText.includes('基础研究')) {
-      btn.style.cursor='pointer';
-      btn.addEventListener('click', function(){ location.href='problem-identification.html'; });
-    }
-  }
-});
-</script>
 </body></html>
