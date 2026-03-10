@@ -1,0 +1,230 @@
+[
+  {
+    "id": "a3dabb2389384ee08d20b905c62ecdf1",
+    "title": "一键报告生成 - AI智能报告工作区",
+    "slug": "report-gen-ai",
+    "file": "report-gen-ai.html"
+  },
+  {
+    "id": "9fcbe9b3ab694d61b5a76489c1a34d35",
+    "title": "技术体系 - 内容管理工作区",
+    "slug": "tech-system",
+    "file": "tech-system.html"
+  },
+  {
+    "id": "0afd96e6ca214d8083b197b002bd6d48",
+    "title": "科研项目分析 - 统计看板内容区",
+    "slug": "project-stats",
+    "file": "project-stats.html"
+  },
+  {
+    "id": "b6b15cf94f0141f19f7ee281b14aaffc",
+    "title": "聚类分析 - 结果与列表内容区",
+    "slug": "clustering-results",
+    "file": "clustering-results.html"
+  },
+  {
+    "id": "232e3ff290b44d20b3ed47d795b0c778",
+    "title": "GKX 智能决策平台 - 系统选择首页",
+    "slug": "home",
+    "file": "home.html"
+  },
+  {
+    "id": "1fb90ece666246f89be860972d53c4c6",
+    "title": "技术趋势分析 - 内容区详情看板",
+    "slug": "tech-trend",
+    "file": "tech-trend.html"
+  },
+  {
+    "id": "37f06f69cedf4cf086598f5e4f8d2c0c",
+    "title": "共性网络分析 - 任务与图谱管理内容区",
+    "slug": "common-network-task",
+    "file": "common-network-task.html"
+  },
+  {
+    "id": "0e52d240a3e34b5f8602429765c1d299",
+    "title": "科研项目分析 - 任务管理列表内容区",
+    "slug": "project-task",
+    "file": "project-task.html"
+  },
+  {
+    "id": "8770a40edfcd43c8b2e94a05e109da4c",
+    "title": "德尔菲问卷 - 任务管理与分析内容区",
+    "slug": "delphi",
+    "file": "delphi.html"
+  },
+  {
+    "id": "6ed1303ef7db4976993011500f959b70",
+    "title": "问题识别与清单研发 - 内容管理工作区详情",
+    "slug": "problem-identification",
+    "file": "problem-identification.html"
+  },
+  {
+    "id": "7519318bbd574efc984ae718f53f78ab",
+    "title": "聚类分析 - 结果与列表内容区",
+    "slug": "clustering-results",
+    "file": "clustering-results.html"
+  },
+  {
+    "id": "40a29e1b086a4b318d62e92db7df6f4a",
+    "title": "多源数据接入 - 内容管理看板详情",
+    "slug": "multi-source-data",
+    "file": "multi-source-data.html"
+  },
+  {
+    "id": "34fe17b0e16343ad951f884b92efbac6",
+    "title": "国内外竞争格局报告 - 综合分析内容区详情",
+    "slug": "competition-report",
+    "file": "competition-report.html"
+  },
+  {
+    "id": "85dc617225634bc08e1ac0e4af40de03",
+    "title": "论文分析 - 综合看板内容区",
+    "slug": "paper-dashboard",
+    "file": "paper-dashboard.html"
+  },
+  {
+    "id": "509b26ecb4384b82ae0ec157ce7dfbb2",
+    "title": "专利分析 - 综合数据看板内容区",
+    "slug": "patent",
+    "file": "patent.html"
+  },
+  {
+    "id": "62d8423590ad4131a347f79161018f06",
+    "title": "战略咨询智能支持 - 科技实体清单管理",
+    "slug": "strategy-shell",
+    "file": "strategy-shell.html"
+  },
+  {
+    "id": "da9bf93e92a34dd382a8a13095cb1ec1",
+    "title": "数据看板显示 - 综合显示与定制内容区详情",
+    "slug": "data-dashboard",
+    "file": "data-dashboard.html"
+  },
+  {
+    "id": "2fa485baf7e042ef87c8719cd31ae95f",
+    "title": "聚类分析 - 任务管理与流程配置内容区",
+    "slug": "clustering-task",
+    "file": "clustering-task.html"
+  },
+  {
+    "id": "8c410de361b448bea7b9ca543bc6b364",
+    "title": "洞察报告发布 - 报告管理内容区",
+    "slug": "insight-publish",
+    "file": "insight-publish.html"
+  },
+  {
+    "id": "7bb017dfc9e64750b162a1b38adc764b",
+    "title": "颠覆性与前沿技术分析 - 内容区详情",
+    "slug": "frontier-tech",
+    "file": "frontier-tech.html"
+  },
+  {
+    "id": "eb09d2e3d6974aef90168de19057b522",
+    "title": "共性网络分析 - 关系矩阵与研究者识别内容区",
+    "slug": "common-network",
+    "file": "common-network.html"
+  },
+  {
+    "id": "2d9dcb2e05d641a19ea6f2c1f2b4cfe7",
+    "title": "问题发展趋势分析 - 综合看板内容区详情",
+    "slug": "problem-trend",
+    "file": "problem-trend.html"
+  },
+  {
+    "id": "24d5a3d6632f4ef585ec5b1d63c7bb38",
+    "title": "战略咨询报告生成 - AI辅助编辑内容区",
+    "slug": "report-generation",
+    "file": "report-generation.html"
+  },
+  {
+    "id": "1fc5579111ba4305abb64ba935754cf2",
+    "title": "科技实体清单 - 内容工作区详情",
+    "slug": "entity-list",
+    "file": "entity-list.html"
+  },
+  {
+    "id": "fbe8633375db4580abe138f70ef16b1b",
+    "title": "聚类分析 - 结果与列表内容区",
+    "slug": "clustering-results",
+    "file": "clustering-results.html"
+  },
+  {
+    "id": "048bc3ba70b44f678a04abb239cc805c",
+    "title": "社会网络分析 - 指标统计与结果分析内容区",
+    "slug": "social-network-metrics",
+    "file": "social-network-metrics.html"
+  },
+  {
+    "id": "42b9f0b7e8b74f11b703a4d9830ef5b7",
+    "title": "深圳市基础研究部署清单 - 内容管理看板内容区",
+    "slug": "shenzhen-list",
+    "file": "shenzhen-list.html"
+  },
+  {
+    "id": "4e8db690b15647fa97251c9d8fb44736",
+    "title": "战略咨询案例展示 - 成果管理详情区",
+    "slug": "strategy-cases",
+    "file": "strategy-cases.html"
+  },
+  {
+    "id": "7df5b377816f4f3a8ebf052630f91651",
+    "title": "社会网络分析 - 数据导入与任务管理内容区",
+    "slug": "social-network-import",
+    "file": "social-network-import.html"
+  },
+  {
+    "id": "2ced43b49e734928ac04949a9c62ae53",
+    "title": "论文分析 - 任务管理与交叉分析内容区",
+    "slug": "paper-task",
+    "file": "paper-task.html"
+  },
+  {
+    "id": "b9accc3bb96a486397d0229d55a1b6e5",
+    "title": "媒体聚焦 - 综合分析内容区",
+    "slug": "media-focus",
+    "file": "media-focus.html"
+  },
+  {
+    "id": "4e2f599cdfc8486b9b23853da41721db",
+    "title": "技术发展线路 - 路线图在线编辑器内容区",
+    "slug": "tech-roadmap",
+    "file": "tech-roadmap.html"
+  },
+  {
+    "id": "34c7e17db5d849fd86b33027f248a479",
+    "title": "技术动态预警 - 内容区看板详情",
+    "slug": "tech-alert",
+    "file": "tech-alert.html"
+  },
+  {
+    "id": "fa235899e4594e65a7c50b129a7d2c78",
+    "title": "共性网络分析 - 任务与图谱管理内容区",
+    "slug": "common-network-task",
+    "file": "common-network-task.html"
+  },
+  {
+    "id": "cbdf05b4b25f43e38b06d95c9ac529be",
+    "title": "热点分析 - 综合监控内容区详情",
+    "slug": "hot-analysis",
+    "file": "hot-analysis.html"
+  },
+  {
+    "id": "1f4e5c7f94f94c6fa4831e3beb757bb4",
+    "title": "共性网络分析 - 任务与图谱管理内容区",
+    "slug": "common-network-task",
+    "file": "common-network-task.html"
+  },
+  {
+    "id": "f2523727bcbc4eeb984f59183f968c17",
+    "title": "科研项目分析 - 统计看板内容区",
+    "slug": "project-stats",
+    "file": "project-stats.html"
+  },
+  {
+    "id": "90e27b6b6d64446d826ceab091b94f15",
+    "title": "社会网络分析 - 交互可视化看板内容区",
+    "slug": "social-network-visualize",
+    "file": "social-network-visualize.html"
+  }
+]
