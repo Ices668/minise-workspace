@@ -1,0 +1,199 @@
+{
+  "mapped": [
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "研究需求分析",
+      "page": "科技实体清单",
+      "route": "/strategy/entity-list"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "研究需求分析",
+      "page": "颠覆性与前沿技术分析",
+      "route": "/research/frontier-tech"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "研究需求分析",
+      "page": "媒体聚焦",
+      "route": "/research/media-focus"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术体系分析",
+      "page": "技术体系",
+      "route": "/strategy/tech-system"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术体系分析",
+      "page": "论文分析",
+      "route": "/research/paper-dashboard"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术体系分析",
+      "page": "专利分析",
+      "route": "/research/patent"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术体系分析",
+      "page": "科研项目分析",
+      "route": "/research/project-stats"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术体系分析",
+      "page": "社会网络分析",
+      "route": "/research/social-network"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术趋势分析",
+      "page": "聚类分析",
+      "route": "/research/clustering-task"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术趋势分析",
+      "page": "共性网络分析",
+      "route": "/research/common-network-task"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术趋势分析",
+      "page": "技术趋势分析",
+      "route": "/research/tech-trend"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "技术趋势分析",
+      "page": "技术动态预警",
+      "route": "/research/tech-alert"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "领域技术线路",
+      "page": "德尔菲问卷",
+      "route": "/research/delphi"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "领域技术线路",
+      "page": "技术发展线路",
+      "route": "/research/tech-roadmap"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "战略咨询报告",
+      "page": "研究报告管理",
+      "route": "/strategy/consulting-report"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "战略咨询报告",
+      "page": "洞察报告发布",
+      "route": "/strategy/insight-publish"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "战略咨询报告",
+      "page": "热点分析",
+      "route": "/research/hot-analysis"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "战略咨询报告",
+      "page": "战略咨询报告生成",
+      "route": "/strategy/report-generation"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "战略咨询成果",
+      "page": "战略咨询案例展示",
+      "route": "/strategy/cases"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "智能问数",
+      "page": "多源数据接入",
+      "route": "/research/multi-source-data"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "智能问数",
+      "page": "数据看板显示",
+      "route": "/research/data-dashboard"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "基础研究智能决策",
+      "lvl2": "基础研究问题清单",
+      "page": "问题识别与清单研发",
+      "route": "/research/problem-identification"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "基础研究智能决策",
+      "lvl2": "基础研究问题清单",
+      "page": "问题发展趋势分析",
+      "route": "/research/problem-trend"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "基础研究智能决策",
+      "lvl2": "基础研究问题清单",
+      "page": "国内外竞争格局报告",
+      "route": "/research/competition-report"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "基础研究智能决策",
+      "lvl2": "基础研究部署清单",
+      "page": "深圳市基础研究部署清单",
+      "route": "/research/shenzhen-list"
+    }
+  ],
+  "unmapped": [
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "战略咨询智能支持",
+      "lvl2": "智能问数",
+      "page": "一键报告生成"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "基础研究智能决策",
+      "lvl2": "基础研究部署清单",
+      "page": "基础研究组织实施分析"
+    },
+    {
+      "system": "新型高端智库系统",
+      "lvl1": "基础研究智能决策",
+      "lvl2": "基础研究成果评估",
+      "page": "基础研究成果评估"
+    }
+  ]
+}

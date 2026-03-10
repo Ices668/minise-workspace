@@ -9,21 +9,69 @@ interface NavItem {
 }
 
 const strategyNav: NavItem[] = [
-  { label: '仪表盘概览', icon: 'dashboard', path: '/strategy/entity-list' },
+  { label: '科技实体清单', icon: 'list_alt', path: '/strategy/entity-list' },
   {
     label: '研究需求分析',
     icon: 'search_check',
     children: [
       { label: '科技实体清单', path: '/strategy/entity-list' },
-      { label: '前沿技术库', path: '/strategy/tech-system' },
-      { label: '媒体动态监测', path: '/strategy/consulting-report' },
+      { label: '颠覆性与前沿技术分析', path: '/research/frontier-tech' },
+      { label: '媒体聚焦', path: '/research/media-focus' },
     ],
   },
-  { label: '技术体系分析', icon: 'hub', path: '/strategy/tech-system' },
-  { label: '技术趋势预测', icon: 'trending_up', path: '/strategy/cases' },
-  { label: '战略咨询报告', icon: 'description', path: '/strategy/report-generation' },
-  { label: '洞察报告发布', icon: 'publish', path: '/strategy/insight-publish' },
-  { label: '战略咨询案例', icon: 'folder_special', path: '/strategy/cases' },
+  {
+    label: '技术体系分析',
+    icon: 'hub',
+    children: [
+      { label: '技术体系', path: '/strategy/tech-system' },
+      { label: '论文分析', path: '/research/paper-dashboard' },
+      { label: '专利分析', path: '/research/patent' },
+      { label: '科研项目分析', path: '/research/project-stats' },
+      { label: '社会网络分析', path: '/research/social-network' },
+    ],
+  },
+  {
+    label: '技术趋势分析',
+    icon: 'trending_up',
+    children: [
+      { label: '聚类分析', path: '/research/clustering-task' },
+      { label: '共性网络分析', path: '/research/common-network-task' },
+      { label: '技术趋势分析', path: '/research/tech-trend' },
+      { label: '技术动态预警', path: '/research/tech-alert' },
+    ],
+  },
+  {
+    label: '领域技术线路',
+    icon: 'route',
+    children: [
+      { label: '德尔菲问卷', path: '/research/delphi' },
+      { label: '技术发展线路', path: '/research/tech-roadmap' },
+    ],
+  },
+  {
+    label: '战略咨询报告',
+    icon: 'description',
+    children: [
+      { label: '研究报告管理', path: '/strategy/consulting-report' },
+      { label: '洞察报告发布', path: '/strategy/insight-publish' },
+      { label: '热点分析', path: '/research/hot-analysis' },
+      { label: '战略咨询报告生成', path: '/strategy/report-generation' },
+    ],
+  },
+  {
+    label: '战略咨询成果',
+    icon: 'folder_special',
+    children: [{ label: '战略咨询案例展示', path: '/strategy/cases' }],
+  },
+  {
+    label: '智能问数',
+    icon: 'query_stats',
+    children: [
+      { label: '多源数据接入', path: '/research/multi-source-data' },
+      { label: '数据看板显示', path: '/research/data-dashboard' },
+      { label: '一键报告生成', path: '/strategy/report-generation' },
+    ],
+  },
 ]
 
 export default function StrategyLayout() {
