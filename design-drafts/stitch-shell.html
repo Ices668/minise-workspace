@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #00A3D9;
+            --sidebar-bg: #FFFFFF;
+            --sidebar-border: #E5E8ED;
+            --active-bg: #E6F7FF;
+            --inactive-text: #333333;
+            --muted-text: #94A3B8;
+        }
+        @layer base {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A3D9",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101d22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "PingFang SC", "Microsoft YaHei", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<title>战略咨询智能支持 - 科技实体清单 (浅色侧栏版)</title>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="w-72 bg-[var(--sidebar-bg)] border-r border-[var(--sidebar-border)] text-slate-900 flex flex-col z-20 overflow-y-auto">
+<div class="p-6 flex items-center gap-3 border-b border-slate-100">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">architecture</span>
+</div>
+<h1 class="font-bold text-lg tracking-tight text-slate-800">战略咨询智能支持</h1>
+</div>
+<nav class="flex-1 px-0 py-6 space-y-2">
+<div class="mb-4">
+<div class="flex items-center justify-between text-slate-400 px-6 py-2 mb-1">
+<span class="text-xs font-bold uppercase tracking-wider">研究体系</span>
+</div>
+<a class="flex items-center gap-3 px-6 py-2.5 text-[var(--inactive-text)] font-medium hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">search_insights</span>
+<span>研究需求分析</span>
+<span class="material-symbols-outlined ml-auto text-sm text-slate-400">expand_more</span>
+</a>
+<div class="mt-1 space-y-0.5">
+<a class="relative flex items-center gap-3 px-10 py-3 bg-[var(--active-bg)] text-primary font-semibold" href="#">
+<div class="absolute left-0 top-0 bottom-0 w-[4px] bg-primary"></div>
+<span class="text-sm">科技实体清单</span>
+</a>
+<a class="flex items-center gap-3 px-10 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="text-sm">前沿技术分析</span>
+</a>
+<a class="flex items-center gap-3 px-10 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="text-sm">媒体聚焦</span>
+</a>
+</div>
+</div>
+<div class="space-y-0.5">
+<a class="flex items-center gap-3 px-6 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">hub</span>
+<span>技术体系分析</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">trending_up</span>
+<span>技术趋势分析</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">route</span>
+<span>领域技术线路</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">description</span>
+<span>战略咨询报告</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2.5 text-[var(--inactive-text)] hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">task_alt</span>
+<span>战略咨询成果</span>
+</a>
+</div>
+</nav>
+<div class="p-6 border-t border-slate-100">
+<div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate text-slate-800">系统管理员</p>
+<p class="text-xs text-slate-500">高级分析师</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 z-10">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/50" placeholder="全球科技实体库搜索..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-slate-200 overflow-hidden border border-slate-100 shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-T17tvxj4aelOn_JTKNm2JvWQ6G3I49rBb4khG5vssXw9uI6TF9r0FPSiaaDHqXggAyjxO-1KmKCRqBHK7K0HXPUkpOT1jtSx_izoLzorJuqTsbaUoI3fp0K2O_nAbUAvFKzBjGCdPZir9s7j6sNYKSY76VwtgLX7R9XqNg-BvaIIChijx2_VDH4OC-ccJnJBF3IMzld1zOl_h_s9fAAu6r9O-WMg7RixHGZkLIB_BwMINcStlGrZI3vUIXvY-E9C9BfhvLibPP-q'); background-size: cover;"></div>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">张志强</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">keyboard_arrow_down</span>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto bg-[#F5F7FA] dark:bg-background-dark/50 p-8">
+<div class="flex items-center gap-2 text-sm text-slate-500 mb-6">
+<span class="hover:text-primary cursor-pointer">战略咨询智能支持</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="hover:text-primary cursor-pointer">研究需求分析</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">科技实体清单</span>
+</div>
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">科技实体清单</h2>
+<p class="text-slate-500 mt-1">深度跟踪全球关键科技企业、研究机构及创新型实体</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">upload</span> 批量导入
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span> 导出数据
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 mb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase">技术领域</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary">
+<option>全部领域</option>
+<option>人工智能</option>
+<option>半导体</option>
+<option>生物医药</option>
+<option>量子计算</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase">地区/国家</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary">
+<option>全球</option>
+<option>中国</option>
+<option>美国</option>
+<option>欧盟</option>
+<option>以色列</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase">创新指数</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary">
+<option>不限</option>
+<option>90分以上</option>
+<option>80-90分</option>
+<option>70-80分</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-500 uppercase">标签筛选</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary" placeholder="输入标签..." type="text"/>
+</div>
+<div class="flex items-end gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-all shadow-lg shadow-primary/20">
+                            查询
+                        </button>
+<button class="flex-1 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-600 dark:text-slate-300 font-bold py-2 px-4 rounded-lg transition-all">
+                            重置
+                        </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold">实体数据列表</span>
+<span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full font-bold">1,248</span>
+</div>
+<div class="flex border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<button class="p-1.5 bg-slate-100 dark:bg-slate-800 text-primary">
+<span class="material-symbols-outlined text-[20px]">format_list_bulleted</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">名称</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">领域</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">创新指数</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">标签</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">更新时间</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-primary">N</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">NVIDIA Corporation</p>
+<p class="text-xs text-slate-500">美国 · 加利福尼亚州</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm">半导体 / 人工智能</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full max-w-[100px]">
+<div class="h-full bg-primary rounded-full" style="width: 98.5%"></div>
+</div>
+<span class="text-sm font-bold text-primary">98.5</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs">GPU</span>
+<span class="px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 text-xs">大模型</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">2023-11-20</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">查看</a>
+<a class="text-primary hover:underline" href="#">编辑</a>
+<a class="text-red-400 hover:text-red-500 transition-colors" href="#">删除</a>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-primary">A</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">阿里巴巴达摩院</p>
+<p class="text-xs text-slate-500">中国 · 杭州</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm">多模态AI / 量子计算</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full max-w-[100px]">
+<div class="h-full bg-primary rounded-full" style="width: 92.1%"></div>
+</div>
+<span class="text-sm font-bold text-primary">92.1</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs">科研中心</span>
+<span class="px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 text-xs">云计算</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">2023-11-18</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">查看</a>
+<a class="text-primary hover:underline" href="#">编辑</a>
+<a class="text-red-400 hover:text-red-500 transition-colors" href="#">删除</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between">
+<span class="text-sm text-slate-500">显示 1 到 10 条，共 1,248 条数据</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm">3</button>
+<span class="px-2 py-1 text-slate-400">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm">125</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

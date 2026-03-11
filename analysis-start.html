@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>智见AI - 智能决策分析助手首页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366F1", // Indigo-based primary
+                        "background-light": "#F8FAFF",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #1E40AF 0%, #0891B2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+<button class="w-12 h-12 flex flex-col items-center justify-center bg-primary text-white rounded-2xl shadow-lg hover:opacity-90 transition-all group">
+<span class="material-icons-outlined text-xl">edit_note</span>
+<span class="text-[10px] mt-0.5">反馈</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center bg-white dark:bg-slate-800 text-slate-400 hover:text-primary rounded-full shadow-md border border-slate-100 dark:border-slate-700 transition-all">
+<span class="material-icons-outlined">help_outline</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center bg-white dark:bg-slate-800 text-slate-400 hover:text-primary rounded-full shadow-md border border-slate-100 dark:border-slate-700 transition-all">
+<span class="material-icons-outlined">history</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center bg-white dark:bg-slate-800 text-slate-400 hover:text-primary rounded-full shadow-md border border-slate-100 dark:border-slate-700 transition-all">
+<span class="material-icons-outlined">fullscreen</span>
+</button>
+</div>
+<main class="max-w-6xl mx-auto px-6 pt-20 pb-24">
+<div class="text-center mb-12">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text tracking-tight">
+                智见AI · 可信可追溯的决策分析助手
+            </h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                覆盖行业研究、技术分析、产业链洞察、政策研判等关键场景，提供可验证的证据链与推理链，支撑您的全链路决策与判断。
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-2 mb-8">
+<button class="px-6 py-2 bg-primary/10 text-primary font-medium rounded-full border border-primary/20">快速研判</button>
+<button class="px-6 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors flex items-center gap-2">
+                深度分析报告
+                <span class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-[10px] font-bold rounded uppercase">Beta</span>
+</button>
+<button class="px-6 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors flex items-center gap-2">
+                技术画像监测
+                <span class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-[10px] font-bold rounded uppercase">Beta</span>
+</button>
+<button class="px-6 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors flex items-center gap-2">
+                领域热点解读
+                <span class="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-[10px] font-bold rounded uppercase">Beta</span>
+</button>
+<button class="px-6 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">政策影响评估</button>
+</div>
+<div class="relative max-w-4xl mx-auto mb-6 group">
+<div class="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-[32px] blur opacity-75 group-focus-within:opacity-100 transition duration-1000"></div>
+<div class="relative flex items-center bg-white dark:bg-slate-800 rounded-[32px] shadow-sm border border-slate-200 dark:border-slate-700 p-2 pl-6">
+<span class="material-icons-outlined text-slate-400 mr-3">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-200 placeholder-slate-400 text-base py-3" placeholder="请输入您的问题，AI咨询师将基于数据与模型，即时为您提供专业的决策分析与建议" type="text"/>
+<button class="p-3 bg-slate-50 dark:bg-slate-700 text-slate-400 hover:text-primary rounded-full transition-colors mr-1">
+<span class="material-icons-outlined">send</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-3 mb-24">
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-500 hover:border-primary/50 hover:text-primary transition-all">
+<span class="text-primary/70 mr-1">例：</span>最近机器人行业的发展趋势是什么
+            </button>
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-500 hover:border-primary/50 hover:text-primary transition-all">
+<span class="text-primary/70 mr-1">例：</span>新能源汽车行业的龙头企业有哪些
+            </button>
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-500 hover:border-primary/50 hover:text-primary transition-all">
+<span class="text-primary/70 mr-1">例：</span>低空经济行业的核心技术与政策动态有哪些
+            </button>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-8">
+<h2 class="text-xl font-bold text-slate-800 dark:text-white">决策分析工具箱</h2>
+<div class="h-px flex-1 bg-slate-100 dark:bg-slate-800 ml-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">上传大纲生成正文</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">根据上传大纲进行正文生成，快速构建初稿</p>
+<button class="mt-auto self-start px-4 py-1.5 bg-slate-50 dark:bg-slate-700 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-primary hover:text-white hover:border-primary transition-all">立即开始</button>
+</div>
+<img alt="UI Preview" class="absolute bottom-4 -right-4 w-28 opacity-40 group-hover:opacity-60 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAJPi7E8AWZnrThUYJb58xonv27YS2CkaAu9sXC8Mtbw_9o3Nck5fPZkvBrmsu6cDDWF8uqeSXIaoGGGwzRntN8fnZ5LkXznK_42csVx7S9HPkq7aFUKMx6Gg3r9KDoYm_jC3Yo-My2ZB13nuEqhVI3pApKJLYSWMVHTaRebTlb8wXdWievsgaq7d-7vDXB5ReovY-NO2s88q3iaUnyTbGw4OvhvttInRaSMCtzu1OHQ0dXsbnlBTtBIaOOw-w0BbZDLtKTMJuPv9M"/>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">技术领域财务分析</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">针对核心技术企业的全景智能财务表现分析</p>
+<button class="mt-auto self-start px-4 py-1.5 bg-slate-50 dark:bg-slate-700 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-primary hover:text-white hover:border-primary transition-all">立即开始</button>
+</div>
+<img alt="Finance Chart" class="absolute bottom-4 -right-4 w-28 opacity-40 group-hover:opacity-60 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB4mzHzvayLf0oMstycpTKnM03q_TtSrWlF_XetFHLT4L5ppD3l6mzA2hGDGrSP82v6D8zXJlVxtOllzof0t-kmKwXTuVAVffVWKIccVFkVGzIuvQYmJMVe87Hy39PRPNOy7YasOVEg4MkfF4sWDCRbNGcOc3-CZaa-D111xgkOx85TPlI043fMxOjBaImjCuqnozvTAo0KBWN0jJiolHPIlyjebwINt-O_7eSTKCKmmRfk_XNYL8Ms0pb5IyYB8M12OlWZ-gbB3yJ"/>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">政策文本深度解读</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">看懂政策背后的核心逻辑与价值取向</p>
+<button class="mt-auto self-start px-4 py-1.5 bg-slate-50 dark:bg-slate-700 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-primary hover:text-white hover:border-primary transition-all">立即开始</button>
+</div>
+<img alt="Policy Doc" class="absolute bottom-4 -right-4 w-28 opacity-40 group-hover:opacity-60 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEeke8mjGfqPsI1K0NwECVsKA4p-b5yGJh7MMEowP3TL8tUDlnk54iOSWwbKSD8khCc87DHEwx8VtcFHhFz6aLnU4QbDcvusEBETdmSSghLh7ppinYBa0Y4lvOBuqnV5hHOfbSRES0VK_hdaov4l1Fw45mMCCr60wpwDOg7csRkUph4thDMWJoesEIWYkVbkV0JPWLyS85seBqyUN5JJZbUK6ajT05uJArQJZks34fp-jW53_hr9FGLWtzCfJNXN38dA6Q1EhqhJBy"/>
+</div>
+<div class="bg-white/40 dark:bg-slate-800/40 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 relative overflow-hidden group grayscale opacity-60">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">生成研究大纲</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6">敬请期待</p>
+</div>
+<div class="absolute bottom-0 right-0 p-4">
+<span class="material-icons-outlined text-4xl text-slate-200 dark:text-slate-700">rocket_launch</span>
+</div>
+</div>
+<div class="bg-white/40 dark:bg-slate-800/40 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 relative overflow-hidden grayscale opacity-60">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">竞品分析</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6">敬请期待</p>
+<div class="absolute bottom-0 right-0 p-4">
+<span class="material-icons-outlined text-4xl text-slate-200 dark:text-slate-700">insights</span>
+</div>
+</div>
+<div class="bg-white/40 dark:bg-slate-800/40 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 relative overflow-hidden grayscale opacity-60">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">趋势洞察</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6">敬请期待</p>
+<div class="absolute bottom-0 right-0 p-4">
+<span class="material-icons-outlined text-4xl text-slate-200 dark:text-slate-700">trending_up</span>
+</div>
+</div>
+<div class="bg-white/40 dark:bg-slate-800/40 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 relative overflow-hidden grayscale opacity-60">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">产业链全景</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6">敬请期待</p>
+<div class="absolute bottom-0 right-0 p-4">
+<span class="material-icons-outlined text-4xl text-slate-200 dark:text-slate-700">hub</span>
+</div>
+</div>
+<div class="bg-white/40 dark:bg-slate-800/40 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 relative overflow-hidden grayscale opacity-60">
+<h3 class="font-bold text-slate-800 dark:text-white mb-2">行业全景</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-6">敬请期待</p>
+<div class="absolute bottom-0 right-0 p-4">
+<span class="material-icons-outlined text-4xl text-slate-200 dark:text-slate-700">view_quilt</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400 opacity-20"></div>
+<script>
+        // Check for system theme preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>

@@ -1,0 +1,31 @@
+{
+  "screenshot": {
+    "name": "projects/16083068148308144470/files/0da51901e47b46a8a3ea4c5a97fa5606",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AOfcidUJLT2FwGTW_2s2Kqj3Q69HBi39VeUD1YAyQomMEBfOi90EFfSP_K022Bo7H6Wiy9qsOY1M2DUgx1wMhBvuNGHTKLX9Wk07IoRoR0D3w6_WRsdAWbug8PDKmUWAFutK5Iz5idma13pezX6Ct2MFYz9umPEz8XX0Y9sflGkr5mMEFY2gNzMbGk9nwZrV6SNrOjmfssjORyM_kdRtVmfb683IwfESCfInibBhiS38aizlnqJLH7_aSTEtUlYp"
+  },
+  "htmlCode": {
+    "name": "projects/16083068148308144470/files/ed868980f64548138f88bb399612abe3",
+    "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2Y4ZjBhYWUxNzQxZTQ0MjI4YmI2NjcxZDU5OTE4OGM4EgsSBxDBjOfazRMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNjA4MzA2ODE0ODMwODE0NDQ3MA&filename=&opi=96797242",
+    "mimeType": "text/html"
+  },
+  "id": "475d716532914d328c533fb87169da2b",
+  "generatedBy": "figaro_agent",
+  "width": "2560",
+  "height": "2048",
+  "title": "战略咨询智能支持 - 科技实体清单管理",
+  "prompt": "Title: 战略咨询智能支持 - 科技实体清单管理\nContext: Internal system layout for a large-scale government/enterprise data platform (Strategic Consulting Intelligent Support).\nDescription of the screen: A professional Web PC (1440px) internal system dashboard layout. \n- Top Header: White background, 1px light gray bottom border. Left side shows 'GKX Logo' and '战略咨询智能支持'. Center has a capsule search bar. Right side has notification icons and user avatar.\n- Left Sidebar: Dark gradient background (deep navy to teal) with a subtle glowing effect. Navigation structure:\n  - Header: '战略咨询智能支持'\n  - Menu Items: '研究需求分析' (Expanded), '技术体系分析', '技术趋势分析', '领域技术线路', '战略咨询报告', '战略咨询成果'.\n  - Sub-menu (under 研究需求分析): '科技实体清单' (Active state with a bright cyan-blue glow and light text), '颠覆性与前沿技术分析', '媒体聚焦'.\n- Right Content Area: Light gray background (#F5F7FA).\n  - Breadcrumb: '战略咨询智能支持 / 研究需求分析 / 科技实体清单'.\n  - Page Title: '科技实体清单'.\n  - Filter Card: White card with large border-radius (12px), subtle shadow. Contains a capsule search box, dropdowns for '技术领域', '地区', '创新指数', '标签', and '查询'/'重置' buttons in lake blue.\n  - Toolbar: '批量导入', '导出' buttons, and view switch icons (Grid/List).\n  - Main Table Card: White card containing a clean data table. Columns: '名称', '领域', '创新指数', '标签', '更新时间', '操作' (View/Edit/Delete links in lake blue). Pagination at the bottom right.\n- Style: Large border-radius, generous whitespace, lake blue/teal primary colors, professional Chinese copy.\nPlatform: web\nForm factor: desktop",
+  "name": "projects/16083068148308144470/screens/475d716532914d328c533fb87169da2b",
+  "theme": {
+    "colorMode": "LIGHT",
+    "font": "PUBLIC_SANS",
+    "roundness": "ROUND_TWELVE",
+    "customColor": "#13b6ec",
+    "saturation": 3
+  },
+  "deviceType": "DESKTOP",
+  "screenType": "DESIGN",
+  "screenMetadata": {
+    "agentType": "PRO_AGENT",
+    "status": "COMPLETE"
+  }
+}
