@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="assets/public-sans.css" rel="stylesheet" />
+<title>GKX</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="assets/tailwindcdn.js"></script>
+<link href="assets/b21023149a2e02ea.bin" rel="stylesheet"/>
+<link href="assets/material-symbols-1.css" rel="stylesheet"/>
+<link href="assets/10c27cb02c3ea07a.bin" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ba6da", // Lake Blue
+                        "background-light": "#f5f7fa",
+                        "background-dark": "#101e22",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "PingFang SC", "Microsoft YaHei", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem", // 12px
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+    </style>
+</head><body class="antialiased"><div class="flex h-screen w-full bg-slate-50 overflow-hidden"><aside id="sidebar" class="w-64 bg-white border-r border-slate-200 flex flex-col z-30 shrink-0" style="min-width:256px"><div class="p-5 flex items-center gap-3 border-b border-slate-100"><div class="w-8 h-8 bg-[#0d9488] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:20px">insights</span></div><span class="font-bold text-base text-slate-800">GKX</span><a href="home.html" class="ml-auto text-slate-400 hover:text-slate-600" title="返回首页"><span class="material-symbols-outlined" style="font-size:18px">home</span></a></div><div class="px-4 pt-4 pb-1"><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">战略咨询体系</span></div><nav class="flex-1 px-2 py-2 overflow-y-auto space-y-0.5"><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">search_check</span><span class="flex-1 text-left">研究需求分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="entity-list.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="entity-list.html">科技实体清单</a><a href="frontier-tech.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="frontier-tech.html">颠覆性与前沿技术分析</a><a href="media-focus.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="media-focus.html">媒体聚焦</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">hub</span><span class="flex-1 text-left">技术体系分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="tech-system.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-system.html">技术体系</a><a href="paper-dashboard.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="paper-dashboard.html">论文分析</a><a href="patent.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="patent.html">专利分析</a><a href="project-stats.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="project-stats.html">科研项目分析</a><a href="social-network-import.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="social-network-import.html">社会网络分析</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">trending_up</span><span class="flex-1 text-left">技术趋势分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="clustering-task.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="clustering-task.html">聚类分析</a><a href="common-network-task.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="common-network-task.html">共性网络分析</a><a href="tech-trend.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-trend.html">技术趋势分析</a><a href="tech-alert.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-alert.html">技术动态预警</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">route</span><span class="flex-1 text-left">领域技术线路</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="delphi.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="delphi.html">德尔菲问卷</a><a href="tech-roadmap.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-roadmap.html">技术发展线路</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">description</span><span class="flex-1 text-left">战略咨询报告</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="strategy-shell.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="strategy-shell.html">研究报告管理</a><a href="insight-publish.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="insight-publish.html">洞察报告发布</a><a href="hot-analysis.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="hot-analysis.html">热点分析</a><a href="report-generation.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="report-generation.html">战略咨询报告生成</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">folder_special</span><span class="flex-1 text-left">战略咨询成果</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="strategy-cases.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="strategy-cases.html">战略咨询案例展示</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">query_stats</span><span class="flex-1 text-left">智能问数</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="multi-source-data.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="multi-source-data.html">多源数据接入</a><a href="data-dashboard.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="data-dashboard.html">数据看板显示</a><a href="report-gen-ai.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="report-gen-ai.html">一键报告生成</a></div></div></nav><div class="p-4 border-t border-slate-100"><div class="bg-slate-50 rounded-xl p-3 flex items-center gap-3"><div class="w-9 h-9 bg-[#0d9488] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:18px">manage_accounts</span></div><div><p class="text-xs font-bold text-slate-800">系统管理员</p><p class="text-[10px] text-slate-500">ID: GKX-0822</p></div></div></div></aside><div class="flex-1 flex flex-col min-w-0 overflow-hidden"><header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0"><div class="flex items-center gap-4"><button onclick="var s=document.getElementById('sidebar');s.style.display=s.style.display==='none'?'flex':'none'" class="p-1 text-slate-500 hover:bg-slate-100 rounded-lg"><span class="material-symbols-outlined">menu</span></button><h2 class="text-sm font-bold text-slate-800">战略咨询智能支持</h2></div><div class="flex-1 max-w-md mx-6"><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" style="font-size:18px">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-slate-100 rounded-full text-sm placeholder-slate-400 outline-none border-none" placeholder="搜索功能、报告..." type="text"/></div></div><div class="flex items-center gap-2"><button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full relative"><span class="material-symbols-outlined" style="font-size:22px">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span></button></div></header><div class="flex-1 overflow-y-auto"><div class="max-w-[1440px] mx-auto px-6 py-8">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">新型高端智库系统</a>
+<span class="text-slate-400">/</span>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">战略咨询智能支持</a>
+<span class="text-slate-400">/</span>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">智能问数</a>
+<span class="text-slate-400">/</span>
+<span class="text-slate-900 font-semibold">多源数据接入</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<h1 class="text-3xl font-bold tracking-tight">多源数据接入</h1>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary/10 text-primary font-semibold rounded-lg hover:bg-primary/20 transition-all border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span>同步日志</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary/10 text-primary font-semibold rounded-lg hover:bg-primary/20 transition-all border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">cleaning_services</span>
+<span>数据清洗配置</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-semibold rounded-lg hover:opacity-90 shadow-lg shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>新建数据源</span>
+</button>
+</div>
+</div>
+<!-- Stats Summary -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div>
+<p class="text-slate-500 text-sm mb-1">接入总数</p>
+<h3 class="text-2xl font-bold">128 <span class="text-xs font-normal text-slate-400 ml-1">个数据源</span></h3>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">database</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div>
+<p class="text-slate-500 text-sm mb-1">今日实时同步</p>
+<h3 class="text-2xl font-bold">45,210 <span class="text-xs font-normal text-slate-400 ml-1">条记录</span></h3>
+</div>
+<div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500">
+<span class="material-symbols-outlined text-emerald-500">sync</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div>
+<p class="text-slate-500 text-sm mb-1">数据清洗异常</p>
+<h3 class="text-2xl font-bold text-rose-500">12 <span class="text-xs font-normal text-slate-400 ml-1">项待处理</span></h3>
+</div>
+<div class="w-12 h-12 bg-rose-50 rounded-full flex items-center justify-center text-rose-500">
+<span class="material-symbols-outlined">warning</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div>
+<p class="text-slate-500 text-sm mb-1">接入健康度</p>
+<h3 class="text-2xl font-bold">98.5<span class="text-sm font-normal ml-1">%</span></h3>
+</div>
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100 dark:text-slate-700" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="1.8" stroke-width="4"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">OK</span>
+</div>
+</div>
+</div>
+<!-- Filter Card -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 mb-8">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex-1 min-w-[280px]">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/30" placeholder="搜索数据源名称、ID或关键词..." type="text"/>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative group">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full text-sm font-medium hover:bg-slate-100 transition-colors">
+<span>接入类型</span>
+<span class="material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full text-sm font-medium hover:bg-slate-100 transition-colors">
+<span>同步状态</span>
+<span class="material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full text-sm font-medium hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">calendar_today</span>
+<span>更新时间</span>
+<span class="material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+</button>
+</div>
+<button class="px-4 py-2 text-primary font-medium text-sm hover:underline">重置条件</button>
+</div>
+</div>
+</div>
+<!-- Main Content - List & Monitoring View -->
+<div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+<!-- Toolbar -->
+<div class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
+<div class="flex items-center p-1 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+<button class="p-1.5 rounded-md bg-primary text-white shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">list</span>
+</button>
+<button class="p-1.5 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+<span>批量启用</span>
+</button>
+<button class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+<span>批量停用</span>
+</button>
+<div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<button class="px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>一键导出</span>
+</button>
+</div>
+</div>
+<!-- Table Card -->
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead>
+<tr class="text-slate-500 text-sm uppercase tracking-wider font-semibold border-b border-slate-100 dark:border-slate-700">
+<th class="px-6 py-4 w-12">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="px-6 py-4">数据源名称</th>
+<th class="px-6 py-4">接入方式</th>
+<th class="px-6 py-4">实时状态</th>
+<th class="px-6 py-4 text-center">同步频率</th>
+<th class="px-6 py-4 text-right">数据量</th>
+<th class="px-6 py-4 text-center">质量评分</th>
+<th class="px-6 py-4">更新时间</th>
+<th class="px-6 py-4 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-700">
+<!-- Table Row 1 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors group">
+<td class="px-6 py-5">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">全球宏观经济指标库</span>
+<span class="text-xs text-slate-400">ID: SRC-882190</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-[20px] text-indigo-500">api</span>
+<span>REST API</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-emerald-600 font-medium">同步成功</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center text-sm">每10分钟</td>
+<td class="px-6 py-5 text-right font-mono text-sm">1.2 TB</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 text-xs font-bold rounded">98.2</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500">2023-11-24 14:21:05</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 text-primary text-sm font-medium">
+<button class="hover:underline">详情</button>
+<button class="hover:underline">配置</button>
+<button class="hover:underline text-rose-500">删除</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors group">
+<td class="px-6 py-5">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">区域能源安全监测数据</span>
+<span class="text-xs text-slate-400">ID: SRC-441021</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-[20px] text-amber-500">storage</span>
+<span>PostgreSQL</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-pulse absolute inline-flex h-full w-full rounded-full bg-primary/40 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-primary font-medium">同步中...</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center text-sm">每1小时</td>
+<td class="px-6 py-5 text-right font-mono text-sm">450.5 GB</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-0.5 bg-amber-50 text-amber-600 text-xs font-bold rounded">85.0</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500">2023-11-24 14:15:33</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 text-primary text-sm font-medium">
+<button class="hover:underline">详情</button>
+<button class="hover:underline">配置</button>
+<button class="hover:underline text-rose-500">删除</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors group">
+<td class="px-6 py-5">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">行业政策研报(PDF)</span>
+<span class="text-xs text-slate-400">ID: SRC-301294</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-[20px] text-rose-400">description</span>
+<span>Cloud Drive</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="relative flex h-2 w-2">
+<span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+</span>
+<span class="text-rose-600 font-medium">同步异常</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center text-sm">每日</td>
+<td class="px-6 py-5 text-right font-mono text-sm">82.1 GB</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-0.5 bg-slate-100 text-slate-500 text-xs font-bold rounded">--</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500">2023-11-23 09:00:01</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 text-primary text-sm font-medium">
+<button class="hover:underline">详情</button>
+<button class="hover:underline">配置</button>
+<button class="hover:underline text-rose-500">删除</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors group">
+<td class="px-6 py-5">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">重点智库合作专家库</span>
+<span class="text-xs text-slate-400">ID: SRC-102298</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-[20px] text-cyan-500">cloud</span>
+<span>Aliyun OSS</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-sm">
+<span class="relative flex h-2 w-2">
+<span class="relative inline-flex rounded-full h-2 w-2 bg-slate-300"></span>
+</span>
+<span class="text-slate-500 font-medium">已暂停</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center text-sm">手动触发</td>
+<td class="px-6 py-5 text-right font-mono text-sm">4.5 GB</td>
+<td class="px-6 py-5 text-center">
+<span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 text-xs font-bold rounded">95.1</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500">2023-11-20 18:33:41</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 text-primary text-sm font-medium">
+<button class="hover:underline">详情</button>
+<button class="hover:underline">配置</button>
+<button class="hover:underline text-rose-500">删除</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700">
+<span class="text-sm text-slate-500">显示 1 到 4 共 128 条记录</span>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-white font-bold text-sm">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition-colors text-sm">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition-colors text-sm">3</button>
+<span class="text-slate-400">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition-colors text-sm">32</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div></div></div></div><script>function toggleGroup(btn){var c=btn.nextElementSibling;if(c.style.maxHeight&&c.style.maxHeight!=="0px"){c.style.maxHeight="0";btn.querySelector(".expand-icon").textContent="expand_more";}else{c.style.maxHeight=c.scrollHeight+"px";btn.querySelector(".expand-icon").textContent="expand_less";}}(function(){var cur=location.href.split("/").pop().split("?")[0];document.querySelectorAll(".nav-item").forEach(function(a){if(a.getAttribute("data-file")===cur){a.classList.add("active-nav-item");var ch=a.closest(".group-children");if(ch){ch.style.maxHeight="9999px";var ic=ch.previousElementSibling.querySelector(".expand-icon");if(ic)ic.textContent="expand_less";}}});})();</script><style>.active-nav-item{color:#1392ec!important;background:#e0f2fe;font-weight:600;border-radius:8px;}</style></body></html>
