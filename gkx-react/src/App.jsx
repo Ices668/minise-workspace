@@ -8,7 +8,18 @@ import Blank from './pages/Blank.jsx'
 
 // Hand-written (shell-stripped) pages
 import EntityList from './pages/strategy/EntityList.jsx'
+import FrontierTech from './pages/strategy/FrontierTech.jsx'
+import MediaFocus from './pages/strategy/MediaFocus.jsx'
+import TechSystem from './pages/strategy/TechSystem.jsx'
+import PaperDashboard from './pages/strategy/PaperDashboard.jsx'
+import Patent from './pages/strategy/Patent.jsx'
+import ProjectStats from './pages/strategy/ProjectStats.jsx'
+import SocialNetworkImport from './pages/strategy/SocialNetworkImport.jsx'
+
 import ProblemIdentification from './pages/research/ProblemIdentification.jsx'
+import ProblemTrend from './pages/research/ProblemTrend.jsx'
+import CompetitionReport from './pages/research/CompetitionReport.jsx'
+import ShenzhenList from './pages/research/ShenzhenList.jsx'
 
 // Auto-generated imports for prototype pages. Some routes are gradually replaced by hand-written JSX pages.
 // NOTE: content pages must be shell-stripped; Layout/ResearchLayout own the shell (sidebar/header).
@@ -71,25 +82,25 @@ const router = createBrowserRouter([
           { path: 'data-dashboard.html', element: <P_data_dashboard_html /> },
           { path: 'delphi.html', element: <P_delphi_html /> },
           { path: 'entity-list.html', element: <EntityList /> },
-          { path: 'frontier-tech.html', element: <P_frontier_tech_html /> },
+          { path: 'frontier-tech.html', element: <FrontierTech /> },
           { path: 'hot-analysis.html', element: <P_hot_analysis_html /> },
           { path: 'insight-publish.html', element: <P_insight_publish_html /> },
-          { path: 'media-focus.html', element: <P_media_focus_html /> },
+          { path: 'media-focus.html', element: <MediaFocus /> },
           { path: 'multi-source-data.html', element: <P_multi_source_data_html /> },
-          { path: 'paper-dashboard.html', element: <P_paper_dashboard_html /> },
+          { path: 'paper-dashboard.html', element: <PaperDashboard /> },
           { path: 'paper-task.html', element: <P_paper_task_html /> },
-          { path: 'patent.html', element: <P_patent_html /> },
-          { path: 'project-stats.html', element: <P_project_stats_html /> },
+          { path: 'patent.html', element: <Patent /> },
+          { path: 'project-stats.html', element: <ProjectStats /> },
           { path: 'project-task.html', element: <P_project_task_html /> },
           { path: 'report-gen-ai.html', element: <P_report_gen_ai_html /> },
           { path: 'report-generation.html', element: <P_report_generation_html /> },
-          { path: 'social-network-import.html', element: <P_social_network_import_html /> },
+          { path: 'social-network-import.html', element: <SocialNetworkImport /> },
           { path: 'social-network-metrics.html', element: <P_social_network_metrics_html /> },
           { path: 'social-network-visualize.html', element: <P_social_network_visualize_html /> },
           { path: 'strategy-cases.html', element: <P_strategy_cases_html /> },
           { path: 'tech-alert.html', element: <P_tech_alert_html /> },
           { path: 'tech-roadmap.html', element: <P_tech_roadmap_html /> },
-          { path: 'tech-system.html', element: <P_tech_system_html /> },
+          { path: 'tech-system.html', element: <TechSystem /> },
           { path: 'tech-trend.html', element: <P_tech_trend_html /> },
           { path: ':page', element: <Blank /> },
         ],
@@ -99,10 +110,10 @@ const router = createBrowserRouter([
         path: 'research',
         element: <ResearchLayout />,
         children: [
-          { path: 'competition-report.html', element: <P_competition_report_html /> },
+          { path: 'competition-report.html', element: <CompetitionReport /> },
           { path: 'problem-identification.html', element: <ProblemIdentification /> },
-          { path: 'problem-trend.html', element: <P_problem_trend_html /> },
-          { path: 'shenzhen-list.html', element: <P_shenzhen_list_html /> },
+          { path: 'problem-trend.html', element: <ProblemTrend /> },
+          { path: 'shenzhen-list.html', element: <ShenzhenList /> },
           { path: ':page', element: <Blank /> },
         ],
       },

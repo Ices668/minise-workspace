@@ -112,6 +112,11 @@ def main() -> int:
     # Indent for readability
     indented = "\n".join("      " + line for line in jsx.splitlines())
 
+    # If extraction accidentally left extra unclosed wrappers, drop them here.
+    # This is a stopgap; pages should be validated and fixed properly.
+    indented = indented.replace("</main></div></div></div>", "</main>")
+    indented = indented.replace("</div></div></div></div>", "</div>")
+
     out.write_text(
         f"// Source: gkx-prototype/{p.name}\n"
         "// Shell stripped: ONLY page content rendered inside Layout <Outlet />.\n\n"
