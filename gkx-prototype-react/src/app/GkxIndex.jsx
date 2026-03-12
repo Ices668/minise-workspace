@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { GKX_PAGES } from './routes'
+import { GKX_PAGES } from './routes.js'
 
 export function GkxIndex() {
   return (
@@ -13,7 +13,7 @@ export function GkxIndex() {
         {GKX_PAGES.map((p) => (
           <Link
             key={p}
-            to={`/gkx/${p.replace(/\.html$/, '')}`}
+            to={p === 'home.html' ? '/home' : `/gkx/${p.replace(/\.html$/, '')}`}
             style={{
               display: 'block',
               padding: 12,

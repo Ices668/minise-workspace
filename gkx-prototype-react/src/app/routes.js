@@ -38,6 +38,4 @@ export const GKX_PAGES = [
   'tech-roadmap.html',
   'tech-system.html',
   'tech-trend.html',
-] as const
-
-export type GkxPage = (typeof GKX_PAGES)[number]
+]

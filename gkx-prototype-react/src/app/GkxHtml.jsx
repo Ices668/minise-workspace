@@ -1,6 +1,4 @@
-import type { GkxPage } from './routes'
-
-export function GkxHtml({ page }: { page: GkxPage }) {
+export function GkxHtml({ page }) {
   // We keep the original HTML in /public/gkx/*.html and render it inside an iframe.
   // This is the only truly safe way to guarantee 1:1 rendering while we progressively
   // convert each page into TSX.
