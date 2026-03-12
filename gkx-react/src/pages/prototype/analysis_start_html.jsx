@@ -1,0 +1,239 @@
+// AUTO-GENERATED: prototype HTML embedded for 1:1 render
+// Source: gkx-prototype/analysis-start.html
+
+export default function PrototypePage() {
+  return (
+    <div className="w-full" dangerouslySetInnerHTML={{ __html: `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="assets/material-symbols-1.css" rel="stylesheet" />
+<title>开始分析</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="assets/tailwindcdn.js"></script>
+<link href="assets/10c27cb02c3ea07a.bin" rel="stylesheet"/>
+<link href="assets/322b47f8fe20a4bb.bin" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A3D9",
+                        "background-main": "#F5F7FA",
+                        "sidebar-active-bg": "#E6F7FF",
+                        "nav-text": "#333333",
+                        "border-light": "#E5E8ED"
+                    },
+                    borderRadius: {
+                        "lg": "12px",
+                        "xl": "16px"
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif;
+            }
+        }
+        .active-nav-item {
+            background-color: #E6F7FF;
+            color: #00A3D9;
+            border-left: 3px solid #00A3D9;
+        }
+        .custom-shadow {
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<title>战略咨询智能支持 - 科技实体清单管理</title>
+</head><body class="antialiased"><div class="flex h-screen w-full bg-slate-50 overflow-hidden"><aside id="sidebar" class="w-64 bg-white border-r border-slate-200 flex flex-col z-30 shrink-0" style="min-width:256px"><div class="p-5 flex items-center gap-3 border-b border-slate-100"><div class="w-8 h-8 bg-[#0d9488] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:20px">insights</span></div><span class="font-bold text-base text-slate-800">GKX</span><a href="home.html" class="ml-auto text-slate-400 hover:text-slate-600" title="返回首页"><span class="material-symbols-outlined" style="font-size:18px">home</span></a></div><div class="px-4 pt-4 pb-1"><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">战略咨询体系</span></div><nav class="flex-1 px-2 py-2 overflow-y-auto space-y-0.5"><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">search_check</span><span class="flex-1 text-left">研究需求分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="entity-list.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="entity-list.html">科技实体清单</a><a href="frontier-tech.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="frontier-tech.html">颠覆性与前沿技术分析</a><a href="media-focus.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="media-focus.html">媒体聚焦</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">hub</span><span class="flex-1 text-left">技术体系分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="tech-system.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-system.html">技术体系</a><a href="paper-dashboard.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="paper-dashboard.html">论文分析</a><a href="patent.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="patent.html">专利分析</a><a href="project-stats.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="project-stats.html">科研项目分析</a><a href="social-network-import.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="social-network-import.html">社会网络分析</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">trending_up</span><span class="flex-1 text-left">技术趋势分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="clustering-task.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="clustering-task.html">聚类分析</a><a href="common-network-task.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="common-network-task.html">共性网络分析</a><a href="tech-trend.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-trend.html">技术趋势分析</a><a href="tech-alert.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-alert.html">技术动态预警</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">route</span><span class="flex-1 text-left">领域技术线路</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="delphi.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="delphi.html">德尔菲问卷</a><a href="tech-roadmap.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-roadmap.html">技术发展线路</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">description</span><span class="flex-1 text-left">战略咨询报告</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="strategy-shell.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="strategy-shell.html">研究报告管理</a><a href="insight-publish.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="insight-publish.html">洞察报告发布</a><a href="hot-analysis.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="hot-analysis.html">热点分析</a><a href="report-generation.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="report-generation.html">战略咨询报告生成</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">folder_special</span><span class="flex-1 text-left">战略咨询成果</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="strategy-cases.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="strategy-cases.html">战略咨询案例展示</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">query_stats</span><span class="flex-1 text-left">智能问数</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="analysis-start.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="analysis-start.html">开始分析</a><a href="case-share.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="case-share.html">案例分享</a><a href="multi-source-data.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="multi-source-data.html">多源数据接入</a><a href="data-dashboard.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="data-dashboard.html">数据看板显示</a><a href="report-gen-ai.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="report-gen-ai.html">一键报告生成</a></div></div></nav><div class="p-4 border-t border-slate-100"><div class="bg-slate-50 rounded-xl p-3 flex items-center gap-3"><div class="w-9 h-9 bg-[#0d9488] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:18px">manage_accounts</span></div><div><p class="text-xs font-bold text-slate-800">系统管理员</p><p class="text-[10px] text-slate-500">ID: GKX-0822</p></div></div></div></aside><div class="flex-1 flex flex-col min-w-0 overflow-hidden"><header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0"><div class="flex items-center gap-4"><button onclick="var s=document.getElementById('sidebar');s.style.display=s.style.display==='none'?'flex':'none'" class="p-1 text-slate-500 hover:bg-slate-100 rounded-lg"><span class="material-symbols-outlined">menu</span></button><h2 class="text-sm font-bold text-slate-800">战略咨询智能支持</h2></div><div class="flex-1 max-w-md mx-6"><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" style="font-size:18px">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-slate-100 rounded-full text-sm placeholder-slate-400 outline-none border-none" placeholder="搜索功能、报告..." type="text"/></div></div><div class="flex items-center gap-2"><button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full relative"><span class="material-symbols-outlined" style="font-size:22px">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span></button></div></header><div class="flex-1 overflow-y-auto"><main class="flex-1 overflow-y-auto p-8 space-y-6"
+<div class="page-inner">
+<!-- BEGIN: Floating Action Menu -->
+<aside class="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4" data-purpose="sidebar-navigation">
+<div class="flex flex-col items-center bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-gray-100 p-2 gap-4">
+<!-- Chat Icon -->
+<button class="p-3 btn-gradient-primary rounded-xl shadow-md hover:opacity-90 transition-all">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Help Icon -->
+<button class="p-3 text-gray-400 hover:text-primary-blue transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- History Icon -->
+<button class="p-3 text-gray-400 hover:text-primary-blue transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Expand Icon -->
+<button class="p-3 text-gray-400 hover:text-primary-blue transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</aside>
+<!-- END: Floating Action Menu -->
+<!-- BEGIN: Top Bar -->
+<header class="w-full max-w-[1440px] mx-auto flex justify-end p-6">
+<button class="p-2 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition-colors shadow-sm">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</header>
+<!-- END: Top Bar -->
+<main class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+<!-- BEGIN: Hero Section -->
+<section class="text-center mt-8 mb-12" data-purpose="hero-content">
+<div class="flex items-center justify-center gap-3 mb-6">
+<h1 class="text-5xl font-bold tracking-tight text-gray-800">
+可信可追踪的决策分析助手
+      </h1>
+<span class="material-symbols-outlined text-primary-blue text-4xl">Auto_Awesome</span>
+</div>
+<p class="text-gray-500 text-lg max-w-4xl mx-auto leading-relaxed">
+      覆盖行业研究、企业分析、产业链分析、政策解读、风险预估与投资判断等关键场景，以可验证的证据链与推理链，支撑你的全链路分析与判断。
+    </p>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Main Navigation Tabs (Categorization Area) -->
+<section class="flex flex-wrap justify-center gap-3 mb-8" data-purpose="navigation-tabs">
+<button class="px-6 py-2 rounded-full nav-btn-active font-medium flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-xl">chat_bubble</span> 快速分析
+    </button>
+<button class="px-6 py-2 rounded-full border border-gray-100 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-xl">description</span> 深度分析报告
+    </button>
+<button class="relative px-6 py-2 rounded-full border border-gray-100 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-xl">analytics</span> 企业研报解读
+      <span class="absolute -top-1 -right-1 px-1.5 py-0.5 bg-primary-blue/20 text-[10px] text-primary-blue rounded-md font-bold scale-90">Beta</span>
+</button>
+<button class="relative px-6 py-2 rounded-full border border-gray-100 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-xl">trending_up</span> 行业研报解读
+      <span class="absolute -top-1 -right-1 px-1.5 py-0.5 bg-primary-blue/20 text-[10px] text-primary-blue rounded-md font-bold scale-90">Beta</span>
+</button>
+<button class="relative px-6 py-2 rounded-full border border-gray-100 bg-white hover:bg-gray-50 text-gray-600 font-medium flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-xl">account_balance</span> 企业财务分析报告
+      <span class="absolute -top-1 -right-1 px-1.5 py-0.5 bg-primary-blue/20 text-[10px] text-primary-blue rounded-md font-bold scale-90">Beta</span>
+</button>
+</section>
+<!-- END: Main Navigation Tabs -->
+<!-- BEGIN: Search Interface -->
+<section class="max-w-5xl mx-auto mb-16" data-purpose="search-interface">
+<div class="relative group">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="block w-full pl-16 pr-20 py-6 glass-search rounded-full shadow-xl focus:ring-2 outline-none text-gray-700 text-lg placeholder-gray-400 transition-all shadow-[#0078D4]/10 focus:ring-[#00BFFF]/30" placeholder="请输入您的问题，AI咨询师将基于数据与模型，即时为您提供专业的商业分析与建议" type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<!-- Updated: Gradient for the main search button -->
+<button class="p-3 btn-gradient-primary rounded-full hover:opacity-90 transition-all shadow-lg flex items-center justify-center">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Example Tags (Example Area) -->
+<div class="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+<div class="flex items-center gap-2 px-4 py-2 bg-gray-50/80 border border-gray-100 rounded-lg text-gray-600 hover:bg-white hover:shadow-sm cursor-pointer transition-all">
+<span class="text-gray-400">例</span>
+<span>最近人形机器人行业的发展趋势是什么</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-gray-50/80 border border-gray-100 rounded-lg text-gray-600 hover:bg-white hover:shadow-sm cursor-pointer transition-all">
+<span class="text-gray-400">例</span>
+<span>新能源汽车行业的龙头企业有哪些</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-gray-50/80 border border-gray-100 rounded-lg text-gray-600 hover:bg-white hover:shadow-sm cursor-pointer transition-all">
+<span class="text-gray-400">例</span>
+<span>低空经济行业的核心技术与政策动态有哪些</span>
+</div>
+</div>
+</section>
+<!-- END: Search Interface -->
+<!-- BEGIN: Toolset Section -->
+<section data-purpose="toolbox">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-6 bg-primary-blue rounded-full"></div>
+<h2 class="text-2xl font-bold text-gray-800">商业分析百宝箱</h2>
+</div>
+<button class="text-primary-blue text-sm font-medium hover:underline">查看全部</button>
+</div>
+<!-- Grid of Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="relative group bg-white p-8 rounded-[2rem] card-shadow border border-gray-50 hover:border-blue-100 transition-all hover:-translate-y-1 overflow-hidden">
+<h3 class="text-xl font-bold text-gray-800 mb-2">上传大纲生成正文</h3>
+<p class="text-gray-400 text-sm leading-relaxed mb-8">根据上传大纲进行正文生成</p>
+<!-- Updated: Gradient for 'Start Now' button -->
+<button class="px-6 py-2 rounded-xl btn-gradient-primary text-sm font-semibold hover:opacity-90 transition-all">立即开始</button>
+<div class="absolute bottom-4 right-4 text-primary-blue opacity-[0.05] pointer-events-none">
+<span class="material-symbols-outlined text-8xl">upload_file</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative group bg-white p-8 rounded-[2rem] card-shadow border border-gray-50 hover:border-blue-100 transition-all hover:-translate-y-1 overflow-hidden">
+<h3 class="text-xl font-bold text-gray-800 mb-2">金融企业财务分析</h3>
+<p class="text-gray-400 text-sm leading-relaxed mb-8">金融企业财务全景智能分析</p>
+<!-- Updated: Gradient for 'Start Now' button -->
+<button class="px-6 py-2 rounded-xl btn-gradient-primary text-sm font-semibold hover:opacity-90 transition-all">立即开始</button>
+<div class="absolute bottom-4 right-4 text-primary-blue opacity-[0.05] pointer-events-none">
+<span class="material-symbols-outlined text-8xl">account_balance_wallet</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative group bg-white p-8 rounded-[2rem] card-shadow border border-gray-50 hover:border-blue-100 transition-all hover:-translate-y-1 overflow-hidden">
+<h3 class="text-xl font-bold text-gray-800 mb-2">非金融企业财务分析</h3>
+<p class="text-gray-400 text-sm leading-relaxed mb-8">看懂非金融企业的真实财务表现</p>
+<!-- Updated: Gradient for 'Start Now' button -->
+<button class="px-6 py-2 rounded-xl btn-gradient-primary text-sm font-semibold hover:opacity-90 transition-all">立即开始</button>
+<div class="absolute bottom-4 right-4 text-primary-blue opacity-[0.05] pointer-events-none">
+<span class="material-symbols-outlined text-8xl">monitoring</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative group bg-white p-8 rounded-[2rem] card-shadow border border-gray-50 hover:border-blue-100 transition-all hover:-translate-y-1 overflow-hidden">
+<h3 class="text-xl font-bold text-gray-800 mb-2">生成大纲</h3>
+<p class="text-gray-400 text-sm leading-relaxed mb-8">敬请期待</p>
+<button class="px-6 py-2 rounded-xl bg-gray-50 text-gray-400 text-sm font-semibold cursor-not-allowed">敬请期待</button>
+<div class="absolute bottom-4 right-4 text-gray-200 opacity-[0.1] pointer-events-none">
+<span class="material-symbols-outlined text-8xl">rocket_launch</span>
+</div>
+</div>
+</div>
+<!-- Second Row (Simplified based on reference visual weight) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+<div class="bg-gray-50/50 p-8 rounded-[2rem] border border-transparent flex flex-col justify-between h-40">
+<h3 class="text-xl font-bold text-gray-400">竞品分析</h3>
+<p class="text-gray-300 text-sm">敬请期待</p>
+</div>
+<div class="bg-gray-50/50 p-8 rounded-[2rem] border border-transparent flex flex-col justify-between h-40">
+<h3 class="text-xl font-bold text-gray-400">洞见趋势</h3>
+<p class="text-gray-300 text-sm">敬请期待</p>
+</div>
+<div class="bg-gray-50/50 p-8 rounded-[2rem] border border-transparent flex flex-col justify-between h-40">
+<h3 class="text-xl font-bold text-gray-400">政策解读</h3>
+<p class="text-gray-300 text-sm">敬请期待</p>
+</div>
+<div class="bg-gray-50/50 p-8 rounded-[2rem] border border-transparent flex flex-col justify-between h-40">
+<h3 class="text-xl font-bold text-gray-400">行业全景</h3>
+<p class="text-gray-300 text-sm">敬请期待</p>
+</div>
+</div>
+</section>
+<!-- END: Toolset Section -->
+</main>
+
+</div>
+
+</main></div></div></div><script>function toggleGroup(btn){var c=btn.nextElementSibling;if(c.style.maxHeight&&c.style.maxHeight!=="0px"){c.style.maxHeight="0";btn.querySelector(".expand-icon").textContent="expand_more";}else{c.style.maxHeight=c.scrollHeight+"px";btn.querySelector(".expand-icon").textContent="expand_less";}}(function(){var cur=location.href.split("/").pop().split("?")[0];document.querySelectorAll(".nav-item").forEach(function(a){if(a.getAttribute("data-file")===cur){a.classList.add("active-nav-item");var ch=a.closest(".group-children");if(ch){ch.style.maxHeight="9999px";var ic=ch.previousElementSibling.querySelector(".expand-icon");if(ic)ic.textContent="expand_less";}}});})();</script><style>.active-nav-item{color:#1392ec!important;background:#e0f2fe;font-weight:600;border-radius:8px;}</style></body></html>` }} />
+  )
+}
