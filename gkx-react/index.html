@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Prototype assets: keep Tailwind CDN + fonts/icons so utility classes match 1:1. -->
+    <link href="/gkx/assets/public-sans.css" rel="stylesheet" />
+    <link href="/gkx/assets/material-symbols-1.css" rel="stylesheet" />
+    <script src="/gkx/assets/tailwindcdn.js"></script>
+
+    <script>
+      // Default tailwind config; pages/layout may add more via inline styles if needed.
+      window.tailwind = window.tailwind || {}
+      window.tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00A3D9',
+              'background-main': '#F5F7FA',
+              'sidebar-active-bg': '#E6F7FF',
+            },
+            fontFamily: {
+              display: ['Public Sans', 'Noto Sans SC', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+
+    <title>GKX</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
