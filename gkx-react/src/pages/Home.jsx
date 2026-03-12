@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
-  // Rebuild home as a clean 1:1 visual match of the prototype, but keep SPA navigation.
-  // Differences from raw HTML are only: Link routing + small state for search focus styling.
+  // 1:1 structure from gkx-prototype/home.html.
+  // Only changes: SPA routing via Link + small state for search icon color.
   const [isSearchFocused, setIsSearchFocused] = useState(false)
 
   const searchIconClass = useMemo(() => {
@@ -107,7 +107,7 @@ export default function Home() {
             <div className="mt-auto flex flex-col sm:flex-row gap-4">
               <Link
                 to="/strategy/entity-list.html"
-                className="flex-1 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn"
+                className="flex-1 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn no-underline"
                 style={{ textDecoration: 'none' }}
               >
                 <span>进入系统</span>
@@ -123,7 +123,7 @@ export default function Home() {
 
           <div className="group bg-white dark:bg-slate-900 rounded-xl p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 dark:border-slate-800 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] hover:border-primary/30 transition-all duration-300 relative overflow-hidden flex flex-col">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <span className="material-symbols-outlined text-[120px]">biotech</span>
+              <span className="material-symbols-outlined text-[120px]">hub</span>
             </div>
             <div className="mb-8">
               <div className="w-16 h-16 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
@@ -131,20 +131,20 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">基础研究智能决策</h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                基础科研数据的深度挖掘与智能分析平台。提供前沿技术监测、热点分析与多源数据融合决策支持。
+                面向基础研究分析与决策支持的数据与模型平台。集成海量数据源，实现多维度的预警监测。
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
                 <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full border border-slate-200 dark:border-slate-700">
-                  前沿技术
+                  课题分析
                 </span>
                 <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full border border-slate-200 dark:border-slate-700">
-                  热点分析
+                  趋势洞察
                 </span>
                 <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full border border-slate-200 dark:border-slate-700">
-                  专利分析
+                  预警监测
                 </span>
                 <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full border border-slate-200 dark:border-slate-700">
-                  论文分析
+                  知识图谱
                 </span>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function Home() {
             <div className="mt-auto flex flex-col sm:flex-row gap-4">
               <Link
                 to="/research/problem-identification.html"
-                className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn"
+                className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn no-underline"
                 style={{ textDecoration: 'none' }}
               >
                 <span>进入系统</span>
@@ -166,7 +166,41 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="mt-16 w-full max-w-[1200px] grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
+          <div className="text-center p-4">
+            <p className="text-3xl font-bold text-secondary">2,840+</p>
+            <p className="text-sm text-slate-500 mt-1">战略报告总数</p>
+          </div>
+          <div className="text-center p-4">
+            <p className="text-3xl font-bold text-primary">15,200+</p>
+            <p className="text-sm text-slate-500 mt-1">课题分析模型</p>
+          </div>
+          <div className="text-center p-4">
+            <p className="text-3xl font-bold text-slate-700 dark:text-slate-300">99.9%</p>
+            <p className="text-sm text-slate-500 mt-1">系统运行稳定性</p>
+          </div>
+          <div className="text-center p-4">
+            <p className="text-3xl font-bold text-slate-700 dark:text-slate-300">24/7</p>
+            <p className="text-sm text-slate-500 mt-1">实时数据监测</p>
+          </div>
+        </div>
       </main>
+
+      <footer className="mt-auto py-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+        <div className="max-w-[1440px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-slate-400 text-sm font-medium">© 2024 GKX 智能决策平台 | 业务单位：国家基础研究决策支持中心</div>
+          <div className="flex items-center gap-6 text-slate-400 text-sm">
+            <a className="hover:text-primary transition-colors" href="#" style={{ textDecoration: 'none' }}>
+              隐私政策
+            </a>
+            <a className="hover:text-primary transition-colors" href="#" style={{ textDecoration: 'none' }}>
+              服务条款
+            </a>
+            <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-[10px] font-bold">V 2.4.0 Stable</span>
+          </div>
+        </div>
+      </footer>
 
       <style>{"body { font-family: \"Public Sans\", \"Noto Sans SC\", sans-serif; } .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }"}</style>
     </div>
