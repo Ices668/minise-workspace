@@ -1,0 +1,41 @@
+export type NavRouteEntry = Readonly<{
+  sourceHtml: string;
+  path: string;
+}>;
+
+export const NAV_ROUTE_MAP: ReadonlyArray<NavRouteEntry> = [
+  { sourceHtml: "home.html", path: "/home" },
+  { sourceHtml: "strategy-shell.html", path: "/strategy/report-generation.html" },
+  { sourceHtml: "entity-list.html", path: "/strategy/entity-list.html" },
+  { sourceHtml: "frontier-tech.html", path: "/strategy/frontier-tech.html" },
+  { sourceHtml: "media-focus.html", path: "/strategy/media-focus.html" },
+  { sourceHtml: "tech-system.html", path: "/strategy/tech-system.html" },
+  { sourceHtml: "paper-dashboard.html", path: "/strategy/paper-dashboard.html" },
+  { sourceHtml: "patent.html", path: "/strategy/patent.html" },
+  { sourceHtml: "project-stats.html", path: "/strategy/project-stats.html" },
+  { sourceHtml: "social-network-import.html", path: "/strategy/social-network-import.html" },
+  { sourceHtml: "social-network-visualize.html", path: "/strategy/social-network-visualize.html" },
+  { sourceHtml: "social-network-metrics.html", path: "/strategy/social-network-metrics.html" },
+  { sourceHtml: "clustering-task.html", path: "/strategy/clustering-task.html" },
+  { sourceHtml: "clustering-results.html", path: "/strategy/clustering-results.html" },
+  { sourceHtml: "common-network-task.html", path: "/strategy/common-network-task.html" },
+  { sourceHtml: "common-network.html", path: "/strategy/common-network.html" },
+  { sourceHtml: "tech-trend.html", path: "/strategy/tech-trend.html" },
+  { sourceHtml: "tech-alert.html", path: "/strategy/tech-alert.html" },
+  { sourceHtml: "delphi.html", path: "/strategy/delphi.html" },
+  { sourceHtml: "tech-roadmap.html", path: "/strategy/tech-roadmap.html" },
+  { sourceHtml: "report-generation.html", path: "/strategy/report-generation.html" },
+  { sourceHtml: "insight-publish.html", path: "/strategy/insight-publish.html" },
+  { sourceHtml: "hot-analysis.html", path: "/strategy/hot-analysis.html" },
+  { sourceHtml: "report-gen-ai.html", path: "/strategy/report-gen-ai.html" },
+  { sourceHtml: "strategy-cases.html", path: "/strategy/strategy-cases.html" },
+  { sourceHtml: "analysis-start.html", path: "/strategy/analysis-start.html" },
+  { sourceHtml: "case-share.html", path: "/strategy/case-share.html" },
+  { sourceHtml: "multi-source-data.html", path: "/strategy/multi-source-data.html" },
+  { sourceHtml: "data-dashboard.html", path: "/strategy/data-dashboard.html" },
+  { sourceHtml: "project-task.html", path: "/strategy/project-task.html" },
+  { sourceHtml: "problem-identification.html", path: "/research/problem-identification.html" },
+  { sourceHtml: "problem-trend.html", path: "/research/problem-trend.html" },
+  { sourceHtml: "competition-report.html", path: "/research/competition-report.html" },
+  { sourceHtml: "shenzhen-list.html", path: "/research/shenzhen-list.html" },
+];
