@@ -1,5 +1,17 @@
+import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 export default function Home() {
-  // 1:1 copy of gkx-prototype/home.html body. Navigation is wired via SPA routes.
+  // Rebuild home as a clean 1:1 visual match of the prototype, but keep SPA navigation.
+  // Differences from raw HTML are only: Link routing + small state for search focus styling.
+  const [isSearchFocused, setIsSearchFocused] = useState(false)
+
+  const searchIconClass = useMemo(() => {
+    return `absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none ${
+      isSearchFocused ? 'text-primary' : 'text-slate-400'
+    }`
+  }, [isSearchFocused])
+
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
       <header className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-3">
@@ -13,13 +25,15 @@ export default function Home() {
 
           <div className="hidden md:flex flex-1 max-w-md mx-8">
             <div className="relative w-full group">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary">
+              <div className={searchIconClass}>
                 <span className="material-symbols-outlined text-xl">search</span>
               </div>
               <input
                 className="block w-full pl-11 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm placeholder-slate-500 focus:ring-2 focus:ring-primary/20 transition-all"
                 placeholder="搜索功能、报告或数据集..."
                 type="text"
+                onFocus={() => setIsSearchFocused(true)}
+                onBlur={() => setIsSearchFocused(false)}
               />
             </div>
           </div>
@@ -91,16 +105,16 @@ export default function Home() {
             </div>
 
             <div className="mt-auto flex flex-col sm:flex-row gap-4">
-              <a
-                href="/strategy/entity-list.html"
-                className="flex-1 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn no-underline"
+              <Link
+                to="/strategy/entity-list.html"
+                className="flex-1 bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn"
                 style={{ textDecoration: 'none' }}
               >
                 <span>进入系统</span>
                 <span className="material-symbols-outlined text-xl group-hover/btn:translate-x-1 transition-transform">
                   arrow_right_alt
                 </span>
-              </a>
+              </Link>
               <button className="flex-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-bold py-3 px-6 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                 查看简介
               </button>
@@ -136,16 +150,16 @@ export default function Home() {
             </div>
 
             <div className="mt-auto flex flex-col sm:flex-row gap-4">
-              <a
-                href="/research/frontier-tech.html"
-                className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn no-underline"
+              <Link
+                to="/research/problem-identification.html"
+                className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 group/btn"
                 style={{ textDecoration: 'none' }}
               >
                 <span>进入系统</span>
                 <span className="material-symbols-outlined text-xl group-hover/btn:translate-x-1 transition-transform">
                   arrow_right_alt
                 </span>
-              </a>
+              </Link>
               <button className="flex-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-bold py-3 px-6 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                 查看简介
               </button>
@@ -154,7 +168,7 @@ export default function Home() {
         </div>
       </main>
 
-      <style>{"body { font-family: 'Public Sans', 'Noto Sans SC', sans-serif; } .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }"}</style>
+      <style>{"body { font-family: \"Public Sans\", \"Noto Sans SC\", sans-serif; } .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }"}</style>
     </div>
   )
 }
