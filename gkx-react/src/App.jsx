@@ -6,7 +6,12 @@ import ResearchLayout from './layouts/ResearchLayout.jsx'
 import Home from './pages/Home.jsx'
 import Blank from './pages/Blank.jsx'
 
-// Auto-generated static imports for prototype pages (dangerouslySetInnerHTML).
+// Hand-written (shell-stripped) pages
+import EntityList from './pages/strategy/EntityList.jsx'
+import ProblemIdentification from './pages/research/ProblemIdentification.jsx'
+
+// Auto-generated imports for prototype pages. Some routes are gradually replaced by hand-written JSX pages.
+// NOTE: content pages must be shell-stripped; Layout/ResearchLayout own the shell (sidebar/header).
 import P_analysis_start_html from './pages/prototype/analysis_start_html.jsx'
 import P_case_share_html from './pages/prototype/case_share_html.jsx'
 import P_clustering_results_html from './pages/prototype/clustering_results_html.jsx'
@@ -65,7 +70,7 @@ const router = createBrowserRouter([
           { path: 'common-network.html', element: <P_common_network_html /> },
           { path: 'data-dashboard.html', element: <P_data_dashboard_html /> },
           { path: 'delphi.html', element: <P_delphi_html /> },
-          { path: 'entity-list.html', element: <P_entity_list_html /> },
+          { path: 'entity-list.html', element: <EntityList /> },
           { path: 'frontier-tech.html', element: <P_frontier_tech_html /> },
           { path: 'hot-analysis.html', element: <P_hot_analysis_html /> },
           { path: 'insight-publish.html', element: <P_insight_publish_html /> },
@@ -95,7 +100,7 @@ const router = createBrowserRouter([
         element: <ResearchLayout />,
         children: [
           { path: 'competition-report.html', element: <P_competition_report_html /> },
-          { path: 'problem-identification.html', element: <P_problem_identification_html /> },
+          { path: 'problem-identification.html', element: <ProblemIdentification /> },
           { path: 'problem-trend.html', element: <P_problem_trend_html /> },
           { path: 'shenzhen-list.html', element: <P_shenzhen_list_html /> },
           { path: ':page', element: <Blank /> },
