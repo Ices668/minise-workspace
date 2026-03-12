@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "8a56815281a7384c",
+    "type": "split",
+    "children": [
+      {
+        "id": "71c0dc5ab1bb9b2e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1563112ff9a138f2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9bd278437554dcfb",
+    "type": "split",
+    "children": [
+      {
+        "id": "627e62ce1d5b2ed2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "141e3ba66d9dcdee",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "4358ea4668e7cce5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "7bdcead9071001a2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "77716f33ef9d5451",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa8de129bf6c9055",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cdaca6e2e585b8e5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "bce038a9515a85cf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "4a8ae92084105296",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "d635966d46c1721b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "0ec46ce45728c578",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "1563112ff9a138f2",
+  "lastOpenFiles": [
+    "新型高端智库系统/00-收件箱/战略咨询智能支持系统-开发工作思路.pdf",
+    "新型高端智库系统/00-收件箱/战略咨询智能支持系统 - 详细用户旅程地图.pdf",
+    "欢迎.md",
+    "新型高端智库系统/项目总览.md",
+    "新型高端智库系统/文件清单.md",
+    "新型高端智库系统/待办事项.md",
+    "新型高端智库系统/03-分析整理/战略技术趋势核心逻辑.md",
+    "新型高端智库系统/00-收件箱/01需求规格说明书V1.0【模板】.docx",
+    "新型高端智库系统/00-收件箱/概要设计说明书【模板】.docx",
+    "新型高端智库系统/00-收件箱/战略咨询智能支持+基础研究--原稿YWJ抽取.docx",
+    "新型高端智库系统/00-收件箱/GKX原型清单-已填写.xlsx",
+    "新型高端智库系统/05-版本归档",
+    "新型高端智库系统/04-产出物",
+    "新型高端智库系统/03-分析整理",
+    "新型高端智库系统/02-需求沟通"
+  ]
+}
