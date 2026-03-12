@@ -23,8 +23,8 @@ export default function Layout() {
             </span>
           </div>
           <span className="font-bold text-base text-slate-800">GKX</span>
-          <a
-            href="/home.html"
+          <Link
+            to="/home"
             className="ml-auto text-slate-400 hover:text-slate-600"
             title="返回首页"
             style={{ textDecoration: 'none' }}
@@ -32,7 +32,7 @@ export default function Layout() {
             <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
               home
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className="px-4 pt-4 pb-1">
