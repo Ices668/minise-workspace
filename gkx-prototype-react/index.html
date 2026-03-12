@@ -1,10 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gkx-prototype-react</title>
+
+    <!-- Match prototype head assets so Tailwind utility classes render correctly. -->
+    <link href="/gkx/assets/public-sans.css" rel="stylesheet" />
+    <link href="/gkx/assets/material-symbols-1.css" rel="stylesheet" />
+
+    <!-- Prototype uses Tailwind CDN + config script; keep it to preserve exact styles. -->
+    <script src="/gkx/assets/tailwindcdn.js"></script>
+    <script>
+      // Keep a stable default; individual pages may also include their own config.
+      window.tailwind = window.tailwind || {}
+      window.tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1392ec',
+              secondary: '#0d9488',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101a22',
+            },
+            fontFamily: {
+              display: ['Public Sans', 'Noto Sans SC', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      }
+    </script>
+
+    <title>GKX Prototype</title>
   </head>
   <body>
     <div id="root"></div>
