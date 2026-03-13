@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="assets/tailwindcdn.js"></script>
+<script src="assets/echarts.min.js"></script>
+<script src="assets/echarts-wordcloud.min.js"></script>
 <link href="assets/b21023149a2e02ea.bin" rel="stylesheet"/>
 <link href="assets/material-symbols-1.css" rel="stylesheet"/>
 <link href="assets/10c27cb02c3ea07a.bin" rel="stylesheet"/>
@@ -41,11 +43,11 @@
 <div class="flex flex-wrap items-center justify-between gap-4">
 <h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">技术趋势分析</h1>
 <div class="flex items-center gap-3">
-<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-colors">
+<button onclick="refreshHotspotData()" class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-colors">
 <span class="material-symbols-outlined text-[20px]">refresh</span>
-              刷新
+              刷新数据
             </button>
-<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-colors">
+<button onclick="exportHotspotReport()" class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-colors">
 <span class="material-symbols-outlined text-[20px]">file_download</span>
               导出报告
             </button>
@@ -63,32 +65,37 @@
 <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">技术搜索</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
-<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400" placeholder="输入技术关键词搜索..." type="text"/>
+<input id="tech-search-input" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400" placeholder="输入技术关键词搜索..." type="text" onkeyup="if(event.key==='Enter')handleHotspotSearch()"/>
 </div>
 </div>
 <div class="w-48">
 <label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">技术领域</label>
 <div class="relative">
-<select class="w-full pl-4 pr-10 py-2.5 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 appearance-none">
-<option>全部领域</option>
-<option>人工智能</option>
-<option>量子计算</option>
-<option>生物医药</option>
-<option>新能源</option>
+<select id="tech-domain-select" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 appearance-none" onchange="handleHotspotSearch()">
+<option value="all">全部领域</option>
+<option value="ai">人工智能</option>
+<option value="quantum">量子计算</option>
+<option value="bio">生物医药</option>
+<option value="energy">新能源</option>
 </select>
 <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
 </div>
 </div>
-<div class="w-64">
-<label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">趋势周期</label>
-<div class="flex items-center gap-2 px-4 py-2.5 bg-slate-50 dark:bg-slate-800 rounded-lg">
-<span class="material-symbols-outlined text-slate-400 text-[20px]">calendar_today</span>
-<span class="text-sm text-slate-600 dark:text-slate-300">2023-01-01 至 2024-12-31</span>
+<div class="w-48">
+<label class="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">时间范围</label>
+<div class="relative">
+<select id="tech-time-select" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 appearance-none" onchange="handleHotspotSearch()">
+<option value="2024">2024年</option>
+<option value="2023">2023年</option>
+<option value="2022">2022年</option>
+<option value="2021">2021年</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
 </div>
 </div>
 <div class="flex gap-2">
-<button class="px-6 py-2.5 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">查询</button>
-<button class="px-6 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-200 transition-colors">重置</button>
+<button class="px-6 py-2.5 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors" onclick="handleHotspotSearch()">查询</button>
+<button class="px-6 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-200 transition-colors" onclick="resetHotspotFilters()">重置</button>
 </div>
 </div>
 </div>
@@ -122,234 +129,1211 @@
 </div>
 </div>
 </div>
-<!-- Main Content Area -->
-<div class="flex flex-col gap-4">
-<!-- Tabs -->
-<div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
-<div class="flex gap-8">
-<button class="px-4 py-3 border-b-2 border-primary text-primary text-sm font-bold">趋势趋势列表</button>
-<button class="px-4 py-3 border-b-2 border-transparent text-slate-500 text-sm font-medium hover:text-slate-700 transition-colors">增长分析看板</button>
+<!-- Main Content Area: Tabbed Modules -->
+<div class="flex flex-col gap-6 pb-12">
+  <!-- Tab Navigation -->
+  <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800">
+    <button onclick="switchModuleTab('hotspot')" id="tab-btn-hotspot" class="px-6 py-3 text-sm font-bold border-b-2 border-primary text-primary transition-all">技术热点分析</button>
+    <button onclick="switchModuleTab('cross')" id="tab-btn-cross" class="px-6 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 border-b-2 border-transparent transition-all">交叉关联分析</button>
+    <button onclick="switchModuleTab('collaboration')" id="tab-btn-collaboration" class="px-6 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 border-b-2 border-transparent transition-all">科研合作分析</button>
+    <button onclick="switchModuleTab('trend')" id="tab-btn-trend" class="px-6 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 border-b-2 border-transparent transition-all">发展趋势演化</button>
+  </div>
+
+  <!-- Tab Contents -->
+  <div id="tab-contents">
+    <!-- Module 1: Technology Hotspots -->
+    <div id="module-hotspot" class="tab-pane block">
+      <div class="flex flex-col gap-6">
+        <!-- Top row: Word Cloud + Ranking -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Chart Column -->
+          <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[500px]">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">cloud</span>
+                技术热点分析 (词云)
+              </h3>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-slate-400">时间跨度:</span>
+                <select class="text-xs bg-slate-50 dark:bg-slate-800 border-none rounded p-1">
+                  <option>2024</option>
+                  <option>2023</option>
+                  <option>2022</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex-1 relative" id="hotspot-chart"></div>
+          </div>
+
+          <!-- Ranking List Column -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[500px]">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-amber-500">reward</span>
+                热点技术排名 (Top 5)
+              </h3>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4 space-y-4">
+              <!-- Rank Item 1 -->
+              <a href="frontier-tech.html" class="flex items-center gap-4 p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+                <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary truncate">生成式AI大模型</h4>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">人工智能</span>
+                    <span class="text-[10px] font-bold text-emerald-500">+145%</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm">chevron_right</span>
+              </a>
+              <!-- Rank Item 2 -->
+              <a href="frontier-tech.html" class="flex items-center gap-4 p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary truncate">量子纠错芯片</h4>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">量子计算</span>
+                    <span class="text-[10px] font-bold text-emerald-500">+82%</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm">chevron_right</span>
+              </a>
+              <!-- Rank Item 3 -->
+              <a href="frontier-tech.html" class="flex items-center gap-4 p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary truncate">固态钠电池</h4>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">新能源</span>
+                    <span class="text-[10px] font-bold text-emerald-500">+64%</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm">chevron_right</span>
+              </a>
+              <!-- Rank Item 4 -->
+              <a href="frontier-tech.html" class="flex items-center gap-4 p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-sm shrink-0">4</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary truncate">mRNA靶向疫苗</h4>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">生物医药</span>
+                    <span class="text-[10px] font-bold text-emerald-500">+58%</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm">chevron_right</span>
+              </a>
+              <!-- Rank Item 5 -->
+              <a href="frontier-tech.html" class="flex items-center gap-4 p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-sm shrink-0">5</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary truncate">6G太赫兹通信</h4>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">通信工程</span>
+                    <span class="text-[10px] font-bold text-emerald-500">+45%</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 group-hover:text-primary text-sm">chevron_right</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom row: Detailed Info Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <!-- Card 1 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-4 hover:border-primary/30 transition-all group">
+            <div class="flex items-start justify-between">
+              <h4 class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary">生成式AI</h4>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">TOP 1</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">出现频次</span>
+                <span class="text-lg font-black text-slate-800 dark:text-slate-200">12,450</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">增长率</span>
+                <span class="text-lg font-black text-emerald-500">+145%</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">论文数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">8,421</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">专利数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">3,120</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">LLM</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">Transformer</span>
+            </div>
+            <div class="flex gap-2 pt-2 mt-auto">
+              <a href="frontier-tech.html" class="flex-1 py-1.5 text-center bg-primary/5 text-primary text-[10px] font-bold rounded-lg hover:bg-primary/10 transition-colors">查看详情</a>
+              <button onclick="showAssociationAnalysis('生成式AI')" class="flex-1 py-1.5 text-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded-lg hover:bg-slate-200 transition-colors">关联分析</button>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-4 hover:border-primary/30 transition-all group">
+            <div class="flex items-start justify-between">
+              <h4 class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary">量子纠错</h4>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">TOP 2</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">出现频次</span>
+                <span class="text-lg font-black text-slate-800 dark:text-slate-200">8,120</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">增长率</span>
+                <span class="text-lg font-black text-emerald-500">+82%</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">论文数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">4,520</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">专利数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">1,845</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">QEC</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">Surface Code</span>
+            </div>
+            <div class="flex gap-2 pt-2 mt-auto">
+              <a href="frontier-tech.html" class="flex-1 py-1.5 text-center bg-primary/5 text-primary text-[10px] font-bold rounded-lg hover:bg-primary/10 transition-colors">查看详情</a>
+              <button onclick="showAssociationAnalysis('量子纠错')" class="flex-1 py-1.5 text-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded-lg hover:bg-slate-200 transition-colors">关联分析</button>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-4 hover:border-primary/30 transition-all group">
+            <div class="flex items-start justify-between">
+              <h4 class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary">固态钠电池</h4>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">TOP 3</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">出现频次</span>
+                <span class="text-lg font-black text-slate-800 dark:text-slate-200">6,580</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">增长率</span>
+                <span class="text-lg font-black text-emerald-500">+64%</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">论文数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">2,310</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">专利数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">5,420</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">Sodium-ion</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">Solid-state</span>
+            </div>
+            <div class="flex gap-2 pt-2 mt-auto">
+              <a href="frontier-tech.html" class="flex-1 py-1.5 text-center bg-primary/5 text-primary text-[10px] font-bold rounded-lg hover:bg-primary/10 transition-colors">查看详情</a>
+              <button onclick="showAssociationAnalysis('固态钠电池')" class="flex-1 py-1.5 text-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded-lg hover:bg-slate-200 transition-colors">关联分析</button>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-4 hover:border-primary/30 transition-all group">
+            <div class="flex items-start justify-between">
+              <h4 class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary">mRNA靶向疫苗</h4>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">TOP 4</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">出现频次</span>
+                <span class="text-lg font-black text-slate-800 dark:text-slate-200">5,400</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">增长率</span>
+                <span class="text-lg font-black text-emerald-500">+58%</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">论文数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">3,850</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">专利数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">1,210</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">mRNA</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">Targeted</span>
+            </div>
+            <div class="flex gap-2 pt-2 mt-auto">
+              <a href="frontier-tech.html" class="flex-1 py-1.5 text-center bg-primary/5 text-primary text-[10px] font-bold rounded-lg hover:bg-primary/10 transition-colors">查看详情</a>
+              <button onclick="showAssociationAnalysis('mRNA靶向疫苗')" class="flex-1 py-1.5 text-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded-lg hover:bg-slate-200 transition-colors">关联分析</button>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-4 hover:border-primary/30 transition-all group">
+            <div class="flex items-start justify-between">
+              <h4 class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary">6G太赫兹</h4>
+              <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">TOP 5</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">出现频次</span>
+                <span class="text-lg font-black text-slate-800 dark:text-slate-200">4,210</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">增长率</span>
+                <span class="text-lg font-black text-emerald-500">+45%</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">论文数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">1,940</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 font-bold uppercase">专利数</span>
+                <span class="text-sm font-bold text-slate-600 dark:text-slate-400">920</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">6G</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">THz</span>
+            </div>
+            <div class="flex gap-2 pt-2 mt-auto">
+              <a href="frontier-tech.html" class="flex-1 py-1.5 text-center bg-primary/5 text-primary text-[10px] font-bold rounded-lg hover:bg-primary/10 transition-colors">查看详情</a>
+              <button onclick="showAssociationAnalysis('6G太赫兹')" class="flex-1 py-1.5 text-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded-lg hover:bg-slate-200 transition-colors">关联分析</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 2: Cross-Correlation Analysis -->
+    <div id="module-cross" class="tab-pane hidden">
+      <div class="flex flex-col gap-6">
+        <!-- Top row: Matrix Table + Network Graph -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Matrix Table Column -->
+          <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[600px]">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-orange-500">grid_on</span>
+                技术交叉关联矩阵
+              </h3>
+              <div class="flex bg-slate-100 dark:bg-slate-800 rounded p-1">
+                <button onclick="filterCrossCorrelation('all')" id="cross-filter-all" class="px-3 py-1 bg-white dark:bg-slate-700 rounded shadow-sm text-xs font-bold text-primary">全部</button>
+                <button onclick="filterCrossCorrelation('strong')" id="cross-filter-strong" class="px-3 py-1 text-slate-500 text-xs font-medium hover:text-slate-700">强关联</button>
+                <button onclick="filterCrossCorrelation('medium')" id="cross-filter-medium" class="px-3 py-1 text-slate-500 text-xs font-medium hover:text-slate-700">中等</button>
+              </div>
+            </div>
+            <div class="flex-1 overflow-auto">
+              <table class="w-full text-left border-collapse">
+                <thead class="sticky top-0 bg-slate-50 dark:bg-slate-800/50 z-10">
+                  <tr class="border-b border-slate-100 dark:border-slate-800">
+                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">技术组合</th>
+                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">关联强度</th>
+                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">关联度数值</th>
+                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">增长率</th>
+                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">论文数</th>
+                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <!-- Combination 1 -->
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex flex-col">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">人工智能 + 生物医药</span>
+                        <span class="text-[10px] text-slate-400">药物发现 / 蛋白质折叠</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-0.5 bg-rose-100 text-rose-600 text-[10px] font-bold rounded">强关联</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-rose-500" style="width: 92%"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 dark:text-slate-400">0.92</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-emerald-500 font-bold text-sm">+85%</td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">1,245</td>
+                    <td class="px-6 py-4 text-right">
+                      <button onclick="showAssociationAnalysis('AI+生物医药')" class="text-primary hover:underline text-xs font-bold">查看详情</button>
+                    </td>
+                  </tr>
+                  <!-- Combination 2 -->
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex flex-col">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">量子计算 + 新材料</span>
+                        <span class="text-[10px] text-slate-400">量子化学 / 催化剂研发</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-0.5 bg-amber-100 text-amber-600 text-[10px] font-bold rounded">中等关联</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-amber-500" style="width: 65%"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 dark:text-slate-400">0.65</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-emerald-500 font-bold text-sm">+42%</td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">856</td>
+                    <td class="px-6 py-4 text-right">
+                      <button onclick="showAssociationAnalysis('量子+新材料')" class="text-primary hover:underline text-xs font-bold">查看详情</button>
+                    </td>
+                  </tr>
+                  <!-- Combination 3 -->
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex flex-col">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">6G + 自动驾驶</span>
+                        <span class="text-[10px] text-slate-400">车路协同 / 远程驾驶</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-0.5 bg-rose-100 text-rose-600 text-[10px] font-bold rounded">强关联</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-rose-500" style="width: 88%"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 dark:text-slate-400">0.88</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-emerald-500 font-bold text-sm">+120%</td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">2,104</td>
+                    <td class="px-6 py-4 text-right">
+                      <button onclick="showAssociationAnalysis('6G+自动驾驶')" class="text-primary hover:underline text-xs font-bold">查看详情</button>
+                    </td>
+                  </tr>
+                  <!-- Combination 4 -->
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex flex-col">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">区块链 + 隐私计算</span>
+                        <span class="text-[10px] text-slate-400">零知识证明 / 数据合规</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-0.5 bg-amber-100 text-amber-600 text-[10px] font-bold rounded">中等关联</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                          <div class="h-full bg-amber-500" style="width: 58%"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 dark:text-slate-400">0.58</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-emerald-500 font-bold text-sm">+35%</td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">642</td>
+                    <td class="px-6 py-4 text-right">
+                      <button onclick="showAssociationAnalysis('区块链+隐私计算')" class="text-primary hover:underline text-xs font-bold">查看详情</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Network Graph Column -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[600px]">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-orange-500">hub</span>
+                关联强度分布网络图
+              </h3>
+            </div>
+            <div class="flex-1 relative" id="cross-correlation-chart"></div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-800/30 border-t border-slate-100 dark:border-slate-800">
+              <div class="flex justify-around text-center">
+                <div class="flex flex-col">
+                  <span class="text-xs text-slate-400 font-bold">强关联</span>
+                  <span class="text-xl font-black text-rose-500">2</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xs text-slate-400 font-bold">中等关联</span>
+                  <span class="text-xl font-black text-amber-500">2</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xs text-slate-400 font-bold">弱关联</span>
+                  <span class="text-xl font-black text-slate-400">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 3: Collaboration Analysis -->
+    <div id="module-collaboration" class="tab-pane hidden">
+      <div class="flex flex-col gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Left: Collaboration Network Visualization -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[700px]">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-500">hub</span>
+                机构合作网络图
+              </h3>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-slate-400 text-sm" title="提示：节点代表机构，连线粗细表示合作强度">info</span>
+                <button class="p-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg text-slate-400" title="展开全屏">
+                  <span class="material-symbols-outlined text-[20px]">open_in_full</span>
+                </button>
+              </div>
+            </div>
+            <div class="flex-1 relative" id="collaboration-chart"></div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-800/30 text-[10px] text-slate-400 border-t border-slate-100 dark:border-slate-800">
+              * 鼠标悬停查看机构详情，滚动缩放，拖拽移动。
+            </div>
+          </div>
+
+          <!-- Right: Collaboration Details List -->
+          <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[700px]">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">list_alt</span>
+                  合作详情列表
+                </h3>
+                <div class="flex items-center gap-3">
+                  <select id="collab-sort" onchange="sortCollaborationList()" class="text-xs bg-slate-50 dark:bg-slate-800 border-none rounded p-1.5 font-bold text-slate-600">
+                    <option value="score">按评分排序</option>
+                    <option value="papers">按论文数排序</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="flex-1 relative">
+                  <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">filter_alt</span>
+                  <select id="collab-domain-filter" onchange="filterCollaborationList()" class="w-full pl-9 pr-4 py-2 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-xs font-medium text-slate-600 appearance-none">
+                    <option value="all">全部合作领域</option>
+                    <option value="ai">人工智能</option>
+                    <option value="quantum">量子计算</option>
+                    <option value="bio">生物医药</option>
+                    <option value="energy">新能源</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto" id="collaboration-list-container">
+              <!-- List items will be injected here by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 4: Development Trend -->
+    <div id="module-trend" class="tab-pane hidden">
+      <div class="flex flex-col gap-6">
+        <!-- Top Row: Time Selector & Main Visual -->
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-500">timeline</span>
+              技术趋势分析看板
+            </h3>
+            <!-- Time Range Selector -->
+            <div class="flex items-center gap-2 bg-white dark:bg-slate-900 p-1.5 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
+              <span class="text-xs text-slate-400 px-2">分析周期:</span>
+              <button onclick="changeTrendTimeRange('2020-2024')" id="trend-time-2024" class="px-3 py-1 text-xs font-bold bg-primary text-white rounded-md shadow-sm">2020 - 2024</button>
+              <button onclick="changeTrendTimeRange('2015-2019')" id="trend-time-2019" class="px-3 py-1 text-xs font-medium text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md">2015 - 2019</button>
+              <button class="px-3 py-1 text-xs font-medium text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md">自定义</button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Left: Line Chart -->
+            <div class="lg:col-span-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[500px]">
+              <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <span class="text-sm font-bold text-slate-700 dark:text-slate-300">技术热度增长曲线</span>
+                <div class="flex items-center gap-2" id="trend-chart-legend">
+                  <!-- Legend items will be updated by JS -->
+                </div>
+              </div>
+              <div class="flex-1 relative" id="trend-chart"></div>
+            </div>
+
+            <!-- Right: Stats List -->
+            <div class="lg:col-span-1 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col h-[500px]">
+              <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                <h4 class="text-sm font-bold text-slate-700 dark:text-slate-300">核心前沿技术统计</h4>
+              </div>
+              <div class="flex-1 overflow-y-auto p-4 space-y-3" id="trend-stats-list">
+                <!-- Items injected by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Comparison Table -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm flex flex-col">
+          <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <h4 class="text-sm font-bold text-slate-700 dark:text-slate-300">年度发展趋势数据对比表</h4>
+            <button class="text-xs text-primary font-bold hover:underline">导出Excel数据</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse" id="trend-comparison-table">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
+                  <th onclick="handleTrendTableSort('name')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">技术领域 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                  <th onclick="handleTrendTableSort('2020')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">2020 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                  <th onclick="handleTrendTableSort('2021')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">2021 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                  <th onclick="handleTrendTableSort('2022')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">2022 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                  <th onclick="handleTrendTableSort('2023')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">2023 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                  <th onclick="handleTrendTableSort('2024')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">2024 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                  <th onclick="handleTrendTableSort('growth')" class="px-6 py-4 text-xs font-bold text-slate-500 uppercase cursor-pointer hover:text-primary">总增长率 <span class="material-symbols-outlined text-[14px] align-middle">unfold_more</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="flex items-center gap-4 pb-2">
-<div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
-<button class="p-1.5 bg-white dark:bg-slate-700 rounded-md shadow-sm text-primary">
-<span class="material-symbols-outlined text-[20px]">list</span>
-</button>
-<button class="p-1.5 text-slate-400 hover:text-slate-600">
-<span class="material-symbols-outlined text-[20px]">grid_view</span>
-</button>
-</div>
-<div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
-<button class="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[18px]">upload_file</span>
-              批量导入
+
+<script>
+  // Global chart instances
+  let charts = {
+    hotspot: null,
+    cross: null,
+    collaboration: null,
+    trend: null
+  };
+
+  // Initialize ECharts instances
+  window.addEventListener('load', function() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? 'dark' : '';
+    
+    // Initial load: Only init hotspot chart as it's the default active tab
+    initHotspotChart(theme);
+    
+    // Setup resize observer for all charts
+    window.addEventListener('resize', () => {
+      Object.values(charts).forEach(chart => chart && chart.resize());
+    });
+  });
+
+  function switchModuleTab(tabId) {
+    // 1. Update Tab Buttons UI
+    const buttons = ['hotspot', 'cross', 'collaboration', 'trend'];
+    buttons.forEach(id => {
+      const btn = document.getElementById(`tab-btn-${id}`);
+      if (id === tabId) {
+        btn.classList.add('border-primary', 'text-primary', 'font-bold');
+        btn.classList.remove('text-slate-500', 'font-medium', 'border-transparent');
+      } else {
+        btn.classList.remove('border-primary', 'text-primary', 'font-bold');
+        btn.classList.add('text-slate-500', 'font-medium', 'border-transparent');
+      }
+    });
+
+    // 2. Switch Panes
+    const panes = document.querySelectorAll('.tab-pane');
+    panes.forEach(pane => {
+      if (pane.id === `module-${tabId}`) {
+        pane.classList.remove('hidden');
+        pane.classList.add('block');
+      } else {
+        pane.classList.add('hidden');
+        pane.classList.remove('block');
+      }
+    });
+
+    // 3. Lazy init or resize charts
+    const theme = document.documentElement.classList.contains('dark') ? 'dark' : '';
+    if (tabId === 'hotspot' && !charts.hotspot) initHotspotChart(theme);
+    if (tabId === 'cross' && !charts.cross) initCrossCorrelationChart(theme);
+    if (tabId === 'collaboration' && !charts.collaboration) initCollaborationChart(theme);
+    if (tabId === 'trend' && !charts.trend) initTrendChart(theme);
+
+    // Force resize to fix container size issues on visibility change
+    setTimeout(() => {
+      if (charts[tabId]) charts[tabId].resize();
+    }, 50);
+  }
+
+  function initHotspotChart(theme) {
+    const chart = echarts.init(document.getElementById('hotspot-chart'), theme);
+    charts.hotspot = chart;
+    const data = [
+      { name: '生成式AI', value: 10000 },
+      { name: '量子纠错', value: 6181 },
+      { name: '固态电池', value: 4386 },
+      { name: '6G通信', value: 4055 },
+      { name: '脑机接口', value: 2467 },
+      { name: '低轨卫星', value: 2244 },
+      { name: '核聚变', value: 1898 },
+      { name: '合成生物', value: 1484 },
+      { name: '数字孪生', value: 1112 },
+      { name: '边缘计算', value: 965 },
+      { name: '大模型', value: 847 },
+      { name: '算力网络', value: 582 },
+      { name: '自动驾驶', value: 555 },
+      { name: '元宇宙', value: 550 },
+      { name: 'Web3.0', value: 462 },
+      { name: '零信任安全', value: 366 },
+      { name: '智慧医疗', value: 360 },
+      { name: '工业互联网', value: 282 },
+      { name: '隐私计算', value: 273 },
+      { name: '区块链', value: 265 }
+    ];
+
+    const option = {
+      series: [{
+        type: 'wordCloud',
+        shape: 'circle',
+        left: 'center',
+        top: 'center',
+        width: '90%',
+        height: '80%',
+        right: null,
+        bottom: null,
+        sizeRange: [14, 60],
+        rotationRange: [-45, 90],
+        rotationStep: 45,
+        gridSize: 8,
+        drawOutOfBound: false,
+        textStyle: {
+          fontFamily: 'sans-serif',
+          fontWeight: 'bold',
+          color: function() {
+            return 'rgb(' + [
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160)
+            ].join(',') + ')';
+          }
+        },
+        emphasis: {
+          textStyle: {
+            shadowBlur: 10,
+            shadowColor: '#333'
+          }
+        },
+        data: data
+      }]
+    };
+    chart.setOption(option);
+  }
+
+  function initCrossCorrelationChart(theme) {
+    const chart = echarts.init(document.getElementById('cross-correlation-chart'), theme);
+    charts.cross = chart;
+    
+    const nodes = [
+      { id: 'ai', name: '人工智能', symbolSize: 40, category: 0 },
+      { id: 'bio', name: '生物医药', symbolSize: 35, category: 0 },
+      { id: 'quantum', name: '量子计算', symbolSize: 30, category: 0 },
+      { id: 'materials', name: '新材料', symbolSize: 25, category: 0 },
+      { id: '6g', name: '6G通信', symbolSize: 20, category: 0 },
+      { id: 'auto', name: '自动驾驶', symbolSize: 20, category: 0 },
+      { id: 'blockchain', name: '区块链', symbolSize: 15, category: 0 },
+      { id: 'privacy', name: '隐私计算', symbolSize: 15, category: 0 }
+    ];
+
+    const links = [
+      { source: 'ai', target: 'bio', value: 0.92, label: '强关联', lineStyle: { width: 5, color: '#f43f5e' } },
+      { source: 'quantum', target: 'materials', value: 0.65, label: '中等关联', lineStyle: { width: 3, color: '#f59e0b' } },
+      { source: '6g', target: 'auto', value: 0.88, label: '强关联', lineStyle: { width: 4, color: '#f43f5e' } },
+      { source: 'blockchain', target: 'privacy', value: 0.58, label: '中等关联', lineStyle: { width: 2, color: '#f59e0b' } }
+    ];
+
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          if (params.dataType === 'edge') {
+            return `${params.data.source} + ${params.data.target}<br/>关联度: ${params.data.value}<br/>等级: ${params.data.label}`;
+          }
+          return params.name;
+        }
+      },
+      series: [
+        {
+          type: 'graph',
+          layout: 'force',
+          data: nodes,
+          links: links,
+          roam: true,
+          label: {
+            show: true,
+            position: 'right',
+            fontSize: 10,
+            color: theme === 'dark' ? '#94a3b8' : '#64748b'
+          },
+          force: {
+            repulsion: 200,
+            edgeLength: 100
+          },
+          lineStyle: {
+            opacity: 0.8,
+            curveness: 0.2
+          },
+          emphasis: {
+            focus: 'adjacency',
+            lineStyle: {
+              width: 10
+            }
+          }
+        }
+      ]
+    };
+    chart.setOption(option);
+    
+    chart.on('click', function(params) {
+      if (params.dataType === 'node') {
+        showAssociationAnalysis(params.name);
+      } else if (params.dataType === 'edge') {
+        alert(`技术组合详细数据:\n${params.data.source} 与 ${params.data.target}\n关联强度: ${params.data.value}\n关联等级: ${params.data.label}`);
+      }
+    });
+  }
+
+  // Collaboration Module Data
+  const collaborationData = [
+    { inst1: '中国科学院', inst2: '清华大学', papers: 124, duration: '5年', domain: 'ai', domainName: '人工智能', score: 9.8 },
+    { inst1: '北京大学', inst2: '复旦大学', papers: 86, duration: '3年', domain: 'bio', domainName: '生物医药', score: 9.2 },
+    { inst1: '斯坦福大学', inst2: '麻省理工学院', papers: 156, duration: '8年', domain: 'quantum', domainName: '量子计算', score: 9.5 },
+    { inst1: '中国科学技术大学', inst2: '浙江大学', papers: 64, duration: '4年', domain: 'quantum', domainName: '量子计算', score: 8.8 },
+    { inst1: '南京大学', inst2: '上海交通大学', papers: 92, duration: '6年', domain: 'energy', domainName: '新能源', score: 9.0 },
+    { inst1: '哈佛大学', inst2: '牛津大学', papers: 112, duration: '10年', domain: 'bio', domainName: '生物医药', score: 9.7 },
+    { inst1: '腾讯AI Lab', inst2: '香港科技大学', papers: 45, duration: '2年', domain: 'ai', domainName: '人工智能', score: 8.5 }
+  ];
+
+  function initCollaborationChart(theme) {
+    const chart = echarts.init(document.getElementById('collaboration-chart'), theme);
+    charts.collaboration = chart;
+    
+    const nodes = [
+      { id: 'cas', name: '中国科学院', symbolSize: 60, value: 124, score: 9.8 },
+      { id: 'tsinghua', name: '清华大学', symbolSize: 50, value: 110, score: 9.5 },
+      { id: 'pku', name: '北京大学', symbolSize: 50, value: 95, score: 9.2 },
+      { id: 'stanford', name: '斯坦福大学', symbolSize: 45, value: 156, score: 9.5 },
+      { id: 'mit', name: '麻省理工学院', symbolSize: 45, value: 140, score: 9.4 },
+      { id: 'ustc', name: '中科大', symbolSize: 40, value: 64, score: 8.8 },
+      { id: 'fudan', name: '复旦大学', symbolSize: 40, value: 80, score: 9.0 }
+    ];
+
+    const links = [
+      { source: 'cas', target: 'tsinghua', value: 0.95 },
+      { source: 'cas', target: 'pku', value: 0.88 },
+      { source: 'tsinghua', target: 'stanford', value: 0.75 },
+      { source: 'stanford', target: 'mit', value: 0.92 },
+      { source: 'pku', target: 'fudan', value: 0.82 },
+      { source: 'ustc', target: 'cas', value: 0.85 }
+    ];
+
+    const option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          if (params.dataType === 'node') {
+            return `<strong>${params.name}</strong><br/>合作论文数: ${params.data.value}<br/>综合评分: ${params.data.score}`;
+          }
+          return `合作强度: ${params.data.value}`;
+        }
+      },
+      series: [{
+        type: 'graph',
+        layout: 'force',
+        data: nodes,
+        links: links,
+        roam: true,
+        draggable: true,
+        label: {
+          show: true,
+          position: 'right',
+          fontSize: 10,
+          color: theme === 'dark' ? '#cbd5e1' : '#475569'
+        },
+        force: {
+          repulsion: 400,
+          edgeLength: 150
+        },
+        lineStyle: {
+          width: 2,
+          curveness: 0.1,
+          color: theme === 'dark' ? '#334155' : '#e2e8f0'
+        },
+        emphasis: {
+          focus: 'adjacency',
+          lineStyle: { width: 6, color: '#0ba6da' }
+        }
+      }]
+    };
+    chart.setOption(option);
+    
+    // Inject initial list
+    renderCollaborationList(collaborationData);
+  }
+
+  function renderCollaborationList(data) {
+    const container = document.getElementById('collaboration-list-container');
+    container.innerHTML = data.map(item => `
+      <div class="p-5 border-b border-slate-50 dark:border-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1 min-w-0">
+            <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors cursor-pointer" onclick="showCooperationDetail('${item.inst1}', '${item.inst2}')">
+              ${item.inst1} <span class="text-slate-400 mx-1">×</span> ${item.inst2}
+            </h4>
+            <div class="flex flex-wrap items-center gap-y-2 gap-x-4 mt-3">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-slate-400 text-xs">description</span>
+                <span class="text-xs text-slate-500">${item.papers} 篇论文</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-slate-400 text-xs">schedule</span>
+                <span class="text-xs text-slate-500">合作 ${item.duration}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-slate-400 text-xs">category</span>
+                <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded">${item.domainName}</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-3 shrink-0">
+            <div class="flex flex-col items-end">
+              <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">合作评分</span>
+              <span class="text-lg font-black text-primary">${item.score}</span>
+            </div>
+            <button onclick="showCooperationDetail('${item.inst1}', '${item.inst2}')" class="px-3 py-1.5 bg-primary/5 text-primary text-[10px] font-bold rounded-lg hover:bg-primary/10 transition-colors">
+              查看详情
             </button>
-<button class="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[18px]">download</span>
-              一键导出
-            </button>
-</div>
-</div>
-<!-- Table Card -->
-<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">技术名称</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">所属标签</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-center">增长率</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">热度指数</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">成熟度</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">投资额 (M$)</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">操作</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-<!-- Row 1 -->
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-<td class="px-6 py-4">
-<a class="text-sm font-bold text-primary hover:underline" href="#">生成式AI大模型</a>
-</td>
-<td class="px-6 py-4">
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded cursor-pointer hover:bg-primary/20">人工智能</span>
-<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold rounded cursor-pointer hover:bg-slate-200">自然语言</span>
-</div>
-</td>
-<td class="px-6 py-4 text-center">
-<div class="inline-flex items-center gap-1 group relative">
-<span class="text-sm font-bold text-emerald-500">+145%</span>
-<span class="material-symbols-outlined text-emerald-500 text-[16px]">trending_up</span>
-<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap">
-                      近三月环比增长
-                    </div>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-24 h-8 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/10 rounded overflow-hidden relative">
-<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,white_100%)]"></div>
-<svg class="absolute bottom-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
-<path d="M0 25 Q 10 5, 20 20 T 40 10 T 60 25 T 80 5 T 100 20" fill="none" stroke="#0ba6da" stroke-width="2"></path>
-</svg>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-full max-w-[100px] bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 65%"></div>
-</div>
-<span class="text-[10px] font-medium text-slate-400 mt-1 block">TRL 6 - 样机阶段</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-sm font-bold text-slate-700 dark:text-slate-300">1,240.50</span>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-3">
-<button class="text-primary hover:text-primary/70 text-xs font-bold">产业链分析</button>
-<button class="text-primary hover:text-primary/70 text-xs font-bold">最新成果</button>
-</div>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-<td class="px-6 py-4">
-<a class="text-sm font-bold text-primary hover:underline" href="#">量子纠错芯片</a>
-</td>
-<td class="px-6 py-4">
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded cursor-pointer">量子计算</span>
-<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold rounded cursor-pointer">硬件</span>
-</div>
-</td>
-<td class="px-6 py-4 text-center">
-<div class="inline-flex items-center gap-1">
-<span class="text-sm font-bold text-emerald-500">+42%</span>
-<span class="material-symbols-outlined text-emerald-500 text-[16px]">trending_up</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-24 h-8 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/5 rounded overflow-hidden relative">
-<svg class="absolute bottom-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
-<path d="M0 28 Q 20 25, 40 20 T 70 15 T 100 5" fill="none" stroke="#0ba6da" stroke-width="2"></path>
-</svg>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-full max-w-[100px] bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 30%"></div>
-</div>
-<span class="text-[10px] font-medium text-slate-400 mt-1 block">TRL 3 - 原理验证</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-sm font-bold text-slate-700 dark:text-slate-300">458.20</span>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-3">
-<button class="text-primary hover:text-primary/70 text-xs font-bold">产业链分析</button>
-<button class="text-primary hover:text-primary/70 text-xs font-bold">最新成果</button>
-</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-<td class="px-6 py-4">
-<a class="text-sm font-bold text-primary hover:underline" href="#">固态钠电池</a>
-</td>
-<td class="px-6 py-4">
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded cursor-pointer">新能源</span>
-<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold rounded cursor-pointer">储能技术</span>
-</div>
-</td>
-<td class="px-6 py-4 text-center">
-<div class="inline-flex items-center gap-1">
-<span class="text-sm font-bold text-amber-500">+12%</span>
-<span class="material-symbols-outlined text-amber-500 text-[16px]">trending_flat</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-24 h-8 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/5 rounded overflow-hidden relative">
-<svg class="absolute bottom-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
-<path d="M0 15 Q 25 10, 50 15 T 75 10 T 100 15" fill="none" stroke="#0ba6da" stroke-width="2"></path>
-</svg>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-full max-w-[100px] bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
-</div>
-<span class="text-[10px] font-medium text-slate-400 mt-1 block">TRL 8 - 商业成熟</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-sm font-bold text-slate-700 dark:text-slate-300">890.00</span>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-3">
-<button class="text-primary hover:text-primary/70 text-xs font-bold">产业链分析</button>
-<button class="text-primary hover:text-primary/70 text-xs font-bold">最新成果</button>
-</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-<td class="px-6 py-4">
-<a class="text-sm font-bold text-primary hover:underline" href="#">mRNA 靶向疫苗</a>
-</td>
-<td class="px-6 py-4">
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded cursor-pointer">生物医药</span>
-<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold rounded cursor-pointer">精准医疗</span>
-</div>
-</td>
-<td class="px-6 py-4 text-center">
-<div class="inline-flex items-center gap-1">
-<span class="text-sm font-bold text-emerald-500">+88%</span>
-<span class="material-symbols-outlined text-emerald-500 text-[16px]">trending_up</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-24 h-8 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/5 rounded overflow-hidden relative">
-<svg class="absolute bottom-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
-<path d="M0 28 L 20 15 L 40 22 L 60 8 L 80 12 L 100 2" fill="none" stroke="#0ba6da" stroke-width="2"></path>
-</svg>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="w-full max-w-[100px] bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 92%"></div>
-</div>
-<span class="text-[10px] font-medium text-slate-400 mt-1 block">TRL 9 - 市场应用</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-sm font-bold text-slate-700 dark:text-slate-300">2,315.60</span>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-3">
-<button class="text-primary hover:text-primary/70 text-xs font-bold">产业链分析</button>
-<button class="text-primary hover:text-primary/70 text-xs font-bold">最新成果</button>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- Pagination -->
-<div class="px-6 py-4 bg-slate-50/50 dark:bg-slate-800/30 flex items-center justify-between">
-<p class="text-xs text-slate-500">共计 2,845 条数据，显示 1 - 10 条</p>
-<div class="flex items-center gap-2">
-<button class="w-8 h-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:bg-white transition-colors">
-<span class="material-symbols-outlined text-[18px]">chevron_left</span>
-</button>
-<button class="w-8 h-8 rounded bg-primary text-white text-xs font-bold">1</button>
-<button class="w-8 h-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-white transition-colors">2</button>
-<button class="w-8 h-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-white transition-colors">3</button>
-<span class="text-slate-400 mx-1">...</span>
-<button class="w-8 h-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-white transition-colors">285</button>
-<button class="w-8 h-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:bg-white transition-colors">
-<span class="material-symbols-outlined text-[18px]">chevron_right</span>
-</button>
-</div>
-</div>
-</div>
-</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function sortCollaborationList() {
+    const sortBy = document.getElementById('collab-sort').value;
+    let sortedData = [...collaborationData];
+    if (sortBy === 'score') {
+      sortedData.sort((a, b) => b.score - a.score);
+    } else {
+      sortedData.sort((a, b) => b.papers - a.papers);
+    }
+    filterCollaborationList(sortedData);
+  }
+
+  function filterCollaborationList(baseData = null) {
+    const domain = document.getElementById('collab-domain-filter').value;
+    const dataToFilter = baseData || [...collaborationData];
+    const filteredData = domain === 'all' 
+      ? dataToFilter 
+      : dataToFilter.filter(item => item.domain === domain);
+    renderCollaborationList(filteredData);
+  }
+
+  function showCooperationDetail(i1, i2) {
+    alert(`正在跳转到 [${i1}] 与 [${i2}] 的深度合作分析页...\n包含：联合科研项目、核心论文列表、合作时间轴及主要研究人员。`);
+  }
+
+  // Trend Module Data
+  const trendData = [
+    { name: '人工智能', color: '#0ba6da', values: [120, 132, 101, 134, 190, 230, 210], years: ['2020', '2021', '2022', '2023', '2024'], growth: '+145%' },
+    { name: '量子计算', color: '#8b5cf6', values: [20, 32, 41, 54, 90, 130, 180], years: ['2020', '2021', '2022', '2023', '2024'], growth: '+820%' },
+    { name: '生物医药', color: '#10b981', values: [150, 232, 201, 154, 190, 330, 410], years: ['2020', '2021', '2022', '2023', '2024'], growth: '+173%' },
+    { name: '新能源', color: '#f59e0b', values: [80, 122, 141, 164, 210, 240, 280], years: ['2020', '2021', '2022', '2023', '2024'], growth: '+250%' },
+    { name: '新材料', color: '#f43f5e', values: [60, 85, 92, 110, 145, 180, 220], years: ['2020', '2021', '2022', '2023', '2024'], growth: '+266%' }
+  ];
+
+  function initTrendChart(theme) {
+    const chart = echarts.init(document.getElementById('trend-chart'), theme);
+    charts.trend = chart;
+    
+    const option = {
+      backgroundColor: 'transparent',
+      tooltip: {
+        trigger: 'axis',
+        formatter: function(params) {
+          let res = `<strong>${params[0].name}</strong><br/>`;
+          params.forEach(p => {
+            res += `<span style="color:${p.color}">●</span> ${p.seriesName}: ${p.value}<br/>`;
+          });
+          return res;
+        }
+      },
+      grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2020', '2021', '2022', '2023', '2024'],
+        axisLabel: { color: theme === 'dark' ? '#94a3b8' : '#64748b' }
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: { color: theme === 'dark' ? '#94a3b8' : '#64748b' },
+        splitLine: { lineStyle: { color: theme === 'dark' ? '#1e293b' : '#f1f5f9' } }
+      },
+      series: trendData.map(item => ({
+        name: item.name,
+        type: 'line',
+        smooth: true,
+        symbolSize: 8,
+        lineStyle: { width: 3, color: item.color },
+        itemStyle: { color: item.color },
+        data: item.values.slice(0, 5)
+      }))
+    };
+    chart.setOption(option);
+
+    // Initial render of list and table
+    renderTrendStatsList(trendData);
+    renderTrendComparisonTable(trendData);
+    updateTrendLegend();
+
+    chart.on('click', function(params) {
+      highlightTrendElement(params.seriesName);
+    });
+  }
+
+  function updateTrendLegend() {
+    const container = document.getElementById('trend-chart-legend');
+    container.innerHTML = trendData.map(item => `
+      <div onclick="highlightTrendElement('${item.name}')" class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+        <span class="w-2 h-2 rounded-full" style="background-color: ${item.color}"></span>
+        <span class="text-[10px] text-slate-400">${item.name}</span>
+      </div>
+    `).join('');
+  }
+
+  function renderTrendStatsList(data) {
+    const container = document.getElementById('trend-stats-list');
+    container.innerHTML = data.map(item => `
+      <div onclick="highlightTrendElement('${item.name}')" id="trend-stat-${item.name}" class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-transparent hover:border-primary/30 transition-all cursor-pointer group">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300 group-hover:text-primary">${item.name}</span>
+          <span class="text-[10px] font-black text-emerald-500">${item.growth}</span>
+        </div>
+        <div class="w-full h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+          <div class="h-full" style="width: ${parseInt(item.growth)}%; background-color: ${item.color}"></div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderTrendComparisonTable(data) {
+    const tbody = document.querySelector('#trend-comparison-table tbody');
+    tbody.innerHTML = data.map(item => `
+      <tr onclick="highlightTrendElement('${item.name}')" id="trend-row-${item.name}" class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group">
+        <td class="px-6 py-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full" style="background-color: ${item.color}"></span>
+            <span class="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary">${item.name}</span>
+          </div>
+        </td>
+        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${item.values[0]}</td>
+        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${item.values[1]}</td>
+        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${item.values[2]}</td>
+        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${item.values[3]}</td>
+        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 font-bold text-slate-800 dark:text-slate-200">${item.values[4]}</td>
+        <td class="px-6 py-4 text-sm font-black text-emerald-500">${item.growth}</td>
+      </tr>
+    `).join('');
+  }
+
+  function highlightTrendElement(name) {
+    // 1. Highlight Chart Line
+    if (charts.trend) {
+      charts.trend.dispatchAction({ type: 'highlight', seriesName: name });
+      // In ECharts, we can't easily "only" highlight one line and dim others via dispatchAction alone for a long time
+      // But we can update options
+      const option = charts.trend.getOption();
+      option.series.forEach(s => {
+        if (s.name === name) {
+          s.lineStyle.width = 6;
+          s.lineStyle.opacity = 1;
+        } else {
+          s.lineStyle.width = 2;
+          s.lineStyle.opacity = 0.2;
+        }
+      });
+      charts.trend.setOption(option);
+    }
+
+    // 2. Highlight List Item
+    document.querySelectorAll('#trend-stats-list > div').forEach(el => {
+      el.classList.remove('border-primary/50', 'bg-primary/5');
+    });
+    const statItem = document.getElementById(`trend-stat-${name}`);
+    if (statItem) statItem.classList.add('border-primary/50', 'bg-primary/5');
+
+    // 3. Highlight Table Row
+    document.querySelectorAll('#trend-comparison-table tbody tr').forEach(el => {
+      el.classList.remove('bg-primary/5', 'dark:bg-primary/10');
+    });
+    const tableRow = document.getElementById(`trend-row-${name}`);
+    if (tableRow) tableRow.classList.add('bg-primary/5', 'dark:bg-primary/10');
+  }
+
+  let currentSort = { key: '', asc: true };
+  function handleTrendTableSort(key) {
+    let sortedData = [...trendData];
+    const isAsc = currentSort.key === key ? !currentSort.asc : false;
+    currentSort = { key, asc: isAsc };
+
+    sortedData.sort((a, b) => {
+      let valA, valB;
+      if (key === 'name') { valA = a.name; valB = b.name; }
+      else if (key === 'growth') { valA = parseInt(a.growth); valB = parseInt(b.growth); }
+      else { 
+        const yearIdx = ['2020', '2021', '2022', '2023', '2024'].indexOf(key);
+        valA = a.values[yearIdx]; valB = b.values[yearIdx];
+      }
+      if (valA < valB) return isAsc ? -1 : 1;
+      if (valA > valB) return isAsc ? 1 : -1;
+      return 0;
+    });
+
+    renderTrendComparisonTable(sortedData);
+  }
+
+  function changeTrendTimeRange(range) {
+    alert(`分析周期已切换至: ${range}\n折线图、统计列表和对比表格将同步更新数据。`);
+    // Logic to update trendData based on range would go here
+  }
+
+  function switchTrendChart(type) {
+    const chart = charts.trend;
+    if (!chart) return;
+    
+    // Update button styles
+    const buttons = event.target.parentElement.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow-sm', 'text-primary', 'font-bold');
+      btn.classList.add('text-slate-500', 'font-medium');
+    });
+    event.target.classList.add('bg-white', 'dark:bg-slate-700', 'shadow-sm', 'text-primary', 'font-bold');
+    event.target.classList.remove('text-slate-500', 'font-medium');
+
+    if (type === 'line') {
+      const theme = document.documentElement.classList.contains('dark') ? 'dark' : '';
+      chart.dispose();
+      initTrendChart(theme);
+    } else {
+      // River logic... (keeping simplified for this step)
+      alert('演化河流图模式：展示技术方向在领域内的动态演化占比。');
+    }
+  }
+
+  // Hotspot Module Interactions
+  function refreshHotspotData() {
+    const theme = document.documentElement.classList.contains('dark') ? 'dark' : '';
+    // Re-init hotspot chart with "new" random data effect
+    if (charts.hotspot) {
+      charts.hotspot.dispose();
+      initHotspotChart(theme);
+    }
+    console.log('Refreshing hotspot data...');
+    // In a real app, this would fetch new data
+  }
+
+  function exportHotspotReport() {
+    alert('正在生成技术趋势分析报告 (PDF/Excel)...');
+  }
+
+  function showAssociationAnalysis(techName) {
+    alert(`正在为 "${techName}" 生成关联分析可视化视图...\n展示该技术与科研实体、产业链及其他技术的关联关系。`);
+  }
+
+  // Hotspot Module Search/Filter Logic
+  function handleHotspotSearch() {
+    const keyword = document.getElementById('tech-search-input').value;
+    const domain = document.getElementById('tech-domain-select').value;
+    const year = document.getElementById('tech-time-select').value;
+    
+    console.log(`Filtering hotspots: keyword=${keyword}, domain=${domain}, year=${year}`);
+    
+    // Simulate refresh effect
+    const container = document.getElementById('module-hotspot');
+    container.style.opacity = '0.5';
+    
+    setTimeout(() => {
+      container.style.opacity = '1';
+      refreshHotspotData(); // Refresh word cloud
+      // In a real app, we would re-render the ranking list and cards here based on filtered data
+      alert(`搜索已完成！\n关键词: ${keyword || '无'}\n领域: ${domain}\n时间: ${year}\n已更新热点排名与详细信息。`);
+    }, 300);
+  }
+
+  function resetHotspotFilters() {
+    document.getElementById('tech-search-input').value = '';
+    document.getElementById('tech-domain-select').value = 'all';
+    document.getElementById('tech-time-select').value = '2024';
+    handleHotspotSearch();
+  }
+
+  function filterCrossCorrelation(filterType) {
+    // 1. Update filter buttons UI
+    const filters = ['all', 'strong', 'medium'];
+    filters.forEach(type => {
+      const btn = document.getElementById(`cross-filter-${type}`);
+      if (type === filterType) {
+        btn.classList.add('bg-white', 'dark:bg-slate-700', 'shadow-sm', 'text-primary', 'font-bold');
+        btn.classList.remove('text-slate-500', 'font-medium');
+      } else {
+        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow-sm', 'text-primary', 'font-bold');
+        btn.classList.add('text-slate-500', 'font-medium');
+      }
+    });
+
+    // 2. Filter Table Rows
+    const rows = document.querySelectorAll('#module-cross table tbody tr');
+    rows.forEach(row => {
+      const strengthText = row.querySelector('td:nth-child(2) span').textContent;
+      if (filterType === 'all') {
+        row.style.display = '';
+      } else if (filterType === 'strong' && strengthText === '强关联') {
+        row.style.display = '';
+      } else if (filterType === 'medium' && strengthText === '中等关联') {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    // 3. Filter Graph (ECharts)
+    if (charts.cross) {
+      const labelMap = { 'strong': '强关联', 'medium': '中等关联' };
+      const option = charts.cross.getOption();
+      
+      // We need to keep nodes but can hide links
+      const originalLinks = [
+        { source: 'ai', target: 'bio', value: 0.92, label: '强关联', lineStyle: { width: 5, color: '#f43f5e' } },
+        { source: 'quantum', target: 'materials', value: 0.65, label: '中等关联', lineStyle: { width: 3, color: '#f59e0b' } },
+        { source: '6g', target: 'auto', value: 0.88, label: '强关联', lineStyle: { width: 4, color: '#f43f5e' } },
+        { source: 'blockchain', target: 'privacy', value: 0.58, label: '中等关联', lineStyle: { width: 2, color: '#f59e0b' } }
+      ];
+
+      const filteredLinks = filterType === 'all' 
+        ? originalLinks 
+        : originalLinks.filter(link => link.label === labelMap[filterType]);
+
+      option.series[0].links = filteredLinks;
+      charts.cross.setOption(option);
+    }
+  }
+</script>
 </div>
 </div>
 
