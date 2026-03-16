@@ -32,6 +32,7 @@
             },
         }
     </script>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <title>媒体聚焦 - 综合分析内容区</title>
 </head><body class="antialiased"><div class="flex h-screen w-full bg-slate-50 overflow-hidden"><aside id="sidebar" class="w-64 bg-white border-r border-slate-200 flex flex-col z-30 shrink-0" style="min-width:256px"><div class="p-5 flex items-center gap-3 border-b border-slate-100"><div class="w-8 h-8 bg-[#0d9488] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:20px">insights</span></div><span class="font-bold text-base text-slate-800">GKX</span><a href="home.html" class="ml-auto text-slate-400 hover:text-slate-600" title="返回首页"><span class="material-symbols-outlined" style="font-size:18px">home</span></a></div><div class="px-4 pt-4 pb-1"><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">战略咨询体系</span></div><nav class="flex-1 px-2 py-2 overflow-y-auto space-y-0.5"><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">search_check</span><span class="flex-1 text-left">研究需求分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="entity-list.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="entity-list.html">科技实体清单</a><a href="frontier-tech.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="frontier-tech.html">颠覆性与前沿技术分析</a><a href="media-focus.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="media-focus.html">媒体聚焦</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">hub</span><span class="flex-1 text-left">技术体系分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="tech-system.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-system.html">技术体系</a><a href="paper-dashboard.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="paper-dashboard.html">论文分析</a><a href="patent.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="patent.html">专利分析</a><a href="project-stats.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="project-stats.html">科研项目分析</a><a href="social-network-import.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="social-network-import.html">社会网络分析</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">trending_up</span><span class="flex-1 text-left">技术趋势分析</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="clustering-task.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="clustering-task.html">聚类分析</a><a href="common-network-task.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="common-network-task.html">共性网络分析</a><a href="tech-trend.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-trend.html">技术趋势分析</a><a href="tech-alert.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-alert.html">技术动态预警</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">route</span><span class="flex-1 text-left">领域技术线路</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="delphi.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="delphi.html">德尔菲问卷</a><a href="tech-roadmap.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="tech-roadmap.html">技术发展线路</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">description</span><span class="flex-1 text-left">战略咨询报告</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="strategy-shell.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="strategy-shell.html">研究报告管理</a><a href="insight-publish.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="insight-publish.html">洞察报告发布</a><a href="hot-analysis.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="hot-analysis.html">热点分析</a><a href="report-generation.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="report-generation.html">战略咨询报告生成</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">folder_special</span><span class="flex-1 text-left">战略咨询成果</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="strategy-cases.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="strategy-cases.html">战略咨询案例展示</a></div></div><div class="nav-group"><button onclick="toggleGroup(this)" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl text-slate-400">query_stats</span><span class="flex-1 text-left">智能问数</span><span class="material-symbols-outlined text-sm text-slate-400 expand-icon">expand_more</span></button><div class="group-children overflow-hidden" style="max-height:0;transition:max-height .25s ease"><a href="analysis-start.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="analysis-start.html">开始分析</a><a href="case-share.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="case-share.html">案例分享</a><a href="multi-source-data.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="multi-source-data.html">多源数据接入</a><a href="data-dashboard.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="data-dashboard.html">数据看板显示</a><a href="report-gen-ai.html" class="flex items-center pl-12 pr-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0d9488] rounded-lg nav-item" data-file="report-gen-ai.html">一键报告生成</a></div></div></nav><div class="p-4 border-t border-slate-100"><div class="bg-slate-50 rounded-xl p-3 flex items-center gap-3"><div class="w-9 h-9 bg-[#0d9488] rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white" style="font-size:18px">manage_accounts</span></div><div><p class="text-xs font-bold text-slate-800">系统管理员</p><p class="text-[10px] text-slate-500">ID: GKX-0822</p></div></div></div></aside><div class="flex-1 flex flex-col min-w-0 overflow-hidden"><header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0"><div class="flex items-center gap-4"><button onclick="var s=document.getElementById('sidebar');s.style.display=s.style.display==='none'?'flex':'none'" class="p-1 text-slate-500 hover:bg-slate-100 rounded-lg"><span class="material-symbols-outlined">menu</span></button><h2 class="text-sm font-bold text-slate-800">战略咨询智能支持</h2></div><div class="flex-1 max-w-md mx-6"><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" style="font-size:18px">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-slate-100 rounded-full text-sm placeholder-slate-400 outline-none border-none" placeholder="搜索功能、报告..." type="text"/></div></div><div class="flex items-center gap-2"><button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full relative"><span class="material-symbols-outlined" style="font-size:22px">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span></button></div></header><div class="flex-1 overflow-y-auto"><div class="relative flex min-h-screen flex-col overflow-x-hidden">
 <div class="flex h-full grow flex-col">
@@ -51,11 +52,11 @@
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
 <h1 class="text-4xl font-black tracking-tight text-slate-900 dark:text-slate-100">媒体聚焦</h1>
 <div class="flex flex-wrap gap-3">
-<button class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">
+<button id="monitor-config-btn" class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">
 <span class="material-symbols-outlined text-lg">settings_input_antenna</span>
 <span>突发监测配置</span>
 </button>
-<button class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">
+<button id="generate-brief-report-btn" class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">
 <span class="material-symbols-outlined text-lg">description</span>
 <span>生成决策简报</span>
 </button>
@@ -67,277 +68,1308 @@
 </div>
 <!-- Top Stats Section -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">监测资讯总数</p>
-<div class="flex items-end gap-2">
-<span class="text-3xl font-bold text-slate-900 dark:text-white">128,429</span>
-<span class="text-xs text-primary font-bold mb-1">+5.2%</span>
+    <!-- Card 1: 总监测媒体数 -->
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">总监测媒体数</p>
+        <div class="flex items-end gap-2">
+            <span class="text-3xl font-bold text-slate-900 dark:text-white">1,284</span>
+            <span class="text-xs text-primary font-bold mb-1">家</span>
+        </div>
+    </div>
+    <!-- Card 2: 媒体关注热点数量 -->
+    <div id="hotspot-card" class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm cursor-pointer hover:border-primary/50 transition-all group">
+        <div class="flex justify-between items-start">
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">媒体关注热点数量</p>
+            <span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">open_in_new</span>
+        </div>
+        <div class="flex items-end gap-2">
+            <span class="text-3xl font-bold text-slate-900 dark:text-white">28</span>
+            <span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-600 text-[10px] font-bold mb-1">活跃</span>
+        </div>
+    </div>
+    <!-- Card 3: 情感偏向指标 -->
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">情感偏向指标</p>
+        <div class="space-y-2 mt-1">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+                <span class="text-green-600">正向 65%</span>
+                <span class="text-slate-400">中性 25%</span>
+                <span class="text-red-600">负向 10%</span>
+            </div>
+            <div class="h-2 w-full flex rounded-full overflow-hidden">
+                <div class="h-full bg-green-500" style="width: 65%"></div>
+                <div class="h-full bg-slate-300" style="width: 25%"></div>
+                <div class="h-full bg-red-500" style="width: 10%"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Card 4: 媒体—技术耦合度总体评分 -->
+    <div id="coupling-card" class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm cursor-pointer hover:border-primary/50 transition-all group">
+        <div class="flex justify-between items-start">
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">媒体—技术耦合度评分</p>
+            <span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">insights</span>
+        </div>
+        <div class="flex items-end gap-2">
+            <span class="text-3xl font-bold text-slate-900 dark:text-white">0.82</span>
+            <span class="text-xs text-green-600 font-bold mb-1">强耦合</span>
+        </div>
+    </div>
 </div>
+
+<!-- Emergency Brief Modal (Initially Hidden) -->
+<div id="brief-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-in zoom-in-95 duration-200">
+        <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">description</span>
+                突发事件应对简报草稿
+            </h3>
+            <button id="close-brief-modal" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-slate-500">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto custom-scrollbar">
+            <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-[10px] font-black text-primary uppercase tracking-widest">事件概览</span>
+                    <span class="text-[10px] text-slate-400">生成时间: 2024-03-13 14:20</span>
+                </div>
+                <h4 id="brief-title" class="text-lg font-black text-slate-900 dark:text-white">关于“量子通信安全标准发布”的舆情分析与建议</h4>
+            </div>
+
+            <div class="space-y-4">
+                <section>
+                    <h5 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-primary rounded-full"></span>
+                        关键事实 (Key Facts)
+                    </h5>
+                    <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1.5 ml-2">
+                        <li>监测到核心媒体在过去2小时内提及量增长 240%。</li>
+                        <li>首发来源集中于专业技术论坛及行业领军企业官网。</li>
+                        <li>情感倾向以“正向期待”为主，占比 72%。</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h5 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-purple-500 rounded-full"></span>
+                        涉及实体与项目
+                    </h5>
+                    <div class="flex flex-wrap gap-2 ml-2">
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded text-[10px] font-bold">国盾量子</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded text-[10px] font-bold">中国科学技术大学</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded text-[10px] font-bold">量子保密通信京沪干线</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h5 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-green-500 rounded-full"></span>
+                        传播渠道建议
+                    </h5>
+                    <div class="grid grid-cols-2 gap-3 ml-2">
+                        <div class="p-3 bg-green-50 dark:bg-green-900/10 rounded-lg border border-green-100 dark:border-green-800">
+                            <p class="text-[10px] font-bold text-green-700 dark:text-green-400 mb-1">重点跟进</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">科技日报、科学网、财新网</p>
+                        </div>
+                        <div class="p-3 bg-blue-50 dark:bg-blue-900/10 rounded-lg border border-blue-100 dark:border-blue-800">
+                            <p class="text-[10px] font-bold text-blue-700 dark:text-blue-400 mb-1">社媒引导</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">微博科技大V、知乎专业答主</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 flex justify-end gap-3">
+            <button id="close-brief-modal-btn" class="px-6 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-white rounded-lg text-sm font-bold hover:bg-slate-300 transition-all">取消</button>
+            <button id="copy-brief-btn" class="px-6 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-all flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">content_copy</span>
+                复制草稿并采纳
+            </button>
+        </div>
+    </div>
 </div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">今日热点事件</p>
-<div class="flex items-end gap-2">
-<span class="text-3xl font-bold text-slate-900 dark:text-white">15</span>
-<span class="px-2 py-0.5 rounded-full bg-red-100 text-red-600 text-[10px] font-bold mb-1">紧急</span>
+
+<!-- Analysis & Workspace Center -->
+
+<!-- Hotspot List Panel (Initially Hidden) -->
+
+<!-- Hotspot List Panel (Initially Hidden) -->
+<div id="hotspot-panel" class="hidden mb-8 bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/20 shadow-md animate-in slide-in-from-top-4 duration-300">
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">local_fire_department</span>
+            媒体关注热点列表
+        </h3>
+        <button id="close-hotspot-panel" class="text-slate-400 hover:text-slate-600">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Hotspot Item 1 -->
+        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-600">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-bold">生成式AI在工业领域的落地</span>
+                <span class="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded font-bold">热度 98</span>
+            </div>
+            <div class="flex justify-between items-center mt-3">
+                <span class="text-xs text-slate-500">增长率: +12.4%</span>
+                <button class="text-xs font-bold text-primary hover:bg-primary/10 px-2 py-1 rounded transition-colors flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add_task</span> 加入监控
+                </button>
+            </div>
+        </div>
+        <!-- Hotspot Item 2 -->
+        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-600">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-bold">量子纠错技术新突破</span>
+                <span class="text-[10px] px-1.5 py-0.5 bg-orange-100 text-orange-600 rounded font-bold">热度 85</span>
+            </div>
+            <div class="flex justify-between items-center mt-3">
+                <span class="text-xs text-slate-500">增长率: +8.2%</span>
+                <button class="text-xs font-bold text-primary hover:bg-primary/10 px-2 py-1 rounded transition-colors flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add_task</span> 加入监控
+                </button>
+            </div>
+        </div>
+        <!-- Hotspot Item 3 -->
+        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-600">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-bold">低轨道卫星星座网络协议</span>
+                <span class="text-[10px] px-1.5 py-0.5 bg-blue-100 text-blue-600 rounded font-bold">热度 72</span>
+            </div>
+            <div class="flex justify-between items-center mt-3">
+                <span class="text-xs text-slate-500">增长率: +15.8%</span>
+                <button class="text-xs font-bold text-primary hover:bg-primary/10 px-2 py-1 rounded transition-colors flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add_task</span> 加入监控
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">平均情感正向率</p>
-<div class="flex items-end gap-2">
-<span class="text-3xl font-bold text-slate-900 dark:text-white">82.4%</span>
-<div class="h-2 w-20 bg-slate-100 dark:bg-slate-700 rounded-full mb-2 overflow-hidden">
-<div class="h-full bg-green-500 rounded-full" style="width: 82%"></div>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">媒体-技术耦合度均值</p>
-<div class="flex items-end gap-2">
-<span class="text-3xl font-bold text-slate-900 dark:text-white">0.76</span>
-<span class="text-xs text-slate-400 mb-1">高相关性</span>
-</div>
-</div>
+
+<!-- Coupling Analysis Modal (Initially Hidden) -->
+<div id="coupling-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-in zoom-in-95 duration-200">
+        <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">hub</span>
+                媒体—技术耦合分析摘要
+            </h3>
+            <button id="close-coupling-modal" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-slate-500">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-6">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800">
+                    <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">总体分布相关性</p>
+                    <p class="text-2xl font-black text-blue-900 dark:text-blue-200">0.82 <span class="text-sm font-normal text-blue-500">强相关</span></p>
+                </div>
+                <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800">
+                    <p class="text-xs text-purple-600 dark:text-purple-400 font-bold mb-1">显著耦合对数量</p>
+                    <p class="text-2xl font-black text-purple-900 dark:text-purple-200">12 <span class="text-sm font-normal text-purple-500">对</span></p>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-4 bg-primary rounded-full"></span>
+                    相关性分布详情
+                </h4>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-medium w-24">媒体关注 vs 产出</span>
+                        <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary" style="width: 85%"></div>
+                        </div>
+                        <span class="text-xs font-bold">0.85</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-medium w-24">媒体关注 vs 政策</span>
+                        <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary" style="width: 78%"></div>
+                        </div>
+                        <span class="text-xs font-bold">0.78</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-medium w-24">媒体关注 vs 投融资</span>
+                        <div class="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary" style="width: 92%"></div>
+                        </div>
+                        <span class="text-xs font-bold">0.92</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-4 bg-primary rounded-full"></span>
+                    显著耦合对 (Media-Tech Pairs)
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300">纽约时报 - 生成式AI</span>
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300">路透社 - 氢能电池</span>
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300">华尔街日报 - 算力芯片</span>
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300">财新 - 数据安全法</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+            <button id="close-coupling-modal-btn" class="px-6 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-all">关闭</button>
+        </div>
+    </div>
 </div>
 <!-- Upper Section (Analysis) -->
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-<!-- Line Chart: Left (2/3) -->
-<div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<div class="flex justify-between items-center mb-6">
-<h3 class="text-lg font-bold">媒体提及与技术趋势耦合时序图</h3>
-<div class="flex gap-2">
-<span class="flex items-center gap-1 text-xs text-slate-500"><span class="w-3 h-3 rounded-full bg-primary"></span> 资讯量</span>
-<span class="flex items-center gap-1 text-xs text-slate-500"><span class="w-3 h-3 rounded-full bg-green-500"></span> 情感值</span>
-<span class="flex items-center gap-1 text-xs text-slate-500"><span class="w-3 h-3 rounded-full bg-purple-500"></span> 学术产出</span>
-</div>
-</div>
-<div class="relative h-[300px] w-full mt-4">
-<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 300">
-<!-- Grid Lines -->
-<line stroke="#e2e8f0" stroke-dasharray="4" x1="0" x2="800" y1="250" y2="250"></line>
-<line stroke="#e2e8f0" stroke-dasharray="4" x1="0" x2="800" y1="150" y2="150"></line>
-<line stroke="#e2e8f0" stroke-dasharray="4" x1="0" x2="800" y1="50" y2="50"></line>
-<!-- Primary Line (News Volume) -->
-<path d="M0,220 C100,210 150,50 200,80 S300,250 400,200 S550,20 700,100 L800,120" fill="none" stroke="#13b6ec" stroke-linecap="round" stroke-width="3"></path>
-<!-- Secondary Line (Sentiment) -->
-<path d="M0,150 Q100,140 200,160 T400,130 T600,170 T800,140" fill="none" stroke="#10b981" stroke-dasharray="5,5" stroke-width="2"></path>
-</svg>
-<div class="flex justify-between mt-4 text-[11px] text-slate-400 font-bold uppercase tracking-wider">
-<span>01/01</span><span>01/05</span><span>01/10</span><span>01/15</span><span>01/20</span><span>01/25</span><span>01/30</span>
-</div>
-</div>
-</div>
+    <!-- Line Chart: Left (2/3) -->
+    <div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+            <div class="space-y-1">
+                <h3 class="text-lg font-bold flex items-center gap-2">
+                    时间序列与趋势视图
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded-full">BETA</span>
+                </h3>
+                <p class="text-xs text-slate-500">
+                    当前分析焦点：<span class="font-bold text-primary">生成式AI (LLM)</span>
+                    <span class="mx-2 text-slate-300">|</span>
+                    数据源：<span class="text-slate-600 dark:text-slate-400">跨领域耦合监测库</span>
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
+                    <select class="bg-transparent border-none px-3 py-1 text-xs font-bold outline-none cursor-pointer text-slate-700 dark:text-slate-200">
+                        <option>最近30天</option>
+                        <option>最近90天</option>
+                        <option>最近半年</option>
+                        <option>自定义时间窗</option>
+                    </select>
+                </div>
+                <button id="multi-compare-btn" class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-lg">compare_arrows</span>
+                    多序列对比
+                </button>
+                <button id="export-chart-btn" class="p-1.5 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-primary hover:text-white transition-all" title="导出数据与图表">
+                    <span class="material-symbols-outlined text-lg">download</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Indicator Selection Chips -->
+        <div class="flex flex-wrap gap-2 mb-8 p-1 bg-slate-50 dark:bg-slate-900/50 rounded-xl">
+            <label class="flex-1 min-w-[120px] cursor-pointer group">
+                <input type="checkbox" checked class="hidden peer">
+                <div class="px-3 py-2.5 rounded-lg border border-transparent text-[11px] font-bold text-slate-500 peer-checked:bg-white dark:peer-checked:bg-slate-800 peer-checked:text-primary peer-checked:shadow-sm hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-all flex items-center justify-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    媒体提及
+                </div>
+            </label>
+            <label class="flex-1 min-w-[120px] cursor-pointer group">
+                <input type="checkbox" checked class="hidden peer">
+                <div class="px-3 py-2.5 rounded-lg border border-transparent text-[11px] font-bold text-slate-500 peer-checked:bg-white dark:peer-checked:bg-slate-800 peer-checked:text-green-500 peer-checked:shadow-sm hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-all flex items-center justify-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    情感指数
+                </div>
+            </label>
+            <label class="flex-1 min-w-[120px] cursor-pointer group">
+                <input type="checkbox" checked class="hidden peer">
+                <div class="px-3 py-2.5 rounded-lg border border-transparent text-[11px] font-bold text-slate-500 peer-checked:bg-white dark:peer-checked:bg-slate-800 peer-checked:text-purple-500 peer-checked:shadow-sm hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-all flex items-center justify-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                    学术产出
+                </div>
+            </label>
+            <label class="flex-1 min-w-[120px] cursor-pointer group">
+                <input type="checkbox" class="hidden peer">
+                <div class="px-3 py-2.5 rounded-lg border border-transparent text-[11px] font-bold text-slate-500 peer-checked:bg-white dark:peer-checked:bg-slate-800 peer-checked:text-orange-500 peer-checked:shadow-sm hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-all flex items-center justify-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                    投融资
+                </div>
+            </label>
+            <label class="flex-1 min-w-[120px] cursor-pointer group">
+                <input type="checkbox" class="hidden peer">
+                <div class="px-3 py-2.5 rounded-lg border border-transparent text-[11px] font-bold text-slate-500 peer-checked:bg-white dark:peer-checked:bg-slate-800 peer-checked:text-blue-500 peer-checked:shadow-sm hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-all flex items-center justify-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                    政策关注
+                </div>
+            </label>
+        </div>
+
+        <!-- Main Chart Area -->
+        <div class="relative flex-1 min-h-[300px] w-full group/chart" id="trend-chart-container">
+            <!-- Lag Correlation Widget -->
+            <div id="correlation-info" class="absolute top-0 right-0 z-10 hidden glass-effect p-4 rounded-xl border border-primary/20 shadow-xl animate-in slide-in-from-right-4 duration-300">
+                <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
+                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">跨序列滞后相关性分析</span>
+                    <span class="material-symbols-outlined text-xs text-slate-400">info</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between gap-6">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-400 font-medium">基准序列</span>
+                            <span class="text-xs font-bold text-primary">媒体提及数</span>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-500">compare_arrows</span>
+                        <div class="flex flex-col text-right">
+                            <span class="text-[9px] text-slate-400 font-medium">目标序列</span>
+                            <span class="text-xs font-bold text-purple-400">学术产出</span>
+                        </div>
+                    </div>
+                    <div class="p-2 bg-white/5 rounded-lg flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-400">Pearson 相关系数</span>
+                            <span class="text-lg font-black text-green-400">0.89</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[9px] text-slate-400">最优滞后期</span>
+                            <span class="block text-xs font-bold text-white">3 天 (滞后)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 800 300" id="trend-svg">
+                <defs>
+                    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" class="chart-gradient-stop-1" />
+                        <stop offset="100%" class="chart-gradient-stop-2" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Grid Lines -->
+                <g stroke="#e2e8f0" stroke-dasharray="0" stroke-width="0.5" class="dark:stroke-slate-700/50">
+                    <line x1="0" x2="800" y1="250" y2="250"></line>
+                    <line x1="0" x2="800" y1="150" y2="150"></line>
+                    <line x1="0" x2="800" y1="50" y2="50"></line>
+                </g>
+                
+                <!-- Area Gradient -->
+                <path d="M0,220 C100,210 150,50 200,80 S300,250 400,200 S550,20 700,100 L800,120 L800,300 L0,300 Z" fill="url(#primaryGradient)" class="transition-all duration-500"></path>
+
+                <!-- Curves -->
+                <!-- Media Mentions -->
+                <path d="M0,220 C100,210 150,50 200,80 S300,250 400,200 S550,20 700,100 L800,120" fill="none" stroke="#13b6ec" stroke-linecap="round" stroke-width="3" class="curve-shadow transition-all duration-500"></path>
+                <!-- Sentiment -->
+                <path d="M0,150 Q100,140 200,160 T400,130 T600,170 T800,140" fill="none" stroke="#10b981" stroke-dasharray="5,5" stroke-width="2" class="transition-all duration-500 opacity-60"></path>
+                <!-- Academic Output -->
+                <path d="M0,280 C50,270 150,260 250,150 S450,180 600,100 L800,80" fill="none" stroke="#a855f7" stroke-width="2.5" class="curve-shadow transition-all duration-500"></path>
+
+                <!-- Hover Interaction Line -->
+                <line id="hover-line" x1="0" x2="0" y1="0" y2="300" stroke="#cbd5e1" stroke-width="1.5" class="hidden dark:stroke-slate-600"></line>
+                
+                <!-- Hover Points -->
+                <circle id="hover-point-1" cx="0" cy="0" r="5" fill="#13b6ec" stroke="white" stroke-width="2" class="hidden shadow-sm"></circle>
+                <circle id="hover-point-2" cx="0" cy="0" r="5" fill="#10b981" stroke="white" stroke-width="2" class="hidden shadow-sm"></circle>
+                <circle id="hover-point-3" cx="0" cy="0" r="5" fill="#a855f7" stroke="white" stroke-width="2" class="hidden shadow-sm"></circle>
+            </svg>
+            
+            <!-- Tooltip -->
+            <div id="chart-tooltip" class="absolute pointer-events-none hidden glass-effect text-white p-4 rounded-xl shadow-2xl text-xs z-20 min-w-[180px] border border-white/10">
+                <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
+                    <span class="font-black" id="tooltip-date">2024-03-10</span>
+                    <span class="text-[9px] px-1.5 py-0.5 bg-primary/20 text-primary rounded font-bold uppercase">实时监测</span>
+                </div>
+                <div class="space-y-2.5" id="tooltip-rows">
+                    <div class="flex justify-between items-center tooltip-row">
+                        <span class="flex items-center gap-2 text-slate-300">
+                            <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(19,182,236,0.6)]"></span> 
+                            媒体提及
+                        </span>
+                        <span class="font-black text-white" id="tooltip-val-1">1,240</span>
+                    </div>
+                    <div class="flex justify-between items-center tooltip-row">
+                        <span class="flex items-center gap-2 text-slate-300">
+                            <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span> 
+                            情感指数
+                        </span>
+                        <span class="font-black text-white" id="tooltip-val-2">0.78</span>
+                    </div>
+                    <div class="flex justify-between items-center tooltip-row">
+                        <span class="flex items-center gap-2 text-slate-300">
+                            <span class="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.6)]"></span> 
+                            学术产出
+                        </span>
+                        <span class="font-black text-white" id="tooltip-val-3">42</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-6 text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] px-2">
+                <span>01/01</span><span>01/05</span><span>01/10</span><span>01/15</span><span>01/20</span><span>01/25</span><span>01/30</span>
+            </div>
+        </div>
+    </div>
 <!-- Hot Detection: Right (1/3) -->
 <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col">
-<h3 class="text-lg font-bold mb-4">热点突发检测</h3>
-<div class="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
-<div class="group p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/20">
-<div class="flex justify-between items-start mb-2">
-<span class="text-sm font-bold truncate pr-2">量子通信安全标准发布</span>
-<span class="shrink-0 px-2 py-0.5 rounded-md bg-orange-100 text-orange-600 text-[10px] font-bold">高强度</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="text-xs text-slate-500">爆发指数: 94.2</span>
-<button class="text-primary text-xs font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">add_circle</span>加入监控
-                                </button>
-</div>
-</div>
-<div class="group p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/20">
-<div class="flex justify-between items-start mb-2">
-<span class="text-sm font-bold truncate pr-2">硅光子芯片技术路线争议</span>
-<span class="shrink-0 px-2 py-0.5 rounded-md bg-blue-100 text-blue-600 text-[10px] font-bold">中等</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="text-xs text-slate-500">爆发指数: 68.5</span>
-<button class="text-primary text-xs font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">add_circle</span>加入监控
-                                </button>
-</div>
-</div>
-<div class="group p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/20">
-<div class="flex justify-between items-start mb-2">
-<span class="text-sm font-bold truncate pr-2">低轨卫星互联网频段分配</span>
-<span class="shrink-0 px-2 py-0.5 rounded-md bg-orange-100 text-orange-600 text-[10px] font-bold">高强度</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="text-xs text-slate-500">爆发指数: 88.1</span>
-<button class="text-primary text-xs font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">add_circle</span>加入监控
-                                </button>
-</div>
-</div>
-</div>
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold">热点检测与突发事件追踪</h3>
+        <span class="text-[10px] font-bold px-2 py-0.5 bg-red-100 text-red-600 rounded-full animate-pulse">实时识别中</span>
+    </div>
+    <div class="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
+        <!-- Candidate 1 -->
+        <div class="group p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 transition-all border border-transparent hover:border-primary/30 hover:shadow-md">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-black text-slate-900 dark:text-white">量子通信安全标准发布</span>
+                <span class="shrink-0 px-2 py-0.5 rounded-md bg-orange-100 text-orange-600 text-[9px] font-black uppercase">高强度突发</span>
+            </div>
+            <div class="space-y-2 mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">触发原因:</span>
+                    <span class="text-[10px] text-orange-600 font-bold bg-orange-50 dark:bg-orange-900/20 px-1.5 py-0.5 rounded">来源集中度激增 (+240%)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">关联实体:</span>
+                    <div class="flex gap-1">
+                        <span class="text-[9px] px-1.5 py-0.5 bg-primary/10 text-primary rounded font-bold">国盾量子</span>
+                        <span class="text-[9px] px-1.5 py-0.5 bg-primary/10 text-primary rounded font-bold">中科大</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button class="emergency-monitor-btn flex-1 py-2 bg-primary text-white rounded-lg text-[10px] font-black hover:bg-primary/90 transition-all flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add_alert</span>加入监控
+                </button>
+                <button class="generate-brief-btn flex-1 py-2 bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-white rounded-lg text-[10px] font-black hover:bg-slate-200 transition-all flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">description</span>生成应对简报
+                </button>
+            </div>
+        </div>
+
+        <!-- Candidate 2 -->
+        <div class="group p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 transition-all border border-transparent hover:border-primary/30 hover:shadow-md">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-black text-slate-900 dark:text-white">硅光子芯片技术路线争议</span>
+                <span class="shrink-0 px-2 py-0.5 rounded-md bg-blue-100 text-blue-600 text-[9px] font-black uppercase">情感异常波动</span>
+            </div>
+            <div class="space-y-2 mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">触发原因:</span>
+                    <span class="text-[10px] text-blue-600 font-bold bg-blue-50 dark:bg-blue-900/20 px-1.5 py-0.5 rounded">负面情感指数异常上升</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">关联实体:</span>
+                    <div class="flex gap-1">
+                        <span class="text-[9px] px-1.5 py-0.5 bg-primary/10 text-primary rounded font-bold">Intel</span>
+                        <span class="text-[9px] px-1.5 py-0.5 bg-primary/10 text-primary rounded font-bold">曦智科技</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button class="emergency-monitor-btn flex-1 py-2 bg-primary text-white rounded-lg text-[10px] font-black hover:bg-primary/90 transition-all flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add_alert</span>加入监控
+                </button>
+                <button class="generate-brief-btn flex-1 py-2 bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-white rounded-lg text-[10px] font-black hover:bg-slate-200 transition-all flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">description</span>生成应对简报
+                </button>
+            </div>
+        </div>
+
+        <!-- Candidate 3 -->
+        <div class="group p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-700 transition-all border border-transparent hover:border-primary/30 hover:shadow-md">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-black text-slate-900 dark:text-white">低轨卫星互联网频段分配</span>
+                <span class="shrink-0 px-2 py-0.5 rounded-md bg-purple-100 text-purple-600 text-[9px] font-black uppercase">新兴高潜热点</span>
+            </div>
+            <div class="space-y-2 mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">触发原因:</span>
+                    <span class="text-[10px] text-purple-600 font-bold bg-purple-50 dark:bg-purple-900/20 px-1.5 py-0.5 rounded">短期提及增长率 420%</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">关联实体:</span>
+                    <div class="flex gap-1">
+                        <span class="text-[9px] px-1.5 py-0.5 bg-primary/10 text-primary rounded font-bold">SpaceX</span>
+                        <span class="text-[9px] px-1.5 py-0.5 bg-primary/10 text-primary rounded font-bold">中国星网</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button class="emergency-monitor-btn flex-1 py-2 bg-primary text-white rounded-lg text-[10px] font-black hover:bg-primary/90 transition-all flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add_alert</span>加入监控
+                </button>
+                <button class="generate-brief-btn flex-1 py-2 bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-white rounded-lg text-[10px] font-black hover:bg-slate-200 transition-all flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">description</span>生成应对简报
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- Middle Section (Interactive Network) -->
-<div class="w-full mb-8">
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden h-[500px] flex flex-col">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 relative z-10">
-<div>
-<h3 class="text-lg font-bold">媒体—技术耦合关联网络</h3>
-<p class="text-xs text-slate-500 mt-1">分析重点：关键核心技术与全球主流媒体报道链条</p>
+<div class="w-full mb-8 relative">
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden h-[600px] flex flex-col">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 relative z-10">
+            <div>
+                <h3 class="text-lg font-bold">媒体—技术耦合关联网络</h3>
+                <p class="text-xs text-slate-500 mt-1">分析重点：关键核心技术与全球主流媒体报道链条</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <!-- Filters -->
+                <div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg gap-1">
+                    <select id="region-filter" class="bg-transparent border-none px-2 py-1 text-[10px] font-bold outline-none cursor-pointer">
+                        <option>全球地域</option>
+                        <option>北美</option>
+                        <option>欧洲</option>
+                        <option>亚太</option>
+                    </select>
+                    <select id="sentiment-filter" class="bg-transparent border-none px-2 py-1 text-[10px] font-bold outline-none cursor-pointer">
+                        <option>所有情感</option>
+                        <option>正向为主</option>
+                        <option>中性平衡</option>
+                    </select>
+                </div>
+                
+                <div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
+                    <button id="zoom-in" class="p-1.5 hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all shadow-sm" title="局部放大">
+                        <span class="material-symbols-outlined text-xl">zoom_in</span>
+                    </button>
+                    <button id="zoom-out" class="p-1.5 hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all" title="缩小">
+                        <span class="material-symbols-outlined text-xl">zoom_out</span>
+                    </button>
+                </div>
+                <button id="path-find-btn" class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-lg">route</span> 路径查找
+                </button>
+                <button class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-all">
+                    <span class="material-symbols-outlined text-lg">filter_alt</span> 关系强度
+                </button>
+            </div>
+        </div>
+
+        <!-- Graph Visualization Container -->
+        <div id="network-container" class="flex-1 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 relative overflow-hidden">
+            <!-- Legend -->
+            <div class="absolute bottom-4 left-4 flex flex-col gap-2 p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-lg border border-slate-200 dark:border-slate-700 z-30 pointer-events-none shadow-sm">
+                <div class="flex items-center gap-2 text-[10px] font-bold text-slate-600 dark:text-slate-300">
+                    <span class="w-3 h-3 rounded-full bg-[#13b6ec]"></span>
+                    核心技术主题
+                </div>
+                <div class="flex items-center gap-2 text-[10px] font-bold text-slate-600 dark:text-slate-300">
+                    <span class="w-3 h-3 rounded-full bg-[#10b981]"></span>
+                    主流媒体
+                </div>
+                <div class="flex items-center gap-2 text-[10px] font-bold text-slate-600 dark:text-slate-300">
+                    <span class="w-3 h-3 rounded-full bg-[#f59e0b]"></span>
+                    关键关联实体
+                </div>
+            </div>
+            
+            <!-- Vis-Network Container -->
+            <div id="vis-network-container" class="w-full h-full"></div>
+        </div>
+
+        <!-- Node Detail Sidebar (Hidden by default) -->
+        <div id="node-detail-panel" class="absolute top-0 right-0 w-80 h-full glass-effect border-l border-white/10 z-40 transform translate-x-full transition-transform duration-300 overflow-y-auto custom-scrollbar shadow-2xl">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span id="detail-node-type" class="text-[9px] font-black uppercase tracking-widest text-primary px-1.5 py-0.5 bg-primary/10 rounded">Media</span>
+                        <h4 id="detail-node-name" class="text-xl font-black text-white mt-2">纽约时报</h4>
+                    </div>
+                    <button id="close-detail-panel" class="text-slate-400 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+
+                <!-- Detail Tabs/Sections -->
+                <div class="space-y-8">
+                    <!-- Timeline Section -->
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">timeline</span> 报道热度趋势
+                        </h5>
+                        <div class="h-24 w-full flex items-end gap-1 px-1">
+                            <div class="flex-1 bg-primary/30 rounded-t h-[40%]"></div>
+                            <div class="flex-1 bg-primary/30 rounded-t h-[60%]"></div>
+                            <div class="flex-1 bg-primary/50 rounded-t h-[30%]"></div>
+                            <div class="flex-1 bg-primary/80 rounded-t h-[90%]"></div>
+                            <div class="flex-1 bg-primary/40 rounded-t h-[50%]"></div>
+                            <div class="flex-1 bg-primary/60 rounded-t h-[70%]"></div>
+                            <div class="flex-1 bg-primary/90 rounded-t h-[100%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Word Cloud Section -->
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">cloud</span> 关联关键词云
+                        </h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-white font-bold">LLM 监管</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[12px] text-primary font-bold">版权争议</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-white">OpenAI</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[14px] text-white font-black">算法伦理</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-slate-400">算力竞争</span>
+                        </div>
+                    </div>
+
+                    <!-- Representative Reports -->
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">article</span> 代表性报道溯源
+                        </h5>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all cursor-pointer border border-transparent hover:border-primary/30">
+                                <p class="text-xs font-bold text-slate-200 line-clamp-2">深度分析：生成式AI如何重塑现代新闻编辑室的版权边界</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-[9px] text-slate-500">2024-03-08</span>
+                                    <span class="text-[9px] text-green-400 font-bold">Positive</span>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all cursor-pointer border border-transparent hover:border-primary/30">
+                                <p class="text-xs font-bold text-slate-200 line-clamp-2">调查报告：大型语言模型训练中的非公开数据使用现状</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-[9px] text-slate-500">2024-02-24</span>
+                                    <span class="text-[9px] text-orange-400 font-bold">Neutral</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path Find Overlay (Simulated) -->
+        <div id="path-overlay" class="absolute inset-0 z-30 hidden flex items-center justify-center pointer-events-none">
+            <div class="p-4 glass-effect rounded-2xl border border-primary/40 shadow-[0_0_30px_rgba(19,182,236,0.2)] animate-in zoom-in-95 duration-500">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold text-white">纽约</div>
+                        <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                        <div class="w-8 h-8 rounded-full bg-orange-400 flex items-center justify-center text-[10px] font-bold text-white">伦理</div>
+                        <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold text-white">AI</div>
+                    </div>
+                    <div class="h-8 w-[1px] bg-white/10 mx-2"></div>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] text-slate-400 uppercase font-bold">传播路径分析</span>
+                        <span class="text-xs font-bold text-white">最短耦合路径 (3跳)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="flex flex-wrap gap-2">
-<div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
-<button class="p-1.5 hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all shadow-sm">
-<span class="material-symbols-outlined text-xl">zoom_in</span>
-</button>
-<button class="p-1.5 hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all">
-<span class="material-symbols-outlined text-xl">zoom_out</span>
-</button>
+<!-- Lower Section (Analysis & Interpretation) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Coupling Analysis: Left (2/3) -->
+    <div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h3 class="text-lg font-bold">耦合度深度分析面板</h3>
+                <p class="text-xs text-slate-500 mt-1">定量分析：媒体关注度 vs 技术发展指标</p>
+            </div>
+            <div class="flex gap-2">
+                <span class="text-[10px] font-bold px-2 py-0.5 bg-primary/10 text-primary rounded uppercase tracking-widest">Granger Causality</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 bg-purple-100 text-purple-600 rounded uppercase tracking-widest">Lag Analysis</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 flex-1">
+            <!-- Heatmap / Matrix Area -->
+            <div class="md:col-span-7 space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider">耦合强度时间热力图</span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[9px] text-slate-400">弱</span>
+                        <div class="h-1.5 w-16 bg-gradient-to-r from-primary/10 to-primary rounded-full"></div>
+                        <span class="text-[9px] text-slate-400">强</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-7 gap-1">
+                    <!-- Day labels -->
+                    <div class="col-start-2 col-span-6 flex justify-between text-[8px] text-slate-400 font-bold mb-1">
+                        <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span>
+                    </div>
+                    <!-- Indicator labels -->
+                    <div class="flex flex-col justify-between py-1 text-[9px] text-slate-500 font-bold text-right pr-2 space-y-2">
+                        <span class="h-6 flex items-center justify-end">提及量</span>
+                        <span class="h-6 flex items-center justify-end">情感值</span>
+                        <span class="h-6 flex items-center justify-end">论文</span>
+                        <span class="h-6 flex items-center justify-end">专利</span>
+                        <span class="h-6 flex items-center justify-end">投融资</span>
+                    </div>
+                    <!-- Heatmap cells -->
+                    <div class="col-span-6 grid grid-cols-6 grid-rows-5 gap-1">
+                        <!-- Row 1 -->
+                        <div class="h-6 bg-primary/20 rounded-sm"></div><div class="h-6 bg-primary/40 rounded-sm"></div><div class="h-6 bg-primary/90 rounded-sm"></div><div class="h-6 bg-primary/60 rounded-sm"></div><div class="h-6 bg-primary/30 rounded-sm"></div><div class="h-6 bg-primary/10 rounded-sm"></div>
+                        <!-- Row 2 -->
+                        <div class="h-6 bg-primary/10 rounded-sm"></div><div class="h-6 bg-primary/20 rounded-sm"></div><div class="h-6 bg-primary/50 rounded-sm"></div><div class="h-6 bg-primary/80 rounded-sm"></div><div class="h-6 bg-primary/40 rounded-sm"></div><div class="h-6 bg-primary/20 rounded-sm"></div>
+                        <!-- Row 3 -->
+                        <div class="h-6 bg-primary/60 rounded-sm"></div><div class="h-6 bg-primary/80 rounded-sm"></div><div class="h-6 bg-primary/30 rounded-sm"></div><div class="h-6 bg-primary/10 rounded-sm"></div><div class="h-6 bg-primary/50 rounded-sm"></div><div class="h-6 bg-primary/90 rounded-sm"></div>
+                        <!-- Row 4 -->
+                        <div class="h-6 bg-primary/30 rounded-sm"></div><div class="h-6 bg-primary/10 rounded-sm"></div><div class="h-6 bg-primary/40 rounded-sm"></div><div class="h-6 bg-primary/70 rounded-sm"></div><div class="h-6 bg-primary/90 rounded-sm"></div><div class="h-6 bg-primary/50 rounded-sm"></div>
+                        <!-- Row 5 -->
+                        <div class="h-6 bg-primary/80 rounded-sm"></div><div class="h-6 bg-primary/95 rounded-sm"></div><div class="h-6 bg-primary/60 rounded-sm"></div><div class="h-6 bg-primary/30 rounded-sm"></div><div class="h-6 bg-primary/10 rounded-sm"></div><div class="h-6 bg-primary/40 rounded-sm"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats / Lag Area -->
+            <div class="md:col-span-5 flex flex-col gap-4">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700">
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider block mb-3">关键指标矩阵 (Correlation)</span>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-600 dark:text-slate-400">Pearson 相关系数</span>
+                            <span class="font-black text-primary">0.82 (强)</span>
+                        </div>
+                        <div id="lag-trigger" class="flex justify-between items-center text-xs cursor-pointer group">
+                            <span class="text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors flex items-center gap-1">
+                                滞后效应分析
+                                <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                            </span>
+                            <span class="font-black text-purple-500">媒体领先 3.2 天</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-600 dark:text-slate-400">因果性 (P-Value)</span>
+                            <span class="font-black text-green-600">0.0042 (显著)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dynamic Interpretation Summary -->
+                <div class="p-4 rounded-xl bg-primary/5 border border-primary/10 flex-1">
+                    <div class="flex items-center gap-2 mb-2 text-primary">
+                        <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest">智能分析摘要</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed italic">
+                        "分析显示，媒体关注度是技术产出的显著先导指标。当前热度激增可能在未来一周内带动相关专利申请量的上升，建议关注核心实体的研发动态。"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interpretation Draft: Right (1/3) -->
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold">可能机制解读草稿</h3>
+            <button class="text-primary hover:bg-primary/10 p-1.5 rounded-lg transition-all" title="重新生成">
+                <span class="material-symbols-outlined">refresh</span>
+            </button>
+        </div>
+        <div class="flex-1 space-y-6 overflow-y-auto custom-scrollbar pr-2">
+            <section>
+                <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">耦合机制分析</h5>
+                <div class="p-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border-l-4 border-primary">
+                    <p class="text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">信息溢出效应</p>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        媒体对特定算法（如 LLM）的广泛报道加速了技术共识的形成，降低了投融资决策的搜索成本，从而诱发了后续的资本涌入。
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">风险与建议</h5>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-orange-500 text-xs mt-0.5">warning</span>
+                        <span class="text-[11px] text-slate-600 dark:text-slate-400">警惕“媒体过度炒作”导致的技术估值泡沫，建议对比学术产出的实际增速。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-green-500 text-xs mt-0.5">verified_user</span>
+                        <span class="text-[11px] text-slate-600 dark:text-slate-400">加强对政策关键词的实时对齐，利用滞后期进行超前布局。</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700">
+            <button class="w-full py-2 bg-primary text-white rounded-lg text-xs font-black hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">content_copy</span>
+                采纳至正式报告
+            </button>
+        </div>
+    </div>
 </div>
-<button class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold">
-<span class="material-symbols-outlined text-lg">route</span> 路径查找
-                            </button>
-<button class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-bold">
-<span class="material-symbols-outlined text-lg">filter_alt</span> 关系强度过滤
-                            </button>
+
+<!-- Analysis & Workspace Center -->
+<div class="mt-8 grid grid-cols-1 xl:grid-cols-2 gap-8">
+    <!-- Card 1: Dynamic Monitoring & Alert Rules -->
+    <div id="monitor-config-card" class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+        <div class="flex justify-between items-center mb-8 shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary">settings_input_antenna</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">动态监控与预警规则</h3>
+                    <p class="text-xs text-slate-500">自定义多维触发逻辑与自动化响应</p>
+                </div>
+            </div>
+            <span class="px-3 py-1 bg-green-100 text-green-600 text-[10px] font-black rounded-full uppercase tracking-wider">运行中</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
+            <!-- Left: Config Form -->
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">监控配置</label>
+                    <div class="space-y-3">
+                        <div class="flex gap-2">
+                            <select class="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg px-3 py-2 text-xs font-bold outline-none focus:ring-2 focus:ring-primary/50">
+                                <option>生成式AI (LLM)</option>
+                                <option>量子通信</option>
+                            </select>
+                            <select class="w-24 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg px-3 py-2 text-xs outline-none">
+                                <option>全球</option>
+                                <option>亚太</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                            <span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+                            <span class="text-[10px] font-bold flex-1">提及增速 ></span>
+                            <input type="number" value="50" class="w-12 bg-transparent border-none text-xs font-black p-0 text-right">
+                            <span class="text-[10px] font-bold text-slate-400">%</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                            <span class="material-symbols-outlined text-red-500 text-sm">mood_bad</span>
+                            <span class="text-[10px] font-bold flex-1">负面占比 ></span>
+                            <input type="number" value="30" class="w-12 bg-transparent border-none text-xs font-black p-0 text-right">
+                            <span class="text-[10px] font-bold text-slate-400">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">自动化动作</label>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded border border-primary/10 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[14px]">description</span> 应急简报
+                        </span>
+                        <span class="px-2 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded border border-primary/10 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[14px]">mail</span> 实时通知
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Validation -->
+            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-100 dark:border-slate-800 flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">历史规则回测</span>
+                    <button id="card-validate-rule-btn" class="px-3 py-1 bg-primary text-white rounded-lg text-[10px] font-black hover:bg-primary/90 transition-all flex items-center gap-1">
+                        <span class="material-symbols-outlined text-xs">play_circle</span>验证
+                    </button>
+                </div>
+                
+                <div id="card-validation-result" class="hidden space-y-4 animate-in slide-in-from-bottom-2">
+                    <div class="flex gap-2">
+                        <div class="flex-1 p-2 bg-white dark:bg-slate-800 rounded-lg border border-green-100 dark:border-green-900/20">
+                            <p class="text-[8px] text-slate-400 uppercase font-bold">漏报率</p>
+                            <p class="text-sm font-black text-green-600">4.2%</p>
+                        </div>
+                        <div class="flex-1 p-2 bg-white dark:bg-slate-800 rounded-lg border border-orange-100 dark:border-orange-900/20">
+                            <p class="text-[8px] text-slate-400 uppercase font-bold">误报率</p>
+                            <p class="text-sm font-black text-orange-600">8.5%</p>
+                        </div>
+                    </div>
+                    <div class="h-20 w-full flex items-end gap-1">
+                        <div class="flex-1 bg-primary/20 rounded-t h-[30%]"></div>
+                        <div class="flex-1 bg-red-400/60 rounded-t h-[80%]"></div>
+                        <div class="flex-1 bg-primary/20 rounded-t h-[40%]"></div>
+                        <div class="flex-1 bg-red-400/60 rounded-t h-[60%]"></div>
+                        <div class="flex-1 bg-primary/20 rounded-t h-[20%]"></div>
+                    </div>
+                </div>
+
+                <div id="card-validation-empty" class="flex-1 flex flex-col items-center justify-center text-center opacity-40">
+                    <span class="material-symbols-outlined text-2xl mb-1">analytics</span>
+                    <p class="text-[10px] font-medium leading-tight">点击验证<br>评估规则有效性</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700 flex justify-end gap-3">
+            <button id="card-save-monitor-btn" class="w-full py-2.5 bg-primary text-white rounded-xl text-xs font-black hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">更新并应用规则</button>
+        </div>
+    </div>
+
+    <!-- Card 2: Report & Recommendation Generation -->
+    <div id="report-gen-card" class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+        <div class="flex justify-between items-center mb-8 shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center">
+                    <span class="material-symbols-outlined text-purple-500">description</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">报告与建议生成</h3>
+                    <p class="text-xs text-slate-500">自动化研判报告与行动建议书</p>
+                </div>
+            </div>
+            <div class="flex gap-1">
+                <button class="p-2 text-slate-400 hover:text-primary transition-colors" title="历史报告">
+                    <span class="material-symbols-outlined text-xl">history</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
+            <!-- Left: Options -->
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">报告模板</label>
+                    <select id="card-report-template" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg px-3 py-2 text-xs font-bold outline-none">
+                        <option>科技舆情短报</option>
+                        <option>战略研判报告</option>
+                        <option>舆情应对建议书</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">包含模块</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 cursor-pointer">
+                            <input type="checkbox" checked class="rounded text-purple-500">
+                            <span class="text-[10px] font-bold">趋势图表</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 cursor-pointer">
+                            <input type="checkbox" checked class="rounded text-purple-500">
+                            <span class="text-[10px] font-bold">耦合分析</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 cursor-pointer">
+                            <input type="checkbox" class="rounded text-purple-500">
+                            <span class="text-[10px] font-bold">行动建议</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 cursor-pointer">
+                            <input type="checkbox" class="rounded text-purple-500">
+                            <span class="text-[10px] font-bold">专家摘录</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Preview Shortcut -->
+            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-100 dark:border-slate-800 flex flex-col relative overflow-hidden group/prev">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">报告实时预览</span>
+                    <span class="text-[8px] font-bold text-slate-400 tracking-tighter">V1.2 DRAFT</span>
+                </div>
+                <div class="flex-1 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm border border-slate-100 dark:border-slate-700 opacity-60 group-hover/prev:opacity-100 transition-opacity">
+                    <div class="w-1/2 h-2 bg-slate-200 dark:bg-slate-700 rounded mb-3"></div>
+                    <div class="space-y-2">
+                        <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700/50 rounded"></div>
+                        <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700/50 rounded"></div>
+                        <div class="w-3/4 h-1.5 bg-slate-100 dark:bg-slate-700/50 rounded"></div>
+                    </div>
+                    <div class="mt-4 h-12 w-full bg-primary/5 rounded-md flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary/30">insert_chart</span>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-slate-900/5 backdrop-blur-[1px] group-hover/prev:backdrop-blur-0 transition-all flex items-center justify-center opacity-0 group-hover/prev:opacity-100">
+                    <button id="card-generate-preview-btn" class="px-4 py-2 bg-white dark:bg-slate-700 shadow-xl rounded-full text-[10px] font-black text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">visibility</span> 查看全屏预览
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700 flex gap-3">
+            <div class="flex-1 grid grid-cols-2 gap-2">
+                <button class="card-export-btn py-2.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white rounded-xl text-xs font-black hover:bg-slate-200 transition-all flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF
+                </button>
+                <button class="card-export-btn py-2.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white rounded-xl text-xs font-black hover:bg-slate-200 transition-all flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">description</span> Word
+                </button>
+            </div>
+            <button id="card-share-report-btn" class="px-4 py-2.5 bg-purple-500 text-white rounded-xl text-xs font-black hover:bg-purple-600 transition-all shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">share</span> 共享
+            </button>
+        </div>
+    </div>
 </div>
+
+<!-- Smart Recommendation & Traceability Section -->
+<div class="mt-8 space-y-6">
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">auto_awesome</span>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">智能推荐与溯源</h3>
+                <p class="text-xs text-slate-500">基于知识图谱与语义相似度的多维关联推荐</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="text-[10px] font-bold text-slate-400 uppercase">推荐偏好:</span>
+            <div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
+                <button class="px-3 py-1 bg-white dark:bg-slate-600 text-primary text-[10px] font-bold rounded-md shadow-sm">关联技术</button>
+                <button class="px-3 py-1 text-slate-500 dark:text-slate-400 text-[10px] font-bold hover:text-primary transition-colors">受影响机构</button>
+                <button class="px-3 py-1 text-slate-500 dark:text-slate-400 text-[10px] font-bold hover:text-primary transition-colors">意见媒体</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Recommend Card 1 -->
+        <div class="recommend-card group bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 -mr-12 -mt-12 rounded-full transition-transform group-hover:scale-150"></div>
+            
+            <div class="flex justify-between items-start mb-4 relative z-10">
+                <div>
+                    <span class="text-[9px] font-black uppercase tracking-widest text-primary px-1.5 py-0.5 bg-primary/10 rounded">Related Tech</span>
+                    <h4 class="text-lg font-black text-slate-900 dark:text-white mt-2">向量数据库 (Vector DB)</h4>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-xl font-black text-primary">94</span>
+                    <span class="text-[8px] font-bold text-slate-400 uppercase">相似度分值</span>
+                </div>
+            </div>
+
+            <div class="space-y-4 flex-1 relative z-10">
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">推荐理由</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        作为生成式AI的核心基础设施，向量数据库在过去一周的媒体提及量随LLM热度同步增长，呈现高度语义耦合。
+                    </p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">代表性报道</p>
+                    <div class="space-y-2">
+                        <div class="p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg text-[10px] text-slate-500 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-primary"></span>
+                            <span class="line-clamp-1 italic">"为什么向量数据库是AI时代的存储基石？"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex gap-3 relative z-10">
+                <button class="evidence-trigger-btn flex-1 py-2 bg-primary/10 text-primary rounded-lg text-[10px] font-black hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">fact_check</span>
+                    证据溯源
+                </button>
+                <button class="dismiss-recommend-btn px-3 py-2 bg-slate-50 dark:bg-slate-700 text-slate-400 dark:text-slate-500 rounded-lg hover:text-red-500 transition-all">
+                    <span class="material-symbols-outlined text-sm">block</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Recommend Card 2 -->
+        <div class="recommend-card group bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 -mr-12 -mt-12 rounded-full transition-transform group-hover:scale-150"></div>
+            
+            <div class="flex justify-between items-start mb-4 relative z-10">
+                <div>
+                    <span class="text-[9px] font-black uppercase tracking-widest text-purple-500 px-1.5 py-0.5 bg-purple-500/10 rounded">Impacted Org</span>
+                    <h4 class="text-lg font-black text-slate-900 dark:text-white mt-2">英伟达 (NVIDIA)</h4>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-xl font-black text-purple-500">88</span>
+                    <span class="text-[8px] font-bold text-slate-400 uppercase">相似度分值</span>
+                </div>
+            </div>
+
+            <div class="space-y-4 flex-1 relative z-10">
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">推荐理由</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        知识图谱显示，LLM的算力分配争议直接关联到NVIDIA的H100供应周期，媒体在报道AI主权时频繁引用其财报数据。
+                    </p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">代表性报道</p>
+                    <div class="space-y-2">
+                        <div class="p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg text-[10px] text-slate-500 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-purple-500"></span>
+                            <span class="line-clamp-1 italic">"算力霸权：NVIDIA在生成式AI竞赛中的独占地位"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex gap-3 relative z-10">
+                <button class="evidence-trigger-btn flex-1 py-2 bg-purple-500/10 text-purple-500 rounded-lg text-[10px] font-black hover:bg-purple-500 hover:text-white transition-all flex items-center justify-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">fact_check</span>
+                    证据溯源
+                </button>
+                <button class="dismiss-recommend-btn px-3 py-2 bg-slate-50 dark:bg-slate-700 text-slate-400 dark:text-slate-500 rounded-lg hover:text-red-500 transition-all">
+                    <span class="material-symbols-outlined text-sm">block</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Recommend Card 3 -->
+        <div class="recommend-card group bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/5 -mr-12 -mt-12 rounded-full transition-transform group-hover:scale-150"></div>
+            
+            <div class="flex justify-between items-start mb-4 relative z-10">
+                <div>
+                    <span class="text-[9px] font-black uppercase tracking-widest text-green-500 px-1.5 py-0.5 bg-green-500/10 rounded">Opinion Leader</span>
+                    <h4 class="text-lg font-black text-slate-900 dark:text-white mt-2">科技日报 (Science Daily)</h4>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-xl font-black text-green-500">82</span>
+                    <span class="text-[8px] font-bold text-slate-400 uppercase">相似度分值</span>
+                </div>
+            </div>
+
+            <div class="space-y-4 flex-1 relative z-10">
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">推荐理由</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        该媒体近期对生成式AI的伦理治理发表了多篇深度特稿，其观点被后续主流媒体广泛引用，属于关键意见源。
+                    </p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">代表性报道</p>
+                    <div class="space-y-2">
+                        <div class="p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg text-[10px] text-slate-500 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-green-500"></span>
+                            <span class="line-clamp-1 italic">"重构信任：建立生成式AI的全球治理框架"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex gap-3 relative z-10">
+                <button class="evidence-trigger-btn flex-1 py-2 bg-green-500/10 text-green-500 rounded-lg text-[10px] font-black hover:bg-green-500 hover:text-white transition-all flex items-center justify-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">fact_check</span>
+                    证据溯源
+                </button>
+                <button class="dismiss-recommend-btn px-3 py-2 bg-slate-50 dark:bg-slate-700 text-slate-400 dark:text-slate-500 rounded-lg hover:text-red-500 transition-all">
+                    <span class="material-symbols-outlined text-sm">block</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Graph Visualization Container -->
-<div class="flex-1 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 relative overflow-hidden flex items-center justify-center">
-<!-- Simulated Network Background -->
-<div class="absolute inset-0 opacity-20 dark:opacity-40 pointer-events-none">
-<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
-<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#cbd5e1" stroke-width="0.5"></path>
-</pattern>
-</defs>
-<rect fill="url(#grid)" height="100%" width="100%"></rect>
-</svg>
+
+<!-- Evidence Traceability Modal (Initially Hidden) -->
+<div id="evidence-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white dark:bg-slate-800 w-full max-w-4xl h-[80vh] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-in zoom-in-95 duration-200 flex flex-col">
+        <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50/50 shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary">fact_check</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">推荐证据溯源详情</h3>
+                    <p class="text-[10px] text-slate-500 font-medium uppercase tracking-widest" id="evidence-target-name">向量数据库 (Vector DB)</p>
+                </div>
+            </div>
+            <button id="close-evidence-modal" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-slate-500">close</span>
+            </button>
+        </div>
+        
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Left: Source Documents & Timeline (1/2) -->
+            <div class="flex-1 border-r border-slate-100 dark:border-slate-700 p-6 overflow-y-auto custom-scrollbar space-y-6">
+                <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">history</span> 引用链与时间轴
+                </h5>
+                
+                <div class="relative space-y-8 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-200 dark:before:bg-slate-700">
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary/20 border-2 border-primary"></div>
+                        <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                            <p class="text-[9px] font-bold text-slate-400 mb-1">2024-03-10 · 原始技术发布</p>
+                            <h6 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Milvus 2.4 版本发布：引入混合搜索新特性</h6>
+                            <p class="text-[10px] text-slate-500">来源：Linux Foundation 官方技术博客</p>
+                        </div>
+                    </div>
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-slate-200 border-2 border-slate-400"></div>
+                        <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                            <p class="text-[9px] font-bold text-slate-400 mb-1">2024-03-11 · 媒体二次扩散</p>
+                            <h6 class="text-xs font-bold text-slate-900 dark:text-white mb-2">生成式AI的“长期记忆”问题：向量数据库如何成为解药？</h6>
+                            <p class="text-[10px] text-slate-500">来源：TechCrunch 深度专栏</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Extracted Facts (1/2) -->
+            <div class="w-[400px] p-6 overflow-y-auto custom-scrollbar space-y-6 shrink-0 bg-slate-50/30 dark:bg-slate-900/30">
+                <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">account_tree</span> 提取事实三元组 (SPO)
+                </h5>
+                
+                <div class="space-y-3">
+                    <div class="p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 group hover:border-primary/40 transition-all">
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex-1 flex flex-col items-center">
+                                <span class="text-[8px] font-bold text-slate-400 uppercase mb-1">Subject</span>
+                                <span class="text-[10px] font-black text-slate-900 dark:text-white text-center">向量数据库</span>
+                            </div>
+                            <div class="flex flex-col items-center px-2">
+                                <span class="text-[8px] font-bold text-primary uppercase mb-1">Predicate</span>
+                                <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                <span class="text-[9px] font-bold text-primary">支撑</span>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center">
+                                <span class="text-[8px] font-bold text-slate-400 uppercase mb-1">Object</span>
+                                <span class="text-[10px] font-black text-slate-900 dark:text-white text-center">LLM 长期记忆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 group hover:border-primary/40 transition-all">
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex-1 flex flex-col items-center">
+                                <span class="text-[8px] font-bold text-slate-400 uppercase mb-1">Subject</span>
+                                <span class="text-[10px] font-black text-slate-900 dark:text-white text-center">英伟达</span>
+                            </div>
+                            <div class="flex flex-col items-center px-2">
+                                <span class="text-[8px] font-bold text-primary uppercase mb-1">Predicate</span>
+                                <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                <span class="text-[9px] font-bold text-primary">提供</span>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center">
+                                <span class="text-[8px] font-bold text-slate-400 uppercase mb-1">Object</span>
+                                <span class="text-[10px] font-black text-slate-900 dark:text-white text-center">算力基础设施</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <p class="text-[10px] text-slate-500 leading-relaxed">
+                        <span class="font-black text-primary uppercase mr-1">Semantic Note:</span>
+                        通过 NLP 模型从海量非结构化文本中自动提取的三元组，用于构建该主题的实时演化图谱。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+            <button id="close-evidence-modal-btn" class="px-6 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-white rounded-lg text-sm font-bold hover:bg-slate-300 transition-all">关闭</button>
+        </div>
+    </div>
 </div>
-<!-- Visual Nodes (Simulated) -->
-<div class="relative w-full h-full">
-<!-- Node 1: Primary Center -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center animate-pulse">
-<div class="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center text-center p-2 font-bold text-sm shadow-xl">生成式AI</div>
-</div>
-<!-- Orbiting Nodes -->
-<div class="absolute top-1/4 left-1/4 w-20 h-20 rounded-full bg-white dark:bg-slate-700 border-2 border-green-400 flex items-center justify-center text-center p-2 text-[10px] font-bold shadow-lg">纽约时报</div>
-<div class="absolute bottom-1/4 right-1/4 w-20 h-20 rounded-full bg-white dark:bg-slate-700 border-2 border-purple-400 flex items-center justify-center text-center p-2 text-[10px] font-bold shadow-lg">算力分配</div>
-<div class="absolute top-1/3 right-1/3 w-16 h-16 rounded-full bg-white dark:bg-slate-700 border-2 border-orange-400 flex items-center justify-center text-center p-1 text-[10px] font-bold shadow-lg">伦理争论</div>
-<!-- Connections (Simulated Lines) -->
-<svg class="absolute inset-0 w-full h-full pointer-events-none">
-<line stroke="#13b6ec" stroke-opacity="0.3" stroke-width="2" x1="50%" x2="25%" y1="50%" y2="25%"></line>
-<line stroke="#13b6ec" stroke-opacity="0.3" stroke-width="2" x1="50%" x2="75%" y1="50%" y2="75%"></line>
-<line stroke="#13b6ec" stroke-opacity="0.3" stroke-width="2" x1="50%" x2="66%" y1="50%" y2="33%"></line>
-</svg>
-</div>
-</div>
-</div>
-</div>
-<!-- Lower Section (Monitoring & Details) -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-<!-- Heatmap: Left (1/2) -->
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<div class="flex justify-between items-center mb-6">
-<h3 class="text-lg font-bold">耦合度分析矩阵</h3>
-<span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded uppercase">Granger Causality</span>
-</div>
-<div class="grid grid-cols-6 gap-2">
-<!-- Y-axis labels would go here, simplified to a grid -->
-<div class="col-start-2 col-span-5 flex justify-between px-2 text-[10px] text-slate-400 font-bold mb-1">
-<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
-</div>
-<div class="flex flex-col justify-between py-2 text-[10px] text-slate-400 font-bold text-right pr-2">
-<span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span>
-</div>
-<div class="col-span-5 grid grid-cols-5 grid-rows-5 gap-2 h-[240px]">
-<!-- Grid cells with varying opacity primary color -->
-<div class="bg-primary/90 rounded shadow-sm"></div>
-<div class="bg-primary/20 rounded shadow-sm"></div>
-<div class="bg-primary/60 rounded shadow-sm"></div>
-<div class="bg-primary/40 rounded shadow-sm"></div>
-<div class="bg-primary/10 rounded shadow-sm"></div>
-<div class="bg-primary/30 rounded shadow-sm"></div>
-<div class="bg-primary/80 rounded shadow-sm"></div>
-<div class="bg-primary/50 rounded shadow-sm"></div>
-<div class="bg-primary/20 rounded shadow-sm"></div>
-<div class="bg-primary/70 rounded shadow-sm"></div>
-<div class="bg-primary/10 rounded shadow-sm"></div>
-<div class="bg-primary/40 rounded shadow-sm"></div>
-<div class="bg-primary/90 rounded shadow-sm"></div>
-<div class="bg-primary/30 rounded shadow-sm"></div>
-<div class="bg-primary/20 rounded shadow-sm"></div>
-<div class="bg-primary/50 rounded shadow-sm"></div>
-<div class="bg-primary/20 rounded shadow-sm"></div>
-<div class="bg-primary/10 rounded shadow-sm"></div>
-<div class="bg-primary/85 rounded shadow-sm"></div>
-<div class="bg-primary/40 rounded shadow-sm"></div>
-<div class="bg-primary/70 rounded shadow-sm"></div>
-<div class="bg-primary/10 rounded shadow-sm"></div>
-<div class="bg-primary/30 rounded shadow-sm"></div>
-<div class="bg-primary/20 rounded shadow-sm"></div>
-<div class="bg-primary/95 rounded shadow-sm"></div>
-</div>
-</div>
-<div class="mt-4 flex items-center justify-end gap-2">
-<span class="text-[10px] text-slate-400">弱相关</span>
-<div class="h-2 w-32 bg-gradient-to-r from-primary/10 to-primary rounded-full"></div>
-<span class="text-[10px] text-slate-400">强相关</span>
-</div>
-</div>
-<!-- Alerts Feed: Right (1/2) -->
-<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
-<h3 class="text-lg font-bold mb-6">预警动态</h3>
-<div class="flex-1 space-y-6">
-<div class="relative pl-6 before:absolute before:left-[3px] before:top-2 before:bottom-[-24px] before:w-[1px] before:bg-slate-200 dark:before:bg-slate-700 last:before:hidden">
-<div class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></div>
-<div class="flex flex-col gap-1">
-<div class="flex justify-between items-center">
-<span class="text-xs font-bold text-slate-400">10:42 AM</span>
-<span class="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded font-bold uppercase">Critical</span>
-</div>
-<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">检测到海外社交媒体关于“6G卫星隐私”的非正常激增</p>
-<div class="flex gap-4 mt-1">
-<a class="text-xs text-primary font-bold hover:underline flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-sm">history_edu</span> 回测验证
-                                    </a>
-<a class="text-xs text-primary font-bold hover:underline flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-sm">find_in_page</span> 查看证据溯源
-                                    </a>
-</div>
-</div>
-</div>
-<div class="relative pl-6 before:absolute before:left-[3px] before:top-2 before:bottom-[-24px] before:w-[1px] before:bg-slate-200 dark:before:bg-slate-700 last:before:hidden">
-<div class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary/60"></div>
-<div class="flex flex-col gap-1">
-<div class="flex justify-between items-center">
-<span class="text-xs font-bold text-slate-400">09:15 AM</span>
-<span class="text-[10px] px-1.5 py-0.5 bg-blue-100 text-blue-600 rounded font-bold uppercase">Info</span>
-</div>
-<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">《Nature》发表针对特定蛋白质折叠技术的新突破</p>
-<div class="flex gap-4 mt-1">
-<a class="text-xs text-primary font-bold hover:underline flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-sm">history_edu</span> 回测验证
-                                    </a>
-<a class="text-xs text-primary font-bold hover:underline flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-sm">find_in_page</span> 查看证据溯源
-                                    </a>
-</div>
-</div>
-</div>
-<div class="relative pl-6">
-<div class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary/60"></div>
-<div class="flex flex-col gap-1">
-<div class="flex justify-between items-center">
-<span class="text-xs font-bold text-slate-400">昨天 18:30</span>
-<span class="text-[10px] px-1.5 py-0.5 bg-blue-100 text-blue-600 rounded font-bold uppercase">Info</span>
-</div>
-<p class="text-sm font-semibold text-slate-800 dark:text-slate-200">主要智库关于“数据跨境流动”的共识达成初步报告</p>
-<div class="flex gap-4 mt-1">
-<a class="text-xs text-primary font-bold hover:underline flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-sm">history_edu</span> 回测验证
-                                    </a>
-<a class="text-xs text-primary font-bold hover:underline flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-sm">find_in_page</span> 查看证据溯源
-                                    </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- Lag Detail Modal (Initially Hidden) -->
+<div id="lag-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white dark:bg-slate-800 w-full max-w-lg rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-in zoom-in-95 duration-200">
+        <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50/50">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-purple-500">history</span>
+                滞后相关性详细分布
+            </h3>
+            <button id="close-lag-modal" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-slate-500">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-6">
+            <div class="h-48 w-full flex items-end gap-2 px-2">
+                <!-- Simple bar chart for lag distribution -->
+                <div class="flex-1 bg-slate-200 dark:bg-slate-700 rounded-t h-[20%]"></div>
+                <div class="flex-1 bg-slate-200 dark:bg-slate-700 rounded-t h-[40%]"></div>
+                <div class="flex-1 bg-primary/40 rounded-t h-[70%]"></div>
+                <div class="flex-1 bg-primary rounded-t h-[100%] shadow-[0_0_15px_rgba(19,182,236,0.4)]"></div>
+                <div class="flex-1 bg-primary/40 rounded-t h-[60%]"></div>
+                <div class="flex-1 bg-slate-200 dark:bg-slate-700 rounded-t h-[30%]"></div>
+                <div class="flex-1 bg-slate-200 dark:bg-slate-700 rounded-t h-[10%]"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-slate-400 font-bold px-2">
+                <span>-7天</span><span>-3天</span><span class="text-primary">当前 (最优: 3.2天)</span><span>+3天</span><span>+7天</span>
+            </div>
+            <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800">
+                <p class="text-xs text-purple-700 dark:text-purple-300 leading-relaxed">
+                    <b>结论：</b> 在 95% 置信区间下，媒体提及数领先于技术专利申请量约 3.2 天。这意味着媒体端的异常波动可作为技术产出预警的有效前置变量。
+                </p>
+            </div>
+        </div>
+        <div class="p-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+            <button id="close-lag-modal-btn" class="px-6 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-white rounded-lg text-sm font-bold hover:bg-slate-300 transition-all">关闭</button>
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -363,4 +1395,539 @@
     .animate-pulse {
         animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
-</style></div></div></div><script>function toggleGroup(btn){var c=btn.nextElementSibling;if(c.style.maxHeight&&c.style.maxHeight!=="0px"){c.style.maxHeight="0";btn.querySelector(".expand-icon").textContent="expand_more";}else{c.style.maxHeight=c.scrollHeight+"px";btn.querySelector(".expand-icon").textContent="expand_less";}}(function(){var cur=location.href.split("/").pop().split("?")[0];document.querySelectorAll(".nav-item").forEach(function(a){if(a.getAttribute("data-file")===cur){a.classList.add("active-nav-item");var ch=a.closest(".group-children");if(ch){ch.style.maxHeight="9999px";var ic=ch.previousElementSibling.querySelector(".expand-icon");if(ic)ic.textContent="expand_less";}}});})();</script><style>.active-nav-item{color:#1392ec!important;background:#e0f2fe;font-weight:600;border-radius:8px;}</style></body></html>
+    @keyframes pulseSlow {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.25; }
+    }
+    .animate-pulse-slow {
+        animation: pulseSlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .chart-gradient-stop-1 { stop-color: #13b6ec; stop-opacity: 0.2; }
+    .chart-gradient-stop-2 { stop-color: #13b6ec; stop-opacity: 0; }
+    .glass-effect {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    .curve-shadow {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+    }
+    .node-glow-primary {
+        box-shadow: 0 0 20px rgba(19, 182, 236, 0.4);
+    }
+    .node-glow-green {
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    }
+    .node-glow-orange {
+        box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+    }
+    .link-flow {
+        stroke-dasharray: 10, 5;
+        animation: flow 20s linear infinite;
+    }
+    @keyframes flow {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+    }
+    .floating-node {
+        animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+        50% { transform: translate(-50%, -50%) translateY(-10px); }
+    }
+    @keyframes slideInFromTop {
+        from { transform: translateY(-1rem); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-in {
+        animation: slideInFromTop 0.3s ease-out forwards;
+    }
+    @keyframes zoomIn {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    .zoom-in-95 {
+        animation: zoomIn 0.2s ease-out forwards;
+    }
+</style></div></div></div><script>function toggleGroup(btn){var c=btn.nextElementSibling;if(c.style.maxHeight&&c.style.maxHeight!=="0px"){c.style.maxHeight="0";btn.querySelector(".expand-icon").textContent="expand_more";}else{c.style.maxHeight=c.scrollHeight+"px";btn.querySelector(".expand-icon").textContent="expand_less";}}(function(){var cur=location.href.split("/").pop().split("?")[0];document.querySelectorAll(".nav-item").forEach(function(a){if(a.getAttribute("data-file")===cur){a.classList.add("active-nav-item");var ch=a.closest(".group-children");if(ch){ch.style.maxHeight="9999px";var ic=ch.previousElementSibling.querySelector(".expand-icon");if(ic)ic.textContent="expand_less";}}});})();
+// Interaction Logic for Media Focus Dashboard
+document.addEventListener('DOMContentLoaded', function() {
+    const hotspotCard = document.getElementById('hotspot-card');
+    const hotspotPanel = document.getElementById('hotspot-panel');
+    const closeHotspotPanel = document.getElementById('close-hotspot-panel');
+
+    const couplingCard = document.getElementById('coupling-card');
+    const couplingModal = document.getElementById('coupling-modal');
+    const closeCouplingModal = document.getElementById('close-coupling-modal');
+    const closeCouplingModalBtn = document.getElementById('close-coupling-modal-btn');
+
+    if (hotspotCard && hotspotPanel) {
+        hotspotCard.addEventListener('click', function() {
+            hotspotPanel.classList.toggle('hidden');
+            if (!hotspotPanel.classList.contains('hidden')) {
+                hotspotPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    }
+
+    if (closeHotspotPanel) {
+        closeHotspotPanel.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hotspotPanel.classList.add('hidden');
+        });
+    }
+
+    if (couplingCard && couplingModal) {
+        couplingCard.addEventListener('click', function() {
+            couplingModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = () => {
+            couplingModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        if (closeCouplingModal) closeCouplingModal.addEventListener('click', closeModal);
+        if (closeCouplingModalBtn) closeCouplingModalBtn.addEventListener('click', closeModal);
+
+        couplingModal.addEventListener('click', function(e) {
+            if (e.target === couplingModal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Trend Chart Interaction Logic
+    const trendContainer = document.getElementById('trend-chart-container');
+    const trendSvg = document.getElementById('trend-svg');
+    const hoverLine = document.getElementById('hover-line');
+    const tooltip = document.getElementById('chart-tooltip');
+    const multiCompareBtn = document.getElementById('multi-compare-btn');
+    const correlationInfo = document.getElementById('correlation-info');
+    const exportChartBtn = document.getElementById('export-chart-btn');
+
+    const hoverPoints = [
+        document.getElementById('hover-point-1'),
+        document.getElementById('hover-point-2'),
+        document.getElementById('hover-point-3')
+    ];
+
+    if (trendContainer && trendSvg) {
+        trendContainer.addEventListener('mousemove', function(e) {
+            const rect = trendSvg.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const xPercent = x / rect.width;
+            
+            if (x >= 0 && x <= rect.width) {
+                hoverLine.setAttribute('x1', x * (800 / rect.width));
+                hoverLine.setAttribute('x2', x * (800 / rect.width));
+                hoverLine.classList.remove('hidden');
+                
+                // Show tooltip
+                tooltip.classList.remove('hidden');
+                tooltip.style.left = `${x + 15}px`;
+                tooltip.style.top = `${e.clientY - rect.top - 20}px`;
+                
+                // Update hover points on curves
+                const curves = trendSvg.querySelectorAll('svg > path:not([fill="url(#primaryGradient)"])');
+                curves.forEach((path, i) => {
+                    if (hoverPoints[i] && path.style.display !== 'none') {
+                        const pathLen = path.getTotalLength();
+                        const point = path.getPointAtLength(xPercent * pathLen);
+                        hoverPoints[i].setAttribute('cx', point.x);
+                        hoverPoints[i].setAttribute('cy', point.y);
+                        hoverPoints[i].classList.remove('hidden');
+                        
+                        // Update values in tooltip (simulated)
+                        const valElem = document.getElementById(`tooltip-val-${i+1}`);
+                        if (valElem) {
+                            if (i === 0) valElem.textContent = Math.round(1000 + Math.random() * 500);
+                            if (i === 1) valElem.textContent = (0.5 + Math.random() * 0.4).toFixed(2);
+                            if (i === 2) valElem.textContent = Math.round(20 + Math.random() * 30);
+                        }
+                    }
+                });
+                
+                // Update date (simulated)
+                const day = Math.floor(xPercent * 30) + 1;
+                document.getElementById('tooltip-date').textContent = `2024-03-${day.toString().padStart(2, '0')}`;
+            }
+        });
+
+        trendContainer.addEventListener('mouseleave', function() {
+            hoverLine.classList.add('hidden');
+            tooltip.classList.add('hidden');
+            hoverPoints.forEach(p => p.classList.add('hidden'));
+        });
+    }
+
+    if (multiCompareBtn) {
+        multiCompareBtn.addEventListener('click', function() {
+            correlationInfo.classList.toggle('hidden');
+            this.classList.toggle('bg-primary');
+            this.classList.toggle('text-white');
+            if (!correlationInfo.classList.contains('hidden')) {
+                alert('已开启多序列对比模式，计算得出的滞后相关系数已显示在图表右上角。');
+            }
+        });
+    }
+
+    if (exportChartBtn) {
+        exportChartBtn.addEventListener('click', function() {
+            alert('正在准备导出当前选定时间窗 (最近30天) 的数据报告与趋势图表...');
+        });
+    }
+
+    // Indicator Toggling
+    document.querySelectorAll('#trend-chart-container').forEach(container => {
+        const checkboxes = container.parentElement.querySelectorAll('input[type="checkbox"]');
+        const curves = Array.from(container.querySelectorAll('svg > path'));
+        const tooltipRows = container.querySelectorAll('.tooltip-row');
+        
+        checkboxes.forEach((cb, i) => {
+            cb.addEventListener('change', function() {
+                if (i === 0) {
+                    // Media Mentions + Gradient
+                    curves[0].style.display = this.checked ? 'block' : 'none';
+                    curves[1].style.display = this.checked ? 'block' : 'none';
+                    if (hoverPoints[0]) hoverPoints[0].style.display = this.checked ? 'block' : 'none';
+                    if (tooltipRows[0]) tooltipRows[0].style.display = this.checked ? 'flex' : 'none';
+                } else {
+                    // Others
+                    const curveIdx = i + 1;
+                    if (curves[curveIdx]) {
+                        curves[curveIdx].style.display = this.checked ? 'block' : 'none';
+                        if (hoverPoints[i]) hoverPoints[i].style.display = this.checked ? 'block' : 'none';
+                        if (tooltipRows[i]) tooltipRows[i].style.display = this.checked ? 'flex' : 'none';
+                    }
+                }
+            });
+        });
+    });
+
+    // Network Graph Interaction Logic (using vis-network)
+    const visContainer = document.getElementById('vis-network-container');
+    const nodeDetailPanel = document.getElementById('node-detail-panel');
+    const closeDetailPanel = document.getElementById('close-detail-panel');
+    const pathOverlay = document.getElementById('path-overlay');
+    const pathFindBtn = document.getElementById('path-find-btn');
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+
+    if (visContainer && typeof vis !== 'undefined') {
+        const nodes = new vis.DataSet([
+            { id: 1, label: '生成式AI', group: 'tech', size: 40, font: { size: 14, color: '#ffffff', face: 'Public Sans', weight: 'bold' }, color: { background: '#13b6ec', border: '#0ea5e9' } },
+            { id: 2, label: '纽约时报', group: 'media', size: 25, color: { background: '#ffffff', border: '#10b981' } },
+            { id: 3, label: '路透社', group: 'media', size: 22, color: { background: '#ffffff', border: '#10b981' } },
+            { id: 4, label: '华尔街日报', group: 'media', size: 22, color: { background: '#ffffff', border: '#10b981' } },
+            { id: 5, label: '算力分配', group: 'entity', size: 25, color: { background: '#ffffff', border: '#f59e0b' } },
+            { id: 6, label: '彭博社', group: 'media', size: 18, color: { background: '#ffffff', border: '#10b981' } },
+            { id: 7, label: '伦理治理', group: 'entity', size: 22, color: { background: '#ffffff', border: '#f59e0b' } }
+        ]);
+
+        const edges = new vis.DataSet([
+            { from: 1, to: 2, label: '深度报道', arrows: 'to', color: { color: '#13b6ec', opacity: 0.4 }, width: 2 },
+            { from: 1, to: 3, label: '市场关注', arrows: 'to', color: { color: '#13b6ec', opacity: 0.4 }, width: 2 },
+            { from: 1, to: 4, label: '技术评测', arrows: 'to', color: { color: '#13b6ec', opacity: 0.4 }, width: 2 },
+            { from: 1, to: 5, arrows: 'to', color: { color: '#94a3b8', opacity: 0.2 }, dashes: true },
+            { from: 2, to: 7, arrows: 'to', color: { color: '#94a3b8', opacity: 0.2 }, dashes: true },
+            { from: 7, to: 1, arrows: 'to', color: { color: '#94a3b8', opacity: 0.2 }, dashes: true }
+        ]);
+
+        const data = { nodes, edges };
+        const options = {
+            nodes: {
+                shape: 'dot',
+                borderWidth: 2,
+                shadow: true,
+                font: { face: 'Public Sans', size: 10 }
+            },
+            edges: {
+                font: { size: 8, align: 'middle', color: '#94a3b8' },
+                smooth: { type: 'continuous' }
+            },
+            physics: {
+                forceAtlas2Based: {
+                    gravitationalConstant: -50,
+                    centralGravity: 0.01,
+                    springLength: 100,
+                    springConstant: 0.08
+                },
+                maxVelocity: 50,
+                solver: 'forceAtlas2Based',
+                timestep: 0.35,
+                stabilization: { iterations: 150 }
+            },
+            interaction: {
+                hover: true,
+                zoomView: true,
+                dragView: true
+            }
+        };
+
+        const network = new vis.Network(visContainer, data, options);
+
+        network.on("click", function (params) {
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                const nodeData = nodes.get(nodeId);
+                
+                document.getElementById('detail-node-name').textContent = nodeData.label;
+                document.getElementById('detail-node-type').textContent = nodeData.group === 'tech' ? 'Technology' : (nodeData.group === 'media' ? 'Media' : 'Entity');
+                
+                nodeDetailPanel.classList.remove('translate-x-full');
+            } else {
+                nodeDetailPanel.classList.add('translate-x-full');
+            }
+        });
+
+        if (zoomInBtn) {
+            zoomInBtn.addEventListener('click', () => {
+                const currentScale = network.getScale();
+                network.moveTo({ scale: currentScale + 0.3 });
+            });
+        }
+
+        if (zoomOutBtn) {
+            zoomOutBtn.addEventListener('click', () => {
+                const currentScale = network.getScale();
+                network.moveTo({ scale: currentScale - 0.3 });
+            });
+        }
+
+        if (pathFindBtn) {
+            pathFindBtn.addEventListener('click', () => {
+                pathOverlay.classList.toggle('hidden');
+                if (!pathOverlay.classList.contains('hidden')) {
+                    alert('正在分析“纽约时报”到“生成式AI”的传播路径...');
+                    setTimeout(() => pathOverlay.classList.add('hidden'), 4000);
+                }
+            });
+        }
+    }
+
+    if (closeDetailPanel) {
+        closeDetailPanel.addEventListener('click', () => {
+            nodeDetailPanel.classList.add('translate-x-full');
+        });
+    }
+
+    // Filter simulation
+    ['region-filter', 'sentiment-filter'].forEach(id => {
+        const filter = document.getElementById(id);
+        if (filter) {
+            filter.addEventListener('change', function() {
+                alert(`网络视图已根据 ${this.options[this.selectedIndex].text} 进行重构过滤`);
+            });
+        }
+    });
+
+    // Emergency Event Interaction Logic
+    const briefModal = document.getElementById('brief-modal');
+    const closeBriefModal = document.getElementById('close-brief-modal');
+    const closeBriefModalBtn = document.getElementById('close-brief-modal-btn');
+    const briefTitle = document.getElementById('brief-title');
+
+    document.querySelectorAll('.emergency-monitor-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const title = this.closest('div[class*="rounded-xl"]').querySelector('.text-sm.font-black').textContent;
+            alert(`已将突发事件 “${title}” 加入实时监控系统，关联实体已同步。`);
+            this.innerHTML = '<span class="material-symbols-outlined text-sm">done_all</span> 监控中';
+            this.classList.replace('bg-primary', 'bg-green-600');
+            this.disabled = true;
+        });
+    });
+
+    document.querySelectorAll('.generate-brief-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const title = this.closest('div[class*="rounded-xl"]').querySelector('.text-sm.font-black').textContent;
+            briefTitle.textContent = `关于“${title}”的舆情分析与建议`;
+            briefModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeBrief = () => {
+        briefModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    };
+
+    if (closeBriefModal) closeBriefModal.addEventListener('click', closeBrief);
+    if (closeBriefModalBtn) closeBriefModalBtn.addEventListener('click', closeBrief);
+    if (briefModal) {
+        briefModal.addEventListener('click', (e) => {
+            if (e.target === briefModal) closeBrief();
+        });
+    }
+
+    const copyBriefBtn = document.getElementById('copy-brief-btn');
+    if (copyBriefBtn) {
+        copyBriefBtn.addEventListener('click', () => {
+            alert('简报草稿已成功复制到剪贴板，并已同步至“决策简报”工作流。');
+            closeBrief();
+        });
+    }
+
+    // Coupling Analysis Interaction Logic
+    const lagTrigger = document.getElementById('lag-trigger');
+    const lagModal = document.getElementById('lag-modal');
+    const closeLagModal = document.getElementById('close-lag-modal');
+    const closeLagModalBtn = document.getElementById('close-lag-modal-btn');
+
+    if (lagTrigger && lagModal) {
+        lagTrigger.addEventListener('click', () => {
+            lagModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeLag = () => {
+            lagModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        if (closeLagModal) closeLagModal.addEventListener('click', closeLag);
+        if (closeLagModalBtn) closeLagModalBtn.addEventListener('click', closeLag);
+        
+        lagModal.addEventListener('click', (e) => {
+            if (e.target === lagModal) closeLag();
+        });
+    }
+
+    // Monitoring Config Interaction Logic (Card Based)
+    const monitorConfigBtn = document.getElementById('monitor-config-btn');
+    const monitorConfigCard = document.getElementById('monitor-config-card');
+    const cardValidateRuleBtn = document.getElementById('card-validate-rule-btn');
+    const cardValidationResult = document.getElementById('card-validation-result');
+    const cardValidationEmpty = document.getElementById('card-validation-empty');
+    const cardSaveMonitorBtn = document.getElementById('card-save-monitor-btn');
+
+    if (monitorConfigBtn && monitorConfigCard) {
+        monitorConfigBtn.addEventListener('click', () => {
+            monitorConfigCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            monitorConfigCard.classList.add('ring-4', 'ring-primary/20');
+            setTimeout(() => monitorConfigCard.classList.remove('ring-4', 'ring-primary/20'), 2000);
+        });
+
+        if (cardValidateRuleBtn) {
+            cardValidateRuleBtn.addEventListener('click', function() {
+                this.innerHTML = '<span class="material-symbols-outlined text-xs animate-spin">sync</span> 验证中';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    cardValidationEmpty.classList.add('hidden');
+                    cardValidationResult.classList.remove('hidden');
+                    this.innerHTML = '<span class="material-symbols-outlined text-xs">play_circle</span>验证';
+                    this.disabled = false;
+                    alert('回测验证完成。该规则在历史数据中表现稳健。');
+                }, 1200);
+            });
+        }
+
+        if (cardSaveMonitorBtn) {
+            cardSaveMonitorBtn.addEventListener('click', () => {
+                alert('监控规则已成功保存并同步至实时引擎。');
+            });
+        }
+    }
+
+    // Report Generation Interaction Logic (Card Based)
+    const reportGenBtn = document.getElementById('generate-brief-report-btn');
+    const reportGenCard = document.getElementById('report-gen-card');
+    const cardGeneratePreviewBtn = document.getElementById('card-generate-preview-btn');
+
+    if (reportGenBtn && reportGenCard) {
+        reportGenBtn.addEventListener('click', () => {
+            reportGenCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            reportGenCard.classList.add('ring-4', 'ring-purple-500/20');
+            setTimeout(() => reportGenCard.classList.remove('ring-4', 'ring-purple-500/20'), 2000);
+        });
+
+        if (cardGeneratePreviewBtn) {
+            cardGeneratePreviewBtn.addEventListener('click', () => {
+                alert('正在生成全屏排版预览，请稍候...');
+            });
+        }
+
+        document.querySelectorAll('.card-export-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const format = btn.textContent.trim();
+                alert(`正在将报告导出为 ${format} 格式...`);
+            });
+        });
+
+        const cardShareReportBtn = document.getElementById('card-share-report-btn');
+        if (cardShareReportBtn) {
+            cardShareReportBtn.addEventListener('click', () => {
+                alert('已成功生成共享链接：https://gkx-intel.com/share/r/20240313-001');
+            });
+        }
+    }
+
+    // Smart Recommendation Interaction Logic
+    const evidenceModal = document.getElementById('evidence-modal');
+    const closeEvidenceModal = document.getElementById('close-evidence-modal');
+    const closeEvidenceModalBtn = document.getElementById('close-evidence-modal-btn');
+    const evidenceTargetName = document.getElementById('evidence-target-name');
+
+    document.querySelectorAll('.evidence-trigger-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = this.closest('.recommend-card');
+            const title = card.querySelector('h4').textContent;
+            evidenceTargetName.textContent = title;
+            evidenceModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeEvidence = () => {
+        evidenceModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    };
+
+    if (closeEvidenceModal) closeEvidenceModal.addEventListener('click', closeEvidence);
+    if (closeEvidenceModalBtn) closeEvidenceModalBtn.addEventListener('click', closeEvidence);
+    if (evidenceModal) {
+        evidenceModal.addEventListener('click', (e) => {
+            if (e.target === evidenceModal) closeEvidence();
+        });
+    }
+
+    document.querySelectorAll('.dismiss-recommend-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = this.closest('.recommend-card');
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                card.remove();
+                // If no cards left, maybe show a message (optional for prototype)
+            }, 300);
+        });
+    });
+
+    // Add to Monitoring Logic
+    document.querySelectorAll('button').forEach(btn => {
+        if (btn.textContent.includes('加入监控')) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const title = this.closest('div[class*="rounded-lg"]').querySelector('.text-sm.font-bold').textContent;
+                alert(`已将热点 “${title}” 加入监控清单`);
+                this.innerHTML = '<span class="material-symbols-outlined text-sm">check_circle</span> 已监控';
+                this.classList.replace('text-primary', 'text-green-600');
+                this.disabled = true;
+            });
+        }
+    });
+});
+</script><style>.active-nav-item{color:#1392ec!important;background:#e0f2fe;font-weight:600;border-radius:8px;}</style></body></html>
