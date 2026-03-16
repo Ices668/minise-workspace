@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 用户模型
+model User {
+  id                 Int      @id @default(autoincrement())
+  email              String   @unique
+  nickname           String?  @unique
+  password           String
+  needResetPassword  Int      @default(0) @db.TinyInt @map("need_reset_password")
+  role               Role     @default(USER)
+  createdAt          DateTime @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt          DateTime @default(now()) @updatedAt @map("updated_at") @db.DateTime(0)
+
+  // 关系
+  serverApplications ServerApplication[]
+  servers            Server[]
+  notifications      Notification[]
+
+  @@map("user")
+}
+
+// 角色枚举
+enum Role {
+  USER
+  ADMIN
+}
+
+// 数据分类模型
+model DataCategory {
+  id          Int              @id @default(autoincrement())
+  name        String
+  description String?
+  parentId    Int?
+  secrecyLevel SecrecyLevel @default(PUBLIC)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  
+  // 关系
+  parent      DataCategory?    @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children    DataCategory[]   @relation("CategoryHierarchy")
+  applicationConnections ServerApplicationDataCategory[]
+
+  @@map("data_category")
+}
+
+// 保密级别枚举
+enum SecrecyLevel {
+  PUBLIC
+  INTERNAL
+  CONFIDENTIAL
+  TOP_SECRET
+}
+
+// 服务器申请模型
+model ServerApplication {
+  id             Int                           @id @default(autoincrement())
+  userId         Int
+  cpu            Int
+  memory         Int
+  gpu            Boolean
+  storage        Int
+  duration       Int
+  reason         String?
+  status         ApplicationStatus @default(PENDING)
+  extensionDays  Int?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  
+  // 关系
+  user           User                           @relation(fields: [userId], references: [id])
+  dataCategoryConnections ServerApplicationDataCategory[]
+  server         Server?
+
+  @@map("server_application")
+}
+
+// 服务器申请与数据分类的连接表
+model ServerApplicationDataCategory {
+  serverApplicationId Int
+  dataCategoryId      Int
+  serverApplication   ServerApplication @relation(fields: [serverApplicationId], references: [id], onDelete: Cascade)
+  dataCategory        DataCategory      @relation(fields: [dataCategoryId], references: [id], onDelete: Cascade)
+  
+  @@id([serverApplicationId, dataCategoryId])
+
+   @@map("server_application_data_cat")
+}
+
+// 申请状态枚举
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  EXPIRED
+}
+
+// 服务器模型
+model Server {
+  id                Int            @id @default(autoincrement())
+  applicationId     Int            @unique
+  status            ServerStatus   @default(RUNNING)
+  expireAt          DateTime
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  userId            Int
+  
+  // PVE相关字段
+  pveVmId           Int?          // Proxmox VM/CT ID
+  pveNode           String?       // 所在PVE节点
+  pveType           String?       // 类型：qemu(虚拟机)或lxc(容器)
+  pveName           String?       // PVE中显示的名称
+  pveIp             String?       // 实例IP地址
+  pveHost           String?       // 宿主机名称
+  pveConfig         Json?         // 完整配置信息
+  
+  // GPU关联
+  gpuId             String?       // 关联的GPU ID
+  
+  // 关系
+  application       ServerApplication @relation(fields: [applicationId], references: [id])
+  user              User           @relation(fields: [userId], references: [id])
+}
+
+// 服务器状态枚举
+enum ServerStatus {
+  RUNNING
+  STOPPED
+  DELETED
+}
+
+// 通知模型
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  content   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  
+  // 关系
+  user      User     @relation(fields: [userId], references: [id])
+}
